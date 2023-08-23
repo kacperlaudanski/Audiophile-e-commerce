@@ -1,8 +1,8 @@
-import styles from './headphones.module.css'
+import '../../../dist-styles/categories.css'
 
 const HeadphonesPage: React.FC = (props) => {
     return (
-      <div className={styles.background}>
+      <div>
 
       </div>
     )

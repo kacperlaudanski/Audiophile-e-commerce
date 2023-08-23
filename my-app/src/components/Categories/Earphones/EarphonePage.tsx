@@ -1,8 +1,9 @@
-import styles from './earphones.module.css'
+import '../../../dist-styles/categories.css'
+import Navbar from '../../Elements/Navbar/Navbar';
 
 const EarphonesPage: React.FC = (props) => {
-  return <div className={styles.background}>
-
+  return <div>
+    <Navbar /> 
   </div>;
 };
 

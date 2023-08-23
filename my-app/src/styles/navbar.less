@@ -1,0 +1,51 @@
+@navbar-color: rgb(0,0,0); 
+@hover-font-color: rgb(216,125,74);
+@font: 'Manrope', sans-serif;
+.flex-setup(@align-items, @justify-content){
+    display:flex; 
+    align-items:@align-items; 
+    justify-content: @justify-content;
+}
+
+
+.navbar-desktop{
+    width:80%; 
+    height: 90px;
+    background-color: @navbar-color; 
+    font-family: @font; 
+    border-bottom: .7px solid #ffffff68;
+    .flex-setup(center, center);
+
+    .logo-container{
+        width:25%; 
+        .navbar-logo{
+            color:rgb(255, 255, 255);
+            text-decoration: none;
+            font-size: 1.5rem; 
+            font-weight: 600;
+        }
+    }
+    .categories-list{
+        width:50%;
+        list-style: none;
+        .flex-setup(center, space-between);
+
+        .navbar-list-element{
+            color: rgb(255,255,255);
+            text-decoration: none;
+            letter-spacing: .8px;
+            font-size: .9rem;
+            font-weight: bolder;
+        }
+
+        .navbar-list-element:hover{
+            color:@hover-font-color; 
+            cursor: pointer;
+        }
+    }
+
+    .cart-button-container{
+        width:25%; 
+        .flex-setup(center, flex-end)
+    }
+}

@@ -1,0 +1,18 @@
+.flex-setup(@align-items, @justify-content){
+    display:flex; 
+    align-items:@align-items; 
+    justify-content: @justify-content;
+}
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-section-container{
+    width:100%; 
+    height:500px; 
+    background-color: rgb(0,0,0);
+    .flex-setup(top, center);
+}

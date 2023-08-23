@@ -1,0 +1,43 @@
+.navbar-desktop {
+  width: 80%;
+  height: 90px;
+  background-color: #000000;
+  font-family: 'Manrope', sans-serif;
+  border-bottom: 0.7px solid #ffffff68;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-desktop .logo-container {
+  width: 25%;
+}
+.navbar-desktop .logo-container .navbar-logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.navbar-desktop .categories-list {
+  width: 50%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-desktop .categories-list .navbar-list-element {
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  font-size: 0.9rem;
+  font-weight: bolder;
+}
+.navbar-desktop .categories-list .navbar-list-element:hover {
+  color: #d87d4a;
+  cursor: pointer;
+}
+.navbar-desktop .cart-button-container {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

@@ -1,11 +1,17 @@
 import React from "react";
+import "../../dist-styles/home.css";
+import HeaderSection from "./HeaderSection";
+import Navbar from "../Elements/Navbar/Navbar";
 
 const Home: React.FC = (props) => {
-    return (
-        <main>
+  return (
+    <React.Fragment>
+      <HeaderSection>
+        <Navbar />
+      </HeaderSection>
+      <main></main>
+    </React.Fragment>
+  );
+};
 
-        </main>
-    )
-}
-
-export default Home; 
+export default Home;

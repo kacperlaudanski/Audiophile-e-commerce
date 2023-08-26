@@ -12,22 +12,28 @@ const Navbar = () => {
       </div>
       <ul className="categories-list">
         <li>
-          <NavLink to={"/"} className="navbar-list-element">HOME</NavLink>
+          <NavLink to={"/"} className="navbar-list-element">
+            HOME
+          </NavLink>
         </li>
         <li>
-          <NavLink to={"/headphones"} className="navbar-list-element">HEADPHONES</NavLink>
+          <NavLink to={"/headphones"} className="navbar-list-element">
+            HEADPHONES
+          </NavLink>
         </li>
         <li>
-          <NavLink to={"/speakers"} className="navbar-list-element">SPEAKERS</NavLink>
+          <NavLink to={"/speakers"} className="navbar-list-element">
+            SPEAKERS
+          </NavLink>
         </li>
         <li>
-          <NavLink to={"/earphones"} className="navbar-list-element">EARPHONES</NavLink>
+          <NavLink to={"/earphones"} className="navbar-list-element">
+            EARPHONES
+          </NavLink>
         </li>
       </ul>
       <div className="cart-button-container">
-        <button type="button" className="cart-button">
-          Cart
-        </button>
+        <button type="button" className="cart-button"></button>
       </div>
     </nav>
   );

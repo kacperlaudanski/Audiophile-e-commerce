@@ -1,18 +1,112 @@
-.flex-setup(@align-items, @justify-content){
-    display:flex; 
-    align-items:@align-items; 
-    justify-content: @justify-content;
+@dark-bg-font: rgb(255, 255, 255);
+@font: "Manrope", sans-serif;
+
+.flex-setup(@align-items, @justify-content) {
+  display: flex;
+  align-items: @align-items;
+  justify-content: @justify-content;
 }
 
-*, *::after, *::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: @font;
 }
 
-.header-section-container{
-    width:100%; 
-    height:500px; 
-    background-color: rgb(0,0,0);
-    .flex-setup(top, center);
+.header-section-container {
+  width: 100%;
+  background-color: rgb(25, 25, 25);
+  .flex-setup(center, flex-start);
+  flex-direction: column;
+
+  .header-product-container {
+    width: 80%;
+    height: 600px;
+    color: @dark-bg-font;
+    .flex-setup(center, space-between);
+
+    .header-product-description {
+      .flex-setup(left, center);
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      background-image: url(../images/home/desktop/image-hero.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      h6 {
+        margin: 1.7em 0;
+      }
+
+      .new-product-sign {
+        color: rgba(241, 241, 241, 0.507);
+        letter-spacing: 6px;
+        font-size: 0.9rem;
+      }
+
+      .header-product-name {
+        font-size: 3rem;
+        color: @dark-bg-font;
+      }
+
+      .header-product-note {
+        color: @dark-bg-font;
+        font-size: 1rem;
+        line-height: 1.7em;
+        color: rgb(241, 241, 241);
+      }
+
+      .header-cta-button {
+        width: 12%;
+        height: 45px;
+        background-color: rgb(216, 125, 74);
+        font-weight: bolder;
+        color: @dark-bg-font;
+        cursor: pointer;
+        border: none;
+        transition: 0.3s linear;
+      }
+
+      .header-cta-button:hover {
+        background-color: rgb(251, 175, 133);
+      }
+    }
+  }
+}
+
+.main-section-container{
+  width:80%;
+  height:200px; 
+  .flex-setup(center, space-between); 
+  flex-direction: column;
+  margin: 200px auto;
+
+  .home-categories-container{
+    .flex-setup(center, space-between); 
+    width:100%;
+
+    .category-container{
+      width:30%;
+      height:200px; 
+      box-sizing: border-box;
+      background-color: rgb(241,241,241);
+      text-align: center;
+      position:relative;
+      padding-top:7em;
+      font-weight: bolder;
+
+      .category-image{
+        width:220px;
+        height:200px;
+        position: absolute;
+        left:50%;
+        top:-70px;
+        transform: translate(-50%);
+      }
+    }
+  }
 }

@@ -18,7 +18,7 @@ const HomeCategories: React.FC = () => {
       name: "SPEAKERS",
       image: SpeakersCategoryIMG,
       link: "/speakers",
-      uuid: uuidv4(), 
+      uuid: uuidv4(),
     },
     {
       name: "EARPHONES",

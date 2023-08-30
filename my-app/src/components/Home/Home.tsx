@@ -1,15 +1,15 @@
 import React from "react";
 import "../../dist-styles/home.css";
-import HeaderSection from "./HeaderSection";
+import HeaderSection from "../Elements/Header/HeaderSection";
 import Navbar from "../Elements/Navbar/Navbar";
 import HeaderProduct from "./HeaderProduct";
 import MainSection from "./MainSection";
-import HomeCategories from "./HomeCategories";
+import CategorySelectionPanel from "./CategorySelectionPanel";
 import ProductsBanner from "./ProductBanners";
 import AboutCompany from "./AboutCompany";
 import Footer from "../Elements/Footer/Footer";
 
-const Home: React.FC = (props) => {
+const Home: React.FC = () => {
   return (
     <React.Fragment>
       <HeaderSection>
@@ -17,7 +17,7 @@ const Home: React.FC = (props) => {
         <HeaderProduct />
       </HeaderSection>
       <MainSection>
-        <HomeCategories />
+        <CategorySelectionPanel />
         <ProductsBanner />
         <AboutCompany />
       </MainSection>

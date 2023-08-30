@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../../../dist-styles/navbar.css";
+import CategoriesList from "../CategoriesElements/CategoriesList";
 
 const Navbar = () => {
   return (
@@ -10,28 +11,10 @@ const Navbar = () => {
           audiophile
         </NavLink>
       </div>
-      <ul className="categories-list">
-        <li>
-          <NavLink to={"/"} className="navbar-list-element">
-            HOME
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={"/headphones"} className="navbar-list-element">
-            HEADPHONES
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={"/speakers"} className="navbar-list-element">
-            SPEAKERS
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={"/earphones"} className="navbar-list-element">
-            EARPHONES
-          </NavLink>
-        </li>
-      </ul>
+      <CategoriesList 
+        listClass = "navbar-categories-list"
+        linkClass = "navbar-list-element"
+      />
       <div className="cart-button-container">
         <button type="button" className="cart-button"></button>
       </div>

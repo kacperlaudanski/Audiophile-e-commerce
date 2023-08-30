@@ -1,0 +1,80 @@
+.footer-container {
+  width: 100%;
+  height: 350px;
+  background-color: #000000;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-container .footer-content-container {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-container .footer-content-container .logo-text-container {
+  width: 50%;
+  height: 90%;
+  box-sizing: border-box;
+  padding: 1em 0;
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.footer-container .footer-content-container .logo-text-container h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.footer-container .footer-content-container .logo-text-container p {
+  color: rgba(241, 241, 241, 0.482);
+}
+.footer-container .footer-content-container .logo-text-container small {
+  color: rgba(241, 241, 241, 0.482);
+  font-weight: bolder;
+}
+.footer-container .footer-content-container .navbar-social-container {
+  width: 50%;
+  height: 90%;
+  box-sizing: border-box;
+  padding: 2em 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.footer-container .footer-content-container .navbar-social-container nav {
+  width: 80%;
+}
+.footer-container .footer-content-container .navbar-social-container nav .footer-categories-list {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-container .footer-content-container .navbar-social-container nav .footer-list-element {
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  font-size: 0.9rem;
+  font-weight: bolder;
+  transition: 0.3s linear;
+}
+.footer-container .footer-content-container .navbar-social-container nav .footer-list-element:hover {
+  color: #d87d4a;
+  cursor: pointer;
+}
+.footer-container .footer-content-container .navbar-social-container .footer-socials {
+  width: 17%;
+  margin-top: 7em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}

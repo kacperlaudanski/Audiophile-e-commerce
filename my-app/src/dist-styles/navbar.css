@@ -17,14 +17,14 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
-.navbar-desktop .categories-list {
+.navbar-desktop .navbar-categories-list {
   width: 50%;
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.navbar-desktop .categories-list .navbar-list-element {
+.navbar-desktop .navbar-categories-list .navbar-list-element {
   color: #ffffff;
   text-decoration: none;
   letter-spacing: 0.8px;
@@ -32,7 +32,7 @@
   font-weight: bolder;
   transition: 0.3s linear;
 }
-.navbar-desktop .categories-list .navbar-list-element:hover {
+.navbar-desktop .navbar-categories-list .navbar-list-element:hover {
   color: #d87d4a;
   cursor: pointer;
 }

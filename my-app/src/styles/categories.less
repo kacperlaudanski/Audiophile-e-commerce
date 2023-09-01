@@ -1,0 +1,22 @@
+@banner-bg-color: rgb(25, 25, 25); 
+@white: rgb(255,255,255); 
+@font: 'Manrope', sans-serif;
+
+.flex-setup(@align-items, @justify-content){
+    display:flex; 
+    align-items:@align-items; 
+    justify-content: @justify-content;
+}
+
+.category-banner{
+   width:100%; 
+   height:200px; 
+   background-color: @banner-bg-color;
+   font-family: @font;
+   .flex-setup(center, center); 
+   
+   h1{
+    font-size: 2rem;
+    color:@white; 
+   }
+}

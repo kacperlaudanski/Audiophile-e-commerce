@@ -1,9 +1,10 @@
 import React, { ReactNode } from "react";
+import '../../../dist-styles/categories.css'; 
 
-const CategoryBanner: React.FC<{children: ReactNode}> = (props) => {
+const CategoryBanner: React.FC<{children: string}> = (props) => {
     return (
         <div className="category-banner">
-          {props.children}
+          <h1>{props.children}</h1>
         </div>
     )
 }

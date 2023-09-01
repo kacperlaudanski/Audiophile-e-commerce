@@ -7,11 +7,12 @@ const ProductPreview: React.FC<{
   productName: string;
   productDescription: string;
   productPageLink: string;
-}> = ({ productImage, productName, productDescription, productPageLink}) => {
+  reverseClass: string | null; 
+}> = ({ productImage, productName, productDescription, productPageLink, reverseClass}) => {
   const navigate = useNavigate();
 
   return (
-    <div className="product-preview-container">
+    <div className={`product-preview-container ${reverseClass}`}>
       <img src={productImage} alt="device-image"></img>
       <div className="product-details">
         <h2>{productName}</h2>

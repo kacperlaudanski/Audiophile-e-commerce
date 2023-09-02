@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import HeadphonesPage from './components/Categories/Headphones/HeadphonesPage';
 import EarphonesPage from './components/Categories/Earphones/EarphonePage';
 import SpeakersPage from './components/Categories/Speakers/SpeakersPage';
+import ProductPage from './components/Elements/Products/ProductPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
          <Route element = {<HeadphonesPage />} path = '/headphones' />
          <Route element = {<EarphonesPage />} path = '/earphones'/>
          <Route element = {<SpeakersPage />} path = '/speakers'/> 
+         <Route element = {<ProductPage />} path = {'/:category/:product'} /> 
        </Routes>
       </BrowserRouter>
     </React.Fragment>

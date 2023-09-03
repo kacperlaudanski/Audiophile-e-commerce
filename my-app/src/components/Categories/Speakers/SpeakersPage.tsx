@@ -10,7 +10,7 @@ import Footer from "../../Elements/Footer/Footer";
 import { speakersList } from "../../Elements/Products/ProductLists";
 import "../../../dist-styles/categories.css";
 
-const SpeakersPage: React.FC = (props) => {
+const SpeakersPage: React.FC = () => {
   return (
     <React.Fragment>
       <HeaderSection>

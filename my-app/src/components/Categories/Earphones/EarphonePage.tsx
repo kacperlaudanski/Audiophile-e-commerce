@@ -7,8 +7,7 @@ import ProductPreview from "../../Elements/Products/ProductPreview";
 import CategorySelectionPanel from "../../Home/CategorySelectionPanel";
 import AboutCompany from "../../Home/AboutCompany";
 import Footer from "../../Elements/Footer/Footer";
-import { earphonesList } from '../../Elements/Products/ProductLists';
-import YX1EarphonesImage from '../../../images/product-yx1-earphones/desktop/image-category-page-preview.jpg'; 
+import { earphonesList } from '../../Elements/Products/ProductLists'; 
 import React from 'react';
 
 const EarphonesPage: React.FC = (props) => {

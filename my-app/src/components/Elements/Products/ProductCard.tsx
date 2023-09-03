@@ -5,18 +5,19 @@ const ProductDetails: React.FC<{
   productImage: string;
   productName: string;
   productDescription: string;
+  productPrice: string; 
   productFeaturesI: string;
   productFeaturesII: string;
   productBoxContent: ReactNode;
 }> = (props) => {
   return (
-    <div className="product-details-container">
+    <div className="product-card-container">
       <div className="product-presentation">
         <img src={props.productImage} alt="product-image"></img>
         <div className="product-description">
           <h1>{props.productName}</h1>
           <p>{props.productDescription}</p>
-          <small className="product-price">$ 899</small>
+          <small className="product-price">{props.productPrice}</small>
           <div className="product-input-section">
             <div className="product-amount-container">
               <button className="change-amount-btn">-</button>
@@ -37,11 +38,7 @@ const ProductDetails: React.FC<{
         <div className="product-in-the-box">
           <h3>IN THE BOX</h3>
           <ul>
-            <li><span>1x </span>Headphone Unit</li>
-            <li><span>2x </span>Replacement Earcups</li>
-            <li><span>1x </span>User Manual</li>
-            <li><span>1x </span>3.5mm 5m Audio Cable</li>
-            <li><span>1x </span>Travel Bag</li>
+            {props.productBoxContent}
           </ul>
         </div>
       </div>

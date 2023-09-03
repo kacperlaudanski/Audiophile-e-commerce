@@ -60,11 +60,12 @@
     flex-direction: row-reverse;
 }
 
-.product-details-container{
+.product-card-container{
     width:100%; 
     height:auto; 
     .flex-setup(center, space-between); 
     flex-direction: column;
+    margin-bottom: 200px;
 
     .product-presentation{
         width:100%; 
@@ -175,13 +176,13 @@
                 list-style: none;
                 line-height: 2em;
 
-                span{
+                .product-box-pieces{
                     color:@dark-orange; 
                     font-weight: bold;
                     margin-right:1em; 
                 }
 
-                li{
+                .product-box-item{
                    color:@gray; 
                 }
             }

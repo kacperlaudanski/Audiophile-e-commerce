@@ -7,10 +7,14 @@ import CategorySelectionPanel from "../../Home/CategorySelectionPanel";
 import AboutCompany from "../../Home/AboutCompany";
 import Footer from "../Footer/Footer";
 import BoxContentItem from "./BoxContentItem";
+import RelatedProductsPanel from "./RelatedProductsPanel";
+import RelatedProduct from "./RelatedProduct";
 import { headphonesList } from "./ProductLists";
 import { speakersList } from "./ProductLists";
 import { earphonesList } from "./ProductLists";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
+
+import Image from "../../../images/product-xx59-headphones/desktop/image-product.jpg";
 
 const ProductPage: React.FC = (props) => {
   const { category, product } = useParams();
@@ -32,6 +36,11 @@ const ProductPage: React.FC = (props) => {
         <Navbar />
       </HeaderSection>
       <MainSection>
+        <div className="go-back-container">
+          <NavLink to={`/${category}`} className="go-back-btn">
+            Go Back
+          </NavLink>
+        </div>
         {selectedProduct?.map((product) => {
           return (
             <ProductDetails
@@ -49,6 +58,23 @@ const ProductPage: React.FC = (props) => {
             />
           );
         })}
+        <RelatedProductsPanel>
+          <RelatedProduct
+            relatedProductImage={Image}
+            relatedProductName="XX59"
+            relatedProductLink={`/${category}/xx59`}
+          />
+          <RelatedProduct
+            relatedProductImage={Image}
+            relatedProductName="XX59"
+            relatedProductLink={`/${category}/xx59`}
+          />
+          <RelatedProduct
+            relatedProductImage={Image}
+            relatedProductName="XX59"
+            relatedProductLink={`/${category}/xx59`}
+          />
+        </RelatedProductsPanel>
         <CategorySelectionPanel />
         <AboutCompany />
       </MainSection>

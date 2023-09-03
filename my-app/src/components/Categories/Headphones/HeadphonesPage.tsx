@@ -15,19 +15,19 @@ const HeadphonesPage: React.FC = (props) => {
     <React.Fragment>
       <HeaderSection>
         <Navbar />
-        <CategoryBanner>Headphones</CategoryBanner>
+        <CategoryBanner>HEADPHONES</CategoryBanner>
       </HeaderSection>
       <MainSection>
         {headphonesList.map((headphones) => {
           return (
-            <ProductPreview 
+            <ProductPreview
               productImage={headphones.image}
               productName={headphones.name}
               productDescription={headphones.description}
-              productPageLink = {headphones.link}
+              productPageLink={headphones.link}
               reverseClass={headphones.productPreviewReverse}
-            /> 
-          )
+            />
+          );
         })}
         <CategorySelectionPanel />
         <AboutCompany />

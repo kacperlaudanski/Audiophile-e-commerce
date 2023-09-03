@@ -110,3 +110,117 @@ export const headphonesList = [
     productPreviewReverse: null
   },
 ];
+
+export const speakersList = [
+  {
+    id: "zx9",
+    link: "./zx9",
+    image: ZX9Image, 
+    name: "ZX9 SPEAKER",
+    description:
+      "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
+    price: "$ 4,500",
+    featuresParagraphI:
+      "Connect via Bluetooth or nearly any wired source. This speaker features optical, digital coaxial, USB Type-B, stereo RCA, and stereo XLR inputs, allowing you to have up to five wired source devices connected for easy switching. Improved bluetooth technology offers near lossless audio quality at up to 328ft (100m).",
+    featuresParagraphII:
+      "Discover clear, more natural sounding highs than the competition with ZX9’s signature planar diaphragm tweeter. Equally important is its powerful room-shaking bass courtesy of a 6.5” aluminum alloy bass unit. You’ll be able to enjoy equal sound quality whether in a large room or small den. Furthermore, you will experience new sensations from old songs since it can respond to even the subtle waveforms.",
+    boxContent: [
+      {
+        pieces: 2,
+        boxItem: "Speaker Unit",
+      },
+      {
+        pieces: 2,
+        boxItem: "Speaker Cloth Panel",
+      },
+      {
+        pieces: 1,
+        boxItem: "User Manual",
+      },
+      {
+        pieces: 1,
+        boxItem: "3.5mm 5m Audio Cable",
+      },
+      {
+        pieces: 1,
+        boxItem: "10m Optical Cable",
+      },
+    ],
+    productPreviewReverse: null
+  },
+  {
+    id: "zx7",
+    link: "./zx7",
+    image: ZX7Image, 
+    name: "ZX7 SPEAKER",
+    description:
+      "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
+    price: "$ 3,500",
+    featuresParagraphI:
+      "Reap the advantages of a flat diaphragm tweeter cone. This provides a fast response rate and excellent high frequencies that lower tiered bookshelf speakers cannot provide. The woofers are made from aluminum that produces a unique and clear sound. XLR inputs allow you to connect to a mixer for more advanced usage.",
+    featuresParagraphII:
+      "The ZX7 speaker is the perfect blend of stylish design and high performance. It houses an encased MDF wooden enclosure which minimises acoustic resonance. Dual connectivity allows pairing through bluetooth or traditional optical and RCA input. Switch input sources and control volume at your finger tips with the included wireless remote. This versatile speaker is equipped to deliver an authentic listening experience.",
+    boxContent: [
+      {
+        pieces: 2,
+        boxItem: "Speaker Unit",
+      },
+      {
+        pieces: 2,
+        boxItem: "Speaker Cloth Panel",
+      },
+      {
+        pieces: 1,
+        boxItem: "User Manual",
+      },
+      {
+        pieces: 1,
+        boxItem: "3.5mm 5m Audio Cable",
+      },
+      {
+        pieces: 1,
+        boxItem: "7.5m Optical Cable",
+      },
+    ],
+    productPreviewReverse: 'reverse'
+  },
+]
+
+export const earphonesList = [
+  {
+    id: "yx1",
+    link: "./yx1",
+    image: YX1Image, 
+    name: "YX1 WIRELESS EARPHONES",
+    description:
+      "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
+    price: "$ 599",
+    featuresParagraphI:
+      "Experience unrivalled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.",
+    featuresParagraphII:
+      "The YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The new 7-hour battery life can be extended up to 28 hours with the charging case, giving you uninterrupted play time. Exquisite craftsmanship with a splash resistant design now available in an all new white and grey color scheme as well as the popular classic black.",
+    boxContent: [
+      {
+        pieces: 2,
+        boxItem: "Earphone Unit",
+      },
+      {
+        pieces: 6,
+        boxItem: "Multi-size Earplugs",
+      },
+      {
+        pieces: 1,
+        boxItem: "User Manual",
+      },
+      {
+        pieces: 1,
+        boxItem: "USB-C Charging Cable",
+      },
+      {
+        pieces: 1,
+        boxItem: "Travel Pouch",
+      },
+    ],
+    productPreviewReverse: null
+  },
+]

@@ -8,12 +8,23 @@ import AboutCompany from "../../Home/AboutCompany";
 import Footer from "../Footer/Footer";
 import BoxContentItem from "./BoxContentItem";
 import { headphonesList } from "./ProductLists";
+import { speakersList } from "./ProductLists";
+import { earphonesList } from "./ProductLists";
 import { useParams } from "react-router-dom";
 
 const ProductPage: React.FC = (props) => {
   const { category, product } = useParams();
-  const selectedProduct = headphonesList.filter((item) => item.id === product); 
 
+  const selectedProduct = selectProduct(category);
+
+  function selectProduct(category: string | undefined) {
+    if (category === "headphones")
+      return headphonesList.filter((item) => item.id === product);
+    if (category === "speakers")
+      return speakersList.filter((item) => item.id === product);
+    if (category === "earphones")
+      return earphonesList.filter((item) => item.id === product);
+  }
 
   return (
     <React.Fragment>
@@ -21,30 +32,27 @@ const ProductPage: React.FC = (props) => {
         <Navbar />
       </HeaderSection>
       <MainSection>
-        {selectedProduct.map((product) => {
-            return (
-                <ProductDetails 
-                  productImage={product.image}
-                  productName={product.name}
-                  productDescription={product.description}
-                  productPrice={product.price}
-                  productFeaturesI={product.featuresParagraphI}
-                  productFeaturesII={product.featuresParagraphII}
-                  productBoxContent = {product.boxContent.map((item) => {
-                    return (
-                        <BoxContentItem 
-                          pieces={item.pieces}
-                          boxItem = {item.boxItem}
-                        />
-                    )
-                  })}
-                />
-            )
+        {selectedProduct?.map((product) => {
+          return (
+            <ProductDetails
+              productImage={product.image}
+              productName={product.name}
+              productDescription={product.description}
+              productPrice={product.price}
+              productFeaturesI={product.featuresParagraphI}
+              productFeaturesII={product.featuresParagraphII}
+              productBoxContent={product.boxContent.map((item) => {
+                return (
+                  <BoxContentItem pieces={item.pieces} boxItem={item.boxItem} />
+                );
+              })}
+            />
+          );
         })}
-        <CategorySelectionPanel /> 
-        <AboutCompany /> 
+        <CategorySelectionPanel />
+        <AboutCompany />
       </MainSection>
-      <Footer /> 
+      <Footer />
     </React.Fragment>
   );
 };

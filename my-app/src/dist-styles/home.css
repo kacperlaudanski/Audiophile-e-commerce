@@ -77,7 +77,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  margin: 200px auto;
+  margin: 150px auto;
 }
 .main-section-container .home-categories-container {
   display: flex;
@@ -92,6 +92,7 @@
   background-color: #f1f1f1;
   text-align: center;
   position: relative;
+  margin-top: 3em;
   padding-top: 7em;
   font-weight: bolder;
 }

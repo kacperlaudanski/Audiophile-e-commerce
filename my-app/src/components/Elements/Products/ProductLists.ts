@@ -14,6 +14,7 @@ export const headphonesList = [
     link: "./xx99markII",
     image: XX99MarkTwoImage,
     name: "XX99 MARK II HEADPHONES",
+    shortName: "XX99 MARK II",
     description:
       "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
     price: "$ 2,999",
@@ -50,6 +51,7 @@ export const headphonesList = [
     link: "./xx99markI",
     image: XX99MarkOneImage, 
     name: "XX99 MARK I HEADPHONES",
+    shortName: "XX99 MARK I",
     description:
       "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
     price: "$ 1,750",
@@ -82,6 +84,7 @@ export const headphonesList = [
     link: "./xx59",
     image: XX59Image, 
     name: "XX59 HEADPHONES",
+    shortName: "XX59",
     description:
       "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
     price: "$ 899",
@@ -117,6 +120,7 @@ export const speakersList = [
     link: "./zx9",
     image: ZX9Image, 
     name: "ZX9 SPEAKER",
+    shortName: "ZX9",
     description:
       "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
     price: "$ 4,500",
@@ -153,6 +157,7 @@ export const speakersList = [
     link: "./zx7",
     image: ZX7Image, 
     name: "ZX7 SPEAKER",
+    shortName: "ZX7",
     description:
       "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
     price: "$ 3,500",
@@ -192,6 +197,7 @@ export const earphonesList = [
     link: "./yx1",
     image: YX1Image, 
     name: "YX1 WIRELESS EARPHONES",
+    shortName: "YX1",
     description:
       "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
     price: "$ 599",

@@ -24,7 +24,7 @@ const SpeakersPage: React.FC = () => {
               productImage={speaker.image}
               productName={speaker.name}
               productDescription={speaker.description}
-              productPageLink={speaker.link}
+              productPageLink={speaker.shortLink}
               reverseClass={speaker.productPreviewReverse}
             />
           )

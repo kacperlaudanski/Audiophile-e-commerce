@@ -24,7 +24,7 @@ const HeadphonesPage: React.FC = (props) => {
               productImage={headphones.image}
               productName={headphones.name}
               productDescription={headphones.description}
-              productPageLink={headphones.link}
+              productPageLink={headphones.shortLink}
               reverseClass={headphones.productPreviewReverse}
             />
           );

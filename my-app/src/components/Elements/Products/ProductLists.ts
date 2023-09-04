@@ -11,7 +11,8 @@ import YX1Image from '../../../images/product-yx1-earphones/desktop/image-produc
 export const headphonesList = [
   {
     id: "xx99markII",
-    link: "./xx99markII",
+    shortLink: "./xx99markII",
+    link: "../headphones/xx99markII",  
     image: XX99MarkTwoImage,
     name: "XX99 MARK II HEADPHONES",
     shortName: "XX99 MARK II",
@@ -48,7 +49,8 @@ export const headphonesList = [
   },
   {
     id: "xx99markI",
-    link: "./xx99markI",
+    shortLink: "./xx99markI",
+    link: "../headphones/xx99markI",   
     image: XX99MarkOneImage, 
     name: "XX99 MARK I HEADPHONES",
     shortName: "XX99 MARK I",
@@ -81,7 +83,8 @@ export const headphonesList = [
   },
   {
     id: "xx59",
-    link: "./xx59",
+    shortLink: "./xx59",
+    link: "../headphones/xx59",   
     image: XX59Image, 
     name: "XX59 HEADPHONES",
     shortName: "XX59",
@@ -117,7 +120,8 @@ export const headphonesList = [
 export const speakersList = [
   {
     id: "zx9",
-    link: "./zx9",
+    shortLink: "./zx9",
+    link: "../speakers/zx9", 
     image: ZX9Image, 
     name: "ZX9 SPEAKER",
     shortName: "ZX9",
@@ -154,7 +158,8 @@ export const speakersList = [
   },
   {
     id: "zx7",
-    link: "./zx7",
+    shortLink: "./zx7",
+    link: "../speakers/zx7",  
     image: ZX7Image, 
     name: "ZX7 SPEAKER",
     shortName: "ZX7",
@@ -194,7 +199,8 @@ export const speakersList = [
 export const earphonesList = [
   {
     id: "yx1",
-    link: "./yx1",
+    shortLink: "./yx1",
+    link: "../earphones/yx1", 
     image: YX1Image, 
     name: "YX1 WIRELESS EARPHONES",
     shortName: "YX1",

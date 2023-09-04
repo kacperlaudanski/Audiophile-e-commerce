@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeaderSection from "../Header/HeaderSection";
 import MainSection from "../../Home/MainSection";
 import Navbar from "../Navbar/Navbar";
@@ -14,8 +14,6 @@ import { speakersList } from "./ProductLists";
 import { earphonesList } from "./ProductLists";
 import { NavLink, useParams } from "react-router-dom";
 
-import Image from "../../../images/product-xx59-headphones/desktop/image-product.jpg";
-
 const ProductPage: React.FC = (props) => {
   const { category, product } = useParams();
 
@@ -29,6 +27,31 @@ const ProductPage: React.FC = (props) => {
     if (category === "earphones")
       return earphonesList.filter((item) => item.id === product);
   }
+
+  const allProducts = [...headphonesList, ...earphonesList, ...speakersList];
+
+  interface RelatedProduct {
+    image: string; 
+    shortName: string; 
+    link: string; 
+  }
+
+  const selectedRelatedProducts: RelatedProduct[]= [];
+
+  function randomRelatedProducts() {
+    const productsWithoutCurrent = allProducts.filter(
+      (item) => item.id !== product
+    );
+    while (selectedRelatedProducts.length < 3) {
+      let randomIndex = Math.floor(
+        Math.random() * productsWithoutCurrent.length
+      );
+      if (selectedRelatedProducts.includes(productsWithoutCurrent[randomIndex]))
+        continue;
+      selectedRelatedProducts.push(productsWithoutCurrent[randomIndex]);
+    }
+  }
+  randomRelatedProducts();
 
   return (
     <React.Fragment>
@@ -59,21 +82,15 @@ const ProductPage: React.FC = (props) => {
           );
         })}
         <RelatedProductsPanel>
-          <RelatedProduct
-            relatedProductImage={Image}
-            relatedProductName="XX59"
-            relatedProductLink={`/${category}/xx59`}
-          />
-          <RelatedProduct
-            relatedProductImage={Image}
-            relatedProductName="XX59"
-            relatedProductLink={`/${category}/xx59`}
-          />
-          <RelatedProduct
-            relatedProductImage={Image}
-            relatedProductName="XX59"
-            relatedProductLink={`/${category}/xx59`}
-          />
+          {selectedRelatedProducts.map((product) => {
+            return (
+              <RelatedProduct
+                relatedProductImage={product.image}
+                relatedProductName={product.shortName}
+                relatedProductLink={product.link}
+              />
+            );
+          })}
         </RelatedProductsPanel>
         <CategorySelectionPanel />
         <AboutCompany />

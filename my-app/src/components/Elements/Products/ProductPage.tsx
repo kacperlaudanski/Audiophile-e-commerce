@@ -7,6 +7,7 @@ import CategorySelectionPanel from "../../Home/CategorySelectionPanel";
 import AboutCompany from "../../Home/AboutCompany";
 import Footer from "../Footer/Footer";
 import BoxContentItem from "./BoxContentItem";
+import ImageGallery from "./ImageGallery";
 import RelatedProductsPanel from "./RelatedProductsPanel";
 import RelatedProduct from "./RelatedProduct";
 import { headphonesList } from "./ProductLists";
@@ -81,6 +82,7 @@ const ProductPage: React.FC = (props) => {
             />
           );
         })}
+        <ImageGallery />
         <RelatedProductsPanel>
           {selectedRelatedProducts.map((product) => {
             return (

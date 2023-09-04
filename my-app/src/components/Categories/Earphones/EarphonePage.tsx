@@ -7,7 +7,7 @@ import ProductPreview from "../../Elements/Products/ProductPreview";
 import CategorySelectionPanel from "../../Home/CategorySelectionPanel";
 import AboutCompany from "../../Home/AboutCompany";
 import Footer from "../../Elements/Footer/Footer";
-import { earphonesList } from '../../Elements/Products/ProductLists'; 
+import { earphonesList } from '../../Elements/Products/ProductLists';
 import React from 'react';
 
 const EarphonesPage: React.FC = (props) => {
@@ -24,7 +24,7 @@ const EarphonesPage: React.FC = (props) => {
               productImage={earphones.image}
               productName={earphones.name}
               productDescription={earphones.description}
-              productPageLink={earphones.link}
+              productPageLink={earphones.shortLink}
               reverseClass={earphones.productPreviewReverse}
             /> 
           )

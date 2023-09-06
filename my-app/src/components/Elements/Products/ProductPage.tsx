@@ -10,9 +10,9 @@ import BoxContentItem from "./BoxContentItem";
 import ImageGallery from "./ImageGallery";
 import RelatedProductsPanel from "./RelatedProductsPanel";
 import RelatedProduct from "./RelatedProduct";
-import { headphonesList } from "./ProductLists";
-import { speakersList } from "./ProductLists";
-import { earphonesList } from "./ProductLists";
+import { headphonesList } from "./ProductData";
+import { speakersList } from "./ProductData";
+import { earphonesList } from "./ProductData";
 import { NavLink, useParams } from "react-router-dom";
 
 const ProductPage: React.FC = (props) => {

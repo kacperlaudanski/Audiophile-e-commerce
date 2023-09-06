@@ -1,0 +1,40 @@
+@font: "Manrope", sans-serif;
+
+.flex-setup(@align-items, @justify-content){
+    display:flex; 
+    align-items: @align-items;
+    justify-content: @justify-content;
+}
+
+
+
+.checkout-container{
+    width:100%; 
+    .flex-setup(flex-start, space-between); 
+    font-family: @font;
+
+
+    .checkout-form-container{
+        width:70%; 
+        height:1000px; 
+        background-color: antiquewhite;
+        border-radius:15px; 
+        box-sizing: border-box;
+        padding: 2em;
+
+        .billing-details-container{
+            width:100%; 
+            height:200px; 
+            margin-top:50px; 
+            display:grid; 
+            grid-template-columns: auto auto; 
+        }
+    }
+
+    .checkout-cart-container{
+        width:28%; 
+        height:500px; 
+        background-color: antiquewhite;
+        border-radius:15px; 
+    }
+}

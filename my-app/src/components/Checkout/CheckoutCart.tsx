@@ -3,8 +3,8 @@ import '../../dist-styles/checkout.css'
 
 const CheckoutCart: React.FC = (props) => {
     return (
-        <div>
-
+        <div className="checkout-cart-container">
+           
         </div>
     )
 }

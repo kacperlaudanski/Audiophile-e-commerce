@@ -8,7 +8,7 @@ import CategorySelectionPanel from "../../Home/CategorySelectionPanel";
 import AboutCompany from "../../Home/AboutCompany";
 import Footer from "../../Elements/Footer/Footer";
 import React from "react";
-import { headphonesList } from "../../Elements/Products/ProductLists";
+import { headphonesList } from "../../Elements/Products/ProductData";
 
 const HeadphonesPage: React.FC = (props) => {
   return (

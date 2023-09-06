@@ -21,7 +21,7 @@ const SpeakersPage: React.FC = () => {
         {speakersList.map((speaker) => {
           return (
             <ProductPreview 
-              productImage={speaker.image}
+              productImage={speaker.mainImage}
               productName={speaker.name}
               productDescription={speaker.description}
               productPageLink={speaker.shortLink}

@@ -7,7 +7,7 @@ import ProductPreview from "../../Elements/Products/ProductPreview";
 import CategorySelectionPanel from "../../Home/CategorySelectionPanel";
 import AboutCompany from "../../Home/AboutCompany";
 import Footer from "../../Elements/Footer/Footer";
-import { speakersList } from "../../Elements/Products/ProductLists";
+import { speakersList } from "../../Elements/Products/ProductData";
 import "../../../dist-styles/categories.css";
 
 const SpeakersPage: React.FC = () => {

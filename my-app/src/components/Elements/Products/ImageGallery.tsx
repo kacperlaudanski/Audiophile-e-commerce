@@ -1,8 +1,5 @@
 import React from "react";
 import "../../../dist-styles/products.css";
-import Image1 from "../../../images/product-xx59-headphones/desktop/image-gallery-1.jpg";
-import Image2 from "../../../images/product-xx59-headphones/desktop/image-gallery-2.jpg";
-import Image3 from "../../../images/product-xx59-headphones/desktop/image-gallery-3.jpg";
 
 interface GalleryImages {
     galleryImage1: string; 

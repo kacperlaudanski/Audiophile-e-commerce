@@ -7,13 +7,13 @@ import Image3 from "../../../images/product-xx59-headphones/desktop/image-galler
 const ImageGallery = () => {
   return (
     <div className="image-gallery-container">
-      <div className="smaller-images">
-        <img src={Image1} className="image-1"></img>
-        <img src={Image2} className="image-2"></img>
-      </div>
-      <div className="big-image">
-      <img src={Image3} className="image-3"></img>
-      </div>
+        <div className="small-images-container">
+            <img className="small-image" src={Image1}></img>
+            <img className="small-image" src={Image2}></img>
+        </div>
+        <div className="big-image-container">
+            <img className="big-image" src={Image3}></img>
+        </div>
     </div>
   );
 };

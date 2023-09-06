@@ -21,7 +21,7 @@ const EarphonesPage: React.FC = (props) => {
         {earphonesList.map((earphones) => {
           return (
             <ProductPreview 
-              productImage={earphones.image}
+              productImage={earphones.mainImage}
               productName={earphones.name}
               productDescription={earphones.description}
               productPageLink={earphones.shortLink}

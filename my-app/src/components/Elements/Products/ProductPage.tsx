@@ -32,12 +32,12 @@ const ProductPage: React.FC = (props) => {
   const allProducts = [...headphonesList, ...earphonesList, ...speakersList];
 
   interface RelatedProduct {
-    image: string; 
-    shortName: string; 
-    link: string; 
+    mainImage: string;
+    shortName: string;
+    link: string;
   }
 
-  const selectedRelatedProducts: RelatedProduct[]= [];
+  const selectedRelatedProducts: RelatedProduct[] = [];
 
   function randomRelatedProducts() {
     const productsWithoutCurrent = allProducts.filter(
@@ -67,27 +67,37 @@ const ProductPage: React.FC = (props) => {
         </div>
         {selectedProduct?.map((product) => {
           return (
-            <ProductDetails
-              productImage={product.image}
-              productName={product.name}
-              productDescription={product.description}
-              productPrice={product.price}
-              productFeaturesI={product.featuresParagraphI}
-              productFeaturesII={product.featuresParagraphII}
-              productBoxContent={product.boxContent.map((item) => {
-                return (
-                  <BoxContentItem pieces={item.pieces} boxItem={item.boxItem} />
-                );
-              })}
-            />
+            <>
+              <ProductDetails
+                productImage={product.mainImage}
+                productName={product.name}
+                productDescription={product.description}
+                productPrice={product.price}
+                productFeaturesI={product.featuresParagraphI}
+                productFeaturesII={product.featuresParagraphII}
+                productBoxContent={product.boxContent.map((item) => {
+                  return (
+                    <BoxContentItem
+                      pieces={item.pieces}
+                      boxItem={item.boxItem}
+                    />
+                  );
+                })}
+              />
+              <ImageGallery
+                galleryImage1={product.galleryImage1}
+                galleryImage2={product.galleryImage2}
+                galleryImage3={product.galleryImage3}
+              />
+            </>
           );
         })}
-        <ImageGallery />
+
         <RelatedProductsPanel>
           {selectedRelatedProducts.map((product) => {
             return (
               <RelatedProduct
-                relatedProductImage={product.image}
+                relatedProductImage={product.mainImage}
                 relatedProductName={product.shortName}
                 relatedProductLink={product.link}
               />

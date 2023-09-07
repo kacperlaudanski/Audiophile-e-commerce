@@ -1,3 +1,6 @@
+body {
+  background-color: #f1f1f1;
+}
 .checkout-container {
   width: 100%;
   display: flex;
@@ -7,18 +10,101 @@
 }
 .checkout-container .checkout-form-container {
   width: 70%;
-  height: 1000px;
-  background-color: antiquewhite;
+  height: auto;
+  background-color: #ffffff;
   border-radius: 15px;
   box-sizing: border-box;
-  padding: 2em;
+  padding: 3em;
 }
-.checkout-container .checkout-form-container .billing-details-container {
+.checkout-container .checkout-form-container .checkout-form-section {
+  height: auto;
+  margin-top: 70px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.checkout-container .checkout-form-container .checkout-form-section h5 {
+  color: #d87d4a;
+}
+.checkout-container .checkout-form-container .checkout-form-section label {
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.checkout-container .checkout-form-container .checkout-form-section input {
+  width: 100%;
+  height: 65px;
+  border-radius: 10px;
+  text-indent: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.135);
+}
+.checkout-container .checkout-form-container .checkout-form-section .checkout-input-container {
+  width: 90%;
+  height: 120px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.checkout-container .checkout-form-container .checkout-form-section .billing-details-container {
   width: 100%;
   height: 200px;
-  margin-top: 50px;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: auto auto;
+}
+.checkout-container .checkout-form-container .checkout-form-section .shipping-info-container {
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto;
+  grid-template-areas: 'address address' 'zipCode city' 'country';
+}
+.checkout-container .checkout-form-container .checkout-form-section .payment-details-container {
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.checkout-container .checkout-form-container .checkout-form-section .payment-details-container .radio-input-container {
+  width: 90%;
+  height: 65px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: 1px solid rgba(0, 0, 0, 0.135);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.checkout-container .checkout-form-container .checkout-form-section .payment-details-container .radio-input-container label {
+  font-size: 1rem;
+}
+.checkout-container .checkout-form-container .checkout-form-section .payment-details-container .radio-input-container input[type='radio'] {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.135);
+  border-radius: 50%;
+  outline: none;
+  margin-right: 20px;
+}
+.checkout-container .checkout-form-container .checkout-form-section .payment-details-container .radio-input-container input[type='radio']:before {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 60%;
+  margin: 20% auto;
+  border-radius: 50%;
+}
+.checkout-container .checkout-form-container .checkout-form-section .payment-details-container .radio-input-container input[type='radio']:checked:before {
+  background: #d87d4a;
+}
+.checkout-container .checkout-form-container .checkout-form-section .payment-details-container .radio-input-container:has(input[type='radio']:checked) {
+  border: 1px solid #d87d4a;
 }
 .checkout-container .checkout-cart-container {
   width: 28%;

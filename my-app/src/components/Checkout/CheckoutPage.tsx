@@ -8,6 +8,7 @@ import Footer from "../Elements/Footer/Footer";
 import '../../dist-styles/checkout.css'; 
 
 const CheckoutPage: React.FC = () => {
+    
     return (
       <>
         <HeaderSection>

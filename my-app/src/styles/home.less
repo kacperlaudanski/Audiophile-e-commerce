@@ -1,30 +1,4 @@
-@dark-bg-font: rgb(255, 255, 255);
-@gray-bg: rgb(241, 241, 241); 
-@hover-font-color: rgb(216,125,74);
-@black: rgb(0,0,0); 
-@font: "Manrope", sans-serif;
-
-.flex-setup(@align-items, @justify-content) {
-  display: flex;
-  align-items: @align-items;
-  justify-content: @justify-content;
-}
-
-.background-image-setup(@url){
-  background-image: url(@url);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.cta-button{
-  height: 45px;
-  font-weight: bolder;
-  color: @dark-bg-font;
-  cursor: pointer;
-  border: none;
-  transition: 0.3s linear;
-}
+@import './variables.less';
 
 *,
 *::after,
@@ -35,77 +9,21 @@
   font-family: @font;
 }
 
-.header-section-container {
-  width: 100%;
-  background-color: rgb(25, 25, 25);
-  .flex-setup(center, flex-start);
-  flex-direction: column;
-
-  .header-product-container {
-    width: 80%;
-    height: 600px;
-    color: @dark-bg-font;
-    .flex-setup(center, space-between);
-
-    .header-product-description {
-      .flex-setup(left, center);
-      width: 100%;
-      height: 100%;
-      flex-direction: column;
-      .background-image-setup('../images/home/desktop/image-hero.jpg');
-
-      h6 {
-        margin: 1.7em 0;
-      }
-
-      .new-product-sign {
-        color: rgba(241, 241, 241, 0.507);
-        letter-spacing: 6px;
-        font-size: 0.9rem;
-      }
-
-      .header-product-name {
-        font-size: 3rem;
-        color: @dark-bg-font;
-      }
-
-      .header-product-note {
-        color: @dark-bg-font;
-        font-size: 1rem;
-        line-height: 1.7em;
-        color: @gray-bg;
-      }
-
-      .header-cta-button:extend(.cta-button){
-        width:12%;
-        background-color: @hover-font-color;
-      }
-
-      .header-cta-button:hover {
-        background-color: rgb(251, 175, 133);
-      }
-    }
-  }
-}
-
 .main-section-container{
   width:80%;
-  .flex-setup(center, space-between); 
-  flex-direction: column;
+  .flex-setup(center, space-between, column); 
   margin: 150px auto;
 
   .home-categories-container{
-    .flex-setup(center, space-between); 
+    .flex-setup(center, space-between, row); 
     width:100%;
 
     .category-container{
       width:30%;
       height:200px; 
-      box-sizing: border-box;
-      background-color: @gray-bg;
+      background-color: @light-gray;
       text-align: center;
       position:relative;
-      margin-top:3em; 
       padding-top:7em;
       font-weight: bolder;
 
@@ -127,10 +45,10 @@
         text-decoration: none;
         font-size: .8rem;
         transition: .3s linear; 
-      }
 
-      .category-link:hover{
-        color:@hover-font-color; 
+        &:hover{
+          color:@dark-orange; 
+        }
       }
     }
   }
@@ -148,9 +66,9 @@
     .product-banner-1{
       width:100%; 
       grid-area: product1;
-      background-color: rgb(216, 125, 74);
+      background-color: @dark-orange;
       overflow: hidden;
-      .flex-setup(center, center);
+      .flex-setup(center, center, row);
       
 
       .pr-banner-1-image{
@@ -179,43 +97,40 @@
       .pr-banner-1-description{
         width:40%; 
         height: 60%;
-        box-sizing: border-box;
-        .flex-setup(left, space-around);
-        flex-direction:column;
+        .flex-setup(flex-start, space-around, column);
         position: relative;
         z-index: 2;
 
         h2{
           font-size: 3rem;
-          color:@dark-bg-font; 
+          color:@white; 
         }
         p{
-          color:@gray-bg;
+          color:@light-gray;
         }
 
         .banner1-cta-button:extend(.cta-button){
           width:30%;
           background-color: @black;
+          &:hover{
+            background-color: rgba(16, 16, 16, 0.632);
+          }
         }
-        .banner1-cta-button:hover{
-          background-color: rgba(16, 16, 16, 0.632);
-        }
+
       }
     }
     .product-banner-2{
       width:100%; 
       height:100%;
-      box-sizing: border-box;
       padding-left:4em;
       grid-area: product2;
       .background-image-setup('../images/home/desktop/image-speaker-zx7.jpg');
-      .flex-setup(center, flex-start);
+      .flex-setup(center, flex-start, row);
 
       .pr-banner-2-description{
         width:40%; 
         height:40%; 
-        .flex-setup(left, space-between);
-        flex-direction: column;
+        .flex-setup(flex-start, space-between, column);
 
         h3{
           font-size: 2rem;
@@ -227,12 +142,12 @@
         background: none;
         border:1px solid @black; 
         color:@black; 
-      }
-      .banner2-cta-button:hover{
-        color:@dark-bg-font; 
-        background-color: @black;
-      }
 
+        &:hover{
+          color:@white; 
+          background-color: @black;
+        }
+      }
     }
     .product-banner-3-left{
       grid-area: product3left;
@@ -240,10 +155,8 @@
     }
     .product-banner-3-right{
       grid-area: product3right;
-      .flex-setup(left, space-around); 
-      flex-direction: column;
-      background-color: @gray-bg;
-      box-sizing: border-box;
+      .flex-setup(flex-start, space-around, column); 
+      background-color: @light-gray;
       padding:4em;
 
       h3{
@@ -255,30 +168,29 @@
         background: none;
         border:1px solid @black; 
         color:@black; 
-      }
 
-      .banner3-cta-button:hover{
-        color:@dark-bg-font; 
-        background-color: @black;
+        &:hover{
+          color:@white; 
+          background-color: @black;
+        }
       }
     }
 
     grid-template-areas: 
     'product1 product1'
     'product2 product2'
-    'product3left product3right'
+    'product3left product3right';
   }
 
   .about-company-container{
     width:100%; 
     margin-top:15em;
-    .flex-setup(center, space-between); 
+    .flex-setup(center, space-between, row); 
     gap: 5%;
 
     .about-company-text{
       width:47.5%; 
-      .flex-setup(left, space-around); 
-      flex-direction: column;
+      .flex-setup(flex-start, space-around, column); 
 
       h2{
         font-size: 2rem;
@@ -286,7 +198,7 @@
         margin-bottom:1em; 
 
         span{
-          color:@hover-font-color; 
+          color:@dark-orange; 
         }
       }
     }
@@ -295,7 +207,6 @@
       width:47.5%; 
       height:600px; 
       .background-image-setup('../images/shared/desktop/image-best-gear.jpg')
-
     }
   }
 }

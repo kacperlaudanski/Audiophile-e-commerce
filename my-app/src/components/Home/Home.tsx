@@ -1,5 +1,4 @@
 import React from "react";
-import "../../dist-styles/home.css";
 import HeaderSection from "../Elements/Header/HeaderSection";
 import Navbar from "../Elements/Navbar/Navbar";
 import HeaderProduct from "./HeaderProduct";

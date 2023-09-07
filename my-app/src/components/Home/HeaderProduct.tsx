@@ -15,7 +15,7 @@ const HeaderProduct: React.FC = (props) => {
           <span>build quality made for the passionate music</span>{" "}<br></br>
           <span>enthusiast.</span>
         </h6>
-        <button className="cta-button header-cta-button">SEE PRODUCT</button>
+        <button className="header-cta-button cta-button">SEE PRODUCT</button>
       </div>
     </div>
   );

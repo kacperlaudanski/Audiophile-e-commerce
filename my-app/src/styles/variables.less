@@ -1,0 +1,30 @@
+@white: rgb(255, 255, 255);
+@light-gray: rgb(241, 241, 241); 
+@dark-orange: rgb(216,125,74);
+@black: rgb(0,0,0); 
+@dark-gray: rgb(25, 25, 25); 
+@gray: rgba(241, 241, 241, 0.482);
+@font: "Manrope", sans-serif;
+
+.flex-setup(@align-items, @justify-content, @flex-direction) {
+    display: flex;
+    align-items: @align-items;
+    justify-content: @justify-content;
+    flex-direction: @flex-direction;
+  }
+
+  .background-image-setup(@url){
+    background-image: url(@url);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .cta-button{
+    height: 45px;
+    font-weight: bolder;
+    color: @white;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s linear;
+  }

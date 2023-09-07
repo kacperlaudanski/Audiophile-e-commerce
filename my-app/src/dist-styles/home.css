@@ -1,5 +1,4 @@
 .cta-button,
-.header-section-container .header-product-container .header-product-description .header-cta-button,
 .main-section-container .home-product-banners .product-banner-1 .pr-banner-1-description .banner1-cta-button,
 .main-section-container .home-product-banners .product-banner-2 .banner2-cta-button,
 .main-section-container .home-product-banners .product-banner-3-right .banner3-cta-button {
@@ -18,59 +17,6 @@
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
 }
-.header-section-container {
-  width: 100%;
-  background-color: #191919;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-}
-.header-section-container .header-product-container {
-  width: 80%;
-  height: 600px;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.header-section-container .header-product-container .header-product-description {
-  display: flex;
-  align-items: left;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  background-image: url('../images/home/desktop/image-hero.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.header-section-container .header-product-container .header-product-description h6 {
-  margin: 1.7em 0;
-}
-.header-section-container .header-product-container .header-product-description .new-product-sign {
-  color: rgba(241, 241, 241, 0.507);
-  letter-spacing: 6px;
-  font-size: 0.9rem;
-}
-.header-section-container .header-product-container .header-product-description .header-product-name {
-  font-size: 3rem;
-  color: #ffffff;
-}
-.header-section-container .header-product-container .header-product-description .header-product-note {
-  color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.7em;
-  color: #f1f1f1;
-}
-.header-section-container .header-product-container .header-product-description .header-cta-button {
-  width: 12%;
-  background-color: #d87d4a;
-}
-.header-section-container .header-product-container .header-product-description .header-cta-button:hover {
-  background-color: #fbaf85;
-}
 .main-section-container {
   width: 80%;
   display: flex;
@@ -83,16 +29,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
   width: 100%;
 }
 .main-section-container .home-categories-container .category-container {
   width: 30%;
   height: 200px;
-  box-sizing: border-box;
   background-color: #f1f1f1;
   text-align: center;
   position: relative;
-  margin-top: 3em;
   padding-top: 7em;
   font-weight: bolder;
 }
@@ -134,6 +79,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
 }
 .main-section-container .home-product-banners .product-banner-1 .pr-banner-1-image {
   width: 60%;
@@ -159,9 +105,8 @@
 .main-section-container .home-product-banners .product-banner-1 .pr-banner-1-description {
   width: 40%;
   height: 60%;
-  box-sizing: border-box;
   display: flex;
-  align-items: left;
+  align-items: flex-start;
   justify-content: space-around;
   flex-direction: column;
   position: relative;
@@ -184,7 +129,6 @@
 .main-section-container .home-product-banners .product-banner-2 {
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
   padding-left: 4em;
   grid-area: product2;
   background-image: url('../images/home/desktop/image-speaker-zx7.jpg');
@@ -194,12 +138,13 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-direction: row;
 }
 .main-section-container .home-product-banners .product-banner-2 .pr-banner-2-description {
   width: 40%;
   height: 40%;
   display: flex;
-  align-items: left;
+  align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
 }
@@ -226,11 +171,10 @@
 .main-section-container .home-product-banners .product-banner-3-right {
   grid-area: product3right;
   display: flex;
-  align-items: left;
+  align-items: flex-start;
   justify-content: space-around;
   flex-direction: column;
   background-color: #f1f1f1;
-  box-sizing: border-box;
   padding: 4em;
 }
 .main-section-container .home-product-banners .product-banner-3-right h3 {
@@ -252,12 +196,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
   gap: 5%;
 }
 .main-section-container .about-company-container .about-company-text {
   width: 47.5%;
   display: flex;
-  align-items: left;
+  align-items: flex-start;
   justify-content: space-around;
   flex-direction: column;
 }

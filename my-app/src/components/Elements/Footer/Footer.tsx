@@ -1,4 +1,3 @@
-import React from "react";
 import "../../../dist-styles/footer.css";
 import CategoriesList from "../CategoriesElements/CategoriesList";
 import FacebookIcon from "../../../images/shared/desktop/icon-facebook.svg";
@@ -10,8 +9,8 @@ const Footer = () => {
     <footer className="footer-container">
       <div className="footer-content-container">
         <div className="logo-text-container">
-          <h3>audiophile</h3>
-          <p>
+          <h3 className="footer-logo">audiophile</h3>
+          <p className="footer-description">
             Audiophile is an all in one stop to fulfill your audio needs. We're
             a small team <br></br>
             of music lovers and sound specialists who are devoted to helping you
@@ -22,7 +21,7 @@ const Footer = () => {
           </p>
           <small>Copyright 2021. All Rights Reserved</small>
         </div>
-        <div className="navbar-social-container">
+        <div className="footer-nav-social-container">
           <nav>
             <CategoriesList
               listClass="footer-categories-list"

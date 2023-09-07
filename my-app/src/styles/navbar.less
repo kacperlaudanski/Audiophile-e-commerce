@@ -1,25 +1,17 @@
-@navbar-color: rgb(25, 25, 25); 
-@hover-font-color: rgb(216,125,74);
-@font: 'Manrope', sans-serif;
-.flex-setup(@align-items, @justify-content){
-    display:flex; 
-    align-items:@align-items; 
-    justify-content: @justify-content;
-}
-
+@import './variables.less'; 
 
 .navbar-desktop{
     width:80%; 
     height: 90px;
-    background-color: @navbar-color; 
+    background-color: @dark-gray; 
     font-family: @font; 
-    border-bottom: .7px solid #ffffff68;
-    .flex-setup(center, center);
+    border-bottom: .7px solid @light-gray;
+    .flex-setup(center, center, row);
 
     .logo-container{
         width:25%; 
         .navbar-logo{
-            color:rgb(255, 255, 255);
+            color:@white;
             text-decoration: none;
             font-size: 1.5rem; 
             font-weight: 600;
@@ -28,36 +20,35 @@
     .navbar-categories-list{
         width:50%;
         list-style: none;
-        .flex-setup(center, space-between);
+        .flex-setup(center, space-between, row);
 
         .navbar-list-element{
-            color: rgb(255,255,255);
+            color: @white;
             text-decoration: none;
             letter-spacing: .8px;
             font-size: .9rem;
             font-weight: bolder;
             transition: .3s linear;
-        }
 
-        .navbar-list-element:hover{
-            color:@hover-font-color; 
-            cursor: pointer;
+            &:hover{
+                color:@dark-orange; 
+                cursor: pointer;
+            }
         }
     }
 
     .cart-button-container{
         width:25%; 
-        .flex-setup(center, flex-end);
+        .flex-setup(center, flex-end, row);
 
         .cart-button{
             width:30px;
             height:30px; 
             background: none;
             border:none;
-            background-image: url(../images/shared/desktop/icon-cart.svg);
-            background-position: center;
-            background-repeat: no-repeat;
-            color: rgb(255,255,255);
+            .background-image-setup('../images/shared/desktop/icon-cart.svg'); 
+            background-size: auto;
+            color: @white;
             cursor: pointer;
         }
     }

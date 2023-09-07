@@ -9,10 +9,6 @@
   justify-content: @justify-content;
 }
 
-body {
-  background-color: @light-gray;
-}
-
 .checkout-container {
   width: 100%;
   .flex-setup(flex-start, space-between);
@@ -25,6 +21,7 @@ body {
     border-radius: 15px;
     box-sizing: border-box;
     padding: 3em;
+    border: 2px solid @gray;
 
     .checkout-form-section {
       height:auto; 
@@ -129,7 +126,10 @@ body {
   .checkout-cart-container {
     width: 28%;
     height: 500px;
-    background-color: antiquewhite;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid @gray;
     border-radius: 15px;
+    box-sizing: border-box;
+    padding:2em; 
   }
 }

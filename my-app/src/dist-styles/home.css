@@ -214,6 +214,9 @@
 .main-section-container .about-company-container .about-company-text h2 span {
   color: #d87d4a;
 }
+.main-section-container .about-company-container .about-company-text p {
+  color: #191919;
+}
 .main-section-container .about-company-container .about-company-image {
   width: 47.5%;
   height: 600px;

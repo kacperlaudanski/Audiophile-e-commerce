@@ -1,0 +1,92 @@
+.cta-button {
+  height: 45px;
+  font-weight: bolder;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+}
+dialog {
+  width: 25%;
+  min-height: 200px;
+  top: 100px;
+  left: 65%;
+  border: none;
+  box-sizing: border-box;
+  padding: 2em;
+  border-radius: 10px;
+  font-family: "Manrope", sans-serif;
+}
+dialog::backdrop {
+  background-color: rgba(25, 25, 25, 0.525);
+}
+dialog .cart-modal-container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: column;
+}
+dialog .cart-modal-container .cart-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+dialog .cart-modal-container .cart-top h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+dialog .cart-modal-container .cart-top .cart-remove-btn {
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  text-decoration: underline;
+  color: #191919;
+  cursor: pointer;
+}
+dialog .cart-modal-container .cart-content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1.5em 0;
+}
+dialog .cart-modal-container .cart-bottom {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: column;
+}
+dialog .cart-modal-container .cart-bottom .cart-price-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: row;
+}
+dialog .cart-modal-container .cart-bottom .cart-price-container h4 {
+  font-size: 0.9rem;
+  color: #666666;
+}
+dialog .cart-modal-container .cart-bottom .cart-price-container .cart-total-price {
+  font-weight: 800;
+}
+dialog .cart-modal-container .cart-bottom .checkout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  margin-top: 1.5em;
+  font-size: 0.8rem;
+  font-weight: 800;
+  background-color: #d87d4a;
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s linear;
+}
+dialog .cart-modal-container .cart-bottom .checkout-btn:hover {
+  background-color: #fbaf85;
+}

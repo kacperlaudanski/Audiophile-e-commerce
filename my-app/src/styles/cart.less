@@ -45,6 +45,64 @@ dialog{
         .cart-content-container{
             .flex-setup(center, center, column); 
             margin: 1.5em 0; 
+
+            .cart-item-container{
+                width:100%; 
+                height:60px; 
+                .flex-setup(center, space-between, row); 
+
+                img{
+                    width:60px; 
+                    height:60px; 
+                    border-radius: 10px;
+                }
+
+                .cart-item-info{
+                   h5{
+                    font-size: 1rem;
+                    font-weight: 800;
+                   }
+
+                   .cart-price{
+                    color:@gray; 
+                    font-size: .9rem;
+                    font-weight: 700;
+                   }
+                }
+
+                .cart-quantity-widget{
+                    width:35%; 
+                    .cart-amount-container{
+                      width:100%;
+                      height:35px; 
+                      .flex-setup(center, center, row); 
+                    }
+
+                    .cart-amount-input{
+                      width:60%;
+                      height:100%; 
+                      border:none; 
+                      outline:none; 
+                      background-color: @gray-transparent;
+                      text-align: center;
+                    }
+
+                    .cart-amount-btn{
+                       width:20%; 
+                       height:100%; 
+                       background-color: @gray-transparent; 
+                       color:@gray;
+                       border:none; 
+                       outline: none;
+                       cursor: pointer; 
+                       transition: .3s linear;
+
+                       &:hover{
+                        color:@dark-orange; 
+                       }
+                    }
+                }
+            }
         }
 
         .cart-bottom{
@@ -61,7 +119,7 @@ dialog{
                     font-weight: 800;
                 }
             }
-            
+
             .checkout-btn{
                 .flex-setup(center, center, row);
                 width:100%; 

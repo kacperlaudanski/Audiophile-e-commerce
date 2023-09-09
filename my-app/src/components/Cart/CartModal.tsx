@@ -28,7 +28,7 @@ const CartModal: React.FC<Modal> = ({
     <dialog ref={ref} onCancel={closeModal}>
       <div className="cart-modal-container">
         <div className="cart-top">
-          <h3>CART({/*itemsNumber*/})</h3>
+          <h3>CART(1)</h3>
           <button className="cart-remove-btn">Remove all</button>
         </div>
         <div className="cart-content-container">{children}</div>

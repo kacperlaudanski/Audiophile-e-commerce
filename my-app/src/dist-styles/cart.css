@@ -65,6 +65,60 @@ dialog .cart-modal-container .cart-content-container {
   flex-direction: column;
   margin: 1.5em 0;
 }
+dialog .cart-modal-container .cart-content-container .cart-item-container {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+dialog .cart-modal-container .cart-content-container .cart-item-container img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+dialog .cart-modal-container .cart-content-container .cart-item-container .cart-item-info h5 {
+  font-size: 1rem;
+  font-weight: 800;
+}
+dialog .cart-modal-container .cart-content-container .cart-item-container .cart-item-info .cart-price {
+  color: #666666;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+dialog .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget {
+  width: 35%;
+}
+dialog .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget .cart-amount-container {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+dialog .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget .cart-amount-input {
+  width: 60%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: rgba(241, 241, 241, 0.482);
+  text-align: center;
+}
+dialog .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget .cart-amount-btn {
+  width: 20%;
+  height: 100%;
+  background-color: rgba(241, 241, 241, 0.482);
+  color: #666666;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+dialog .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget .cart-amount-btn:hover {
+  color: #d87d4a;
+}
 dialog .cart-modal-container .cart-bottom {
   display: flex;
   align-items: stretch;

@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import QuantityWidget from "./QuantityWidget";
 import "../../../dist-styles/products.css";
 
 const ProductDetails: React.FC<{
@@ -19,11 +20,11 @@ const ProductDetails: React.FC<{
           <p>{props.productDescription}</p>
           <small className="product-price">{props.productPrice}</small>
           <div className="product-input-section">
-            <div className="product-amount-container">
-              <button className="change-amount-btn">-</button>
-              <input className="product-amount-input" value={1}></input>
-              <button className="change-amount-btn">+</button>
-            </div>
+            <QuantityWidget 
+              containerClass = 'product-amount-container'
+              inputClass = 'product-amount-input'
+              amountBtnClass = 'change-amount-btn'
+            /> 
             <button className="add-to-cart-btn">ADD TO CART</button>
           </div>
         </div>

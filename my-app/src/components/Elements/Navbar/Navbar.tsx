@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import "../../../dist-styles/navbar.css";
 import CartModal from "../../Cart/CartModal";
 import CategoriesList from "../CategoriesElements/CategoriesList";
+import CartItem from "../../Cart/CartItem";
 
 const Navbar = () => {
   const [modal, setModal] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = () => {
         ></button>
       </div>
       <CartModal closeModal={() => setModal(false)} openModal={modal}>
-        {cartItems.length === 0 ? 'Cart is empty' : cartItems}
+        <CartItem />
       </CartModal>
     </nav>
   );

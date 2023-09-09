@@ -1,9 +1,29 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+.cta-button,
+.product-preview-container .product-details .product-link-btn,
+.product-card-container .product-presentation .product-description .product-input-section .add-to-cart-btn,
+.related-panel-container .related-product-container .see-related-product-btn {
+  height: 45px;
+  font-weight: bolder;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+}
 .product-preview-container {
   width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
   margin-bottom: 11em;
   font-family: "Manrope", sans-serif;
 }
@@ -26,16 +46,11 @@
   max-width: 50%;
 }
 .product-preview-container .product-details p {
-  color: rgba(0, 0, 0, 0.453);
+  color: #666666;
 }
 .product-preview-container .product-details .product-link-btn {
   width: 30%;
-  height: 50px;
   background-color: #d87d4a;
-  color: #ffffff;
-  border: none;
-  transition: 0.3s linear;
-  cursor: pointer;
 }
 .product-preview-container .product-details .product-link-btn:hover {
   background-color: #fbaf85;
@@ -49,10 +64,11 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  flex-direction: row;
 }
 .go-back-container .go-back-btn {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.453);
+  color: #666666;
 }
 .product-card-container {
   width: 100%;
@@ -68,6 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
 }
 .product-card-container .product-presentation img {
   width: 45%;
@@ -88,7 +105,7 @@
   width: 200px;
 }
 .product-card-container .product-presentation .product-description p {
-  color: rgba(0, 0, 0, 0.453);
+  color: #666666;
 }
 .product-card-container .product-presentation .product-description .product-price {
   font-weight: bold;
@@ -100,6 +117,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
 }
 .product-card-container .product-presentation .product-description .product-input-section .product-amount-container {
   width: 40%;
@@ -109,6 +127,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
 }
 .product-card-container .product-presentation .product-description .product-input-section .product-amount-container input {
   width: 33%;
@@ -119,20 +138,14 @@
 }
 .product-card-container .product-presentation .product-description .product-input-section .product-amount-container .change-amount-btn {
   width: 33%;
-  color: rgba(0, 0, 0, 0.453);
+  color: #666666;
   cursor: pointer;
   border: none;
 }
 .product-card-container .product-presentation .product-description .product-input-section .add-to-cart-btn {
   width: 55%;
   max-width: 200px;
-  height: 45px;
   background-color: #d87d4a;
-  color: #ffffff;
-  font-weight: bolder;
-  transition: 0.3s linear;
-  border: none;
-  cursor: pointer;
 }
 .product-card-container .product-presentation .product-description .product-input-section .add-to-cart-btn:hover {
   background-color: #fbaf85;
@@ -144,6 +157,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
 }
 .product-card-container .product-spec h3 {
   font-size: 1.5rem;
@@ -155,7 +169,7 @@
   height: 100%;
 }
 .product-card-container .product-spec .product-features p {
-  color: rgba(0, 0, 0, 0.453);
+  color: #666666;
 }
 .product-card-container .product-spec .product-in-the-box {
   width: 20%;
@@ -171,7 +185,7 @@
   margin-right: 1em;
 }
 .product-card-container .product-spec .product-in-the-box ul .product-box-item {
-  color: rgba(0, 0, 0, 0.453);
+  color: #666666;
 }
 .image-gallery-container {
   width: 100%;
@@ -180,6 +194,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
 }
 .image-gallery-container img {
   border-radius: 10px;
@@ -210,6 +225,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
   margin-bottom: 200px;
 }
 .related-panel-container .related-product-container {
@@ -230,13 +246,7 @@
 .related-panel-container .related-product-container .see-related-product-btn {
   width: 45%;
   max-width: 150px;
-  height: 50px;
   background-color: #d87d4a;
-  color: #ffffff;
-  font-weight: bold;
-  border: none;
-  transition: 0.3s linear;
-  cursor: pointer;
 }
 .related-panel-container .related-product-container .see-related-product-btn:hover {
   background-color: #fbaf85;

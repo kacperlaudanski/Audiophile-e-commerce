@@ -34,6 +34,11 @@ dialog{
                 text-decoration: underline;
                 color: @dark-gray; 
                 cursor: pointer;
+                transition: .3s linear;
+
+                &:hover{
+                    color: @dark-orange;
+                }
             }
         }
 
@@ -56,6 +61,7 @@ dialog{
                     font-weight: 800;
                 }
             }
+            
             .checkout-btn{
                 .flex-setup(center, center, row);
                 width:100%; 

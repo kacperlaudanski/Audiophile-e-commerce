@@ -1,3 +1,11 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
 .cta-button,
 .main-section-container .home-product-banners .product-banner-1 .pr-banner-1-description .banner1-cta-button,
 .main-section-container .home-product-banners .product-banner-2 .banner2-cta-button,
@@ -8,14 +16,6 @@
   cursor: pointer;
   border: none;
   transition: 0.3s linear;
-}
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Manrope", sans-serif;
 }
 .main-section-container {
   width: 80%;

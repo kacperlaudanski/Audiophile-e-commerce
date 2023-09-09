@@ -1,33 +1,21 @@
-@font: "Manrope", sans-serif;
-@light-gray: rgb(241, 241, 241);
-@gray: rgba(0, 0, 0, 0.135); 
-@dark-orange: rgb(216, 125, 74);
-
-.flex-setup(@align-items, @justify-content) {
-  display: flex;
-  align-items: @align-items;
-  justify-content: @justify-content;
-}
+@import './variables.less';
 
 .checkout-container {
   width: 100%;
-  .flex-setup(flex-start, space-between);
-  font-family: @font;
+  .flex-setup(flex-start, space-between, row);
 
   .checkout-form-container {
     width: 70%;
     height: auto;
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
-    box-sizing: border-box;
     padding: 3em;
-    border: 2px solid @gray;
+    border: 2px solid @lighter-gray;
 
     .checkout-form-section {
       height:auto; 
       margin-top: 70px;
-      .flex-setup(flex-start, space-around);
-      flex-direction: column;
+      .flex-setup(flex-start, space-around, column);
 
       h5 {
         color: @dark-orange;
@@ -43,14 +31,13 @@
         height: 65px;
         border-radius: 10px;
         text-indent: 25px;
-        border: 1px solid @gray;
+        border: 1px solid @lighter-gray;
       }
 
       .checkout-input-container {
         width: 90%;
         height: 120px;
-        .flex-setup(flex-start, space-around);
-        flex-direction: column;
+        .flex-setup(flex-start, space-around, column);
       }
 
       .billing-details-container {
@@ -85,10 +72,9 @@
             width: 90%;
             height: 65px;
             border-radius: 10px;
-            box-sizing: border-box;
             padding: 0 20px;
-            border: 1px solid @gray;
-            .flex-setup(center, flex-start);
+            border: 1px solid @lighter-gray;
+            .flex-setup(center, flex-start, row);
 
             label{
                 font-size: 1rem;
@@ -98,7 +84,7 @@
               -webkit-appearance: none;
               width:25px; 
               height:25px; 
-              border:1px solid @gray;
+              border:1px solid @lighter-gray;
               border-radius: 50%;
               outline:none;
               margin-right:20px;
@@ -126,10 +112,9 @@
   .checkout-cart-container {
     width: 28%;
     height: 500px;
-    background-color: rgb(255, 255, 255);
-    border: 2px solid @gray;
+    background-color: @white;
+    border: 2px solid @lighter-gray;
     border-radius: 15px;
-    box-sizing: border-box;
     padding:2em; 
   }
 }

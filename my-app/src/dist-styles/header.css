@@ -1,3 +1,11 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
 .cta-button,
 .header-section-container .header-product-container .header-product-description .header-cta-button {
   height: 45px;
@@ -6,14 +14,6 @@
   cursor: pointer;
   border: none;
   transition: 0.3s linear;
-}
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Manrope", sans-serif;
 }
 .header-section-container {
   width: 100%;

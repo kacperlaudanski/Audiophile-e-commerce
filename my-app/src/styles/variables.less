@@ -5,9 +5,17 @@
 @black: rgb(0,0,0); 
 @dark-gray: rgb(25, 25, 25); 
 @gray:rgb(102, 102, 102);
+@lighter-gray:rgb(203, 203, 203); 
 @dark-gray-transparent: rgba(25, 25, 25, 0.525); 
 @gray-transparent: rgba(241, 241, 241, 0.482);
 @font: "Manrope", sans-serif;
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: @font;
+}
 
 .flex-setup(@align-items, @justify-content, @flex-direction) {
     display: flex;

@@ -1,3 +1,11 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
 .cta-button {
   height: 45px;
   font-weight: bolder;
@@ -45,6 +53,10 @@ dialog .cart-modal-container .cart-top .cart-remove-btn {
   text-decoration: underline;
   color: #191919;
   cursor: pointer;
+  transition: 0.3s linear;
+}
+dialog .cart-modal-container .cart-top .cart-remove-btn:hover {
+  color: #d87d4a;
 }
 dialog .cart-modal-container .cart-content-container {
   display: flex;

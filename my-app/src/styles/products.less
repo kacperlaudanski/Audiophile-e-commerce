@@ -1,20 +1,9 @@
-@dark-orange: rgb(216, 125, 74);
-@bright-orange: rgb(251, 175, 133);
-@white: rgb(255, 255, 255);
-@light-gray: rgb(241, 241, 241);
-@gray: rgba(0, 0, 0, 0.453);
-@font: "Manrope", sans-serif;
-
-.flex-setup(@align-items, @justify-content) {
-  display: flex;
-  align-items: @align-items;
-  justify-content: @justify-content;
-}
+@import './variables.less';
 
 .product-preview-container {
   width: 100%;
   height: auto;
-  .flex-setup(center, space-between);
+  .flex-setup(center, space-between, row);
   margin-bottom: 11em;
   font-family: @font;
 
@@ -27,8 +16,7 @@
     height: 400px;
     box-sizing: border-box;
     padding: 4em;
-    .flex-setup(left, space-between);
-    flex-direction: column;
+    .flex-setup(left, space-between, column);
 
     h2 {
       font-size: 2rem;
@@ -40,18 +28,13 @@
       color: @gray;
     }
 
-    .product-link-btn {
+    .product-link-btn:extend(.cta-button) {
       width: 30%;
-      height: 50px;
       background-color: @dark-orange;
-      color: @white;
-      border: none;
-      transition: 0.3s linear;
-      cursor: pointer;
-    }
 
-    .product-link-btn:hover {
-      background-color: @bright-orange;
+      &:hover {
+        background-color: @bright-orange;
+      }
     }
   }
 }
@@ -63,7 +46,7 @@
 .go-back-container {
   width: 100%;
   height: 100px;
-  .flex-setup(flex-start, flex-start);
+  .flex-setup(flex-start, flex-start, row);
 
   .go-back-btn {
     text-decoration: none;
@@ -74,13 +57,12 @@
 .product-card-container {
   width: 100%;
   height: auto;
-  .flex-setup(center, space-between);
-  flex-direction: column;
+  .flex-setup(center, space-between, column);
   margin-bottom: 200px;
 
   .product-presentation {
     width: 100%;
-    .flex-setup(center, space-between);
+    .flex-setup(center, space-between, row);
 
     img {
       width: 45%;
@@ -91,8 +73,7 @@
       height: 380px;
       box-sizing: border-box;
       padding: 1em;
-      .flex-setup(left, space-between);
-      flex-direction: column;
+      .flex-setup(left, space-between, column);
 
       h1 {
         font-size: 2.5rem;
@@ -112,14 +93,14 @@
       .product-input-section {
         width: 60%;
         max-width: 370px;
-        .flex-setup(center, space-between);
+        .flex-setup(center, space-between, row);
 
         .product-amount-container {
           width: 40%;
           max-width: 150px;
           height: 45px;
           background-color: @light-gray;
-          .flex-setup(center, space-between);
+          .flex-setup(center, space-between, row);
 
           input {
             width: 33%;
@@ -137,20 +118,14 @@
           }
         }
 
-        .add-to-cart-btn {
+        .add-to-cart-btn:extend(.cta-button) {
           width: 55%;
           max-width: 200px;
-          height: 45px;
           background-color: @dark-orange;
-          color: @white;
-          font-weight: bolder;
-          transition: 0.3s linear;
-          border: none;
-          cursor: pointer;
-        }
 
-        .add-to-cart-btn:hover {
-          background-color: @bright-orange;
+          &:hover {
+            background-color: @bright-orange;
+          }
         }
       }
     }
@@ -160,7 +135,7 @@
     width: 100%;
     height: 300px;
     margin-top: 5em;
-    .flex-setup(center, space-between);
+    .flex-setup(center, space-between, row);
 
     h3 {
       font-size: 1.5rem;
@@ -203,7 +178,7 @@
     width:100%; 
     height: 600px;
     margin: 100px 0 200px; 
-    .flex-setup(center, space-between);
+    .flex-setup(center, space-between, row);
 
     img{
         border-radius: 10px;
@@ -212,8 +187,7 @@
     .small-images-container{
         width:39%;
         height:100%;
-        .flex-setup(left, space-between); 
-        flex-direction: column;
+        .flex-setup(left, space-between, column); 
 
         .small-image{
             width:100%; 
@@ -232,18 +206,15 @@
     }
 }
 
-
-
 .related-panel-container {
   width: 100%;
   height: 350px;
-  .flex-setup(center, space-between);
+  .flex-setup(center, space-between, row);
   margin-bottom: 200px;
 
   .related-product-container {
     width: 30%;
-    .flex-setup(center, space-between);
-    flex-direction: column;
+    .flex-setup(center, space-between, column);
 
     img {
       width: 90%;
@@ -255,20 +226,14 @@
       margin: 1em 0;
     }
 
-    .see-related-product-btn {
+    .see-related-product-btn:extend(.cta-button) {
       width: 45%;
       max-width: 150px;
-      height: 50px;
       background-color: @dark-orange;
-      color: @white;
-      font-weight: bold;
-      border: none;
-      transition: 0.3s linear;
-      cursor: pointer;
-    }
 
-    .see-related-product-btn:hover {
-      background-color: @bright-orange;
+      &:hover{
+        background-color: @bright-orange;
+      }
     }
   }
 }

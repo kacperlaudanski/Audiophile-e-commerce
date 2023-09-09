@@ -1,18 +1,33 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+.cta-button {
+  height: 45px;
+  font-weight: bolder;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+}
 .checkout-container {
   width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  font-family: "Manrope", sans-serif;
+  flex-direction: row;
 }
 .checkout-container .checkout-form-container {
   width: 70%;
   height: auto;
   background-color: #ffffff;
   border-radius: 15px;
-  box-sizing: border-box;
   padding: 3em;
-  border: 2px solid rgba(0, 0, 0, 0.135);
+  border: 2px solid #cbcbcb;
 }
 .checkout-container .checkout-form-container .checkout-form-section {
   height: auto;
@@ -34,7 +49,7 @@
   height: 65px;
   border-radius: 10px;
   text-indent: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.135);
+  border: 1px solid #cbcbcb;
 }
 .checkout-container .checkout-form-container .checkout-form-section .checkout-input-container {
   width: 90%;
@@ -71,12 +86,12 @@
   width: 90%;
   height: 65px;
   border-radius: 10px;
-  box-sizing: border-box;
   padding: 0 20px;
-  border: 1px solid rgba(0, 0, 0, 0.135);
+  border: 1px solid #cbcbcb;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-direction: row;
 }
 .checkout-container .checkout-form-container .checkout-form-section .payment-details-container .radio-input-container label {
   font-size: 1rem;
@@ -85,7 +100,7 @@
   -webkit-appearance: none;
   width: 25px;
   height: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.135);
+  border: 1px solid #cbcbcb;
   border-radius: 50%;
   outline: none;
   margin-right: 20px;
@@ -108,8 +123,7 @@
   width: 28%;
   height: 500px;
   background-color: #ffffff;
-  border: 2px solid rgba(0, 0, 0, 0.135);
+  border: 2px solid #cbcbcb;
   border-radius: 15px;
-  box-sizing: border-box;
   padding: 2em;
 }

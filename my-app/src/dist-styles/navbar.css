@@ -64,5 +64,6 @@
   background-size: cover;
   background-size: auto;
   color: #ffffff;
+  outline: none;
   cursor: pointer;
 }

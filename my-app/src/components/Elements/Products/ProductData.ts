@@ -45,7 +45,7 @@ export const headphonesList = [
     shortName: "XX99 MARK II",
     description:
       "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
-    price: "$ 2,999",
+    price: 2999,
     featuresParagraphI:
       "Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you’ll never miss a beat.",
     featuresParagraphII:
@@ -86,7 +86,7 @@ export const headphonesList = [
     shortName: "XX99 MARK I",
     description:
       "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
-    price: "$ 1,750",
+    price: 1750,
     featuresParagraphI:
       "As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz.",
     featuresParagraphII:
@@ -123,7 +123,7 @@ export const headphonesList = [
     shortName: "XX59",
     description:
       "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
-    price: "$ 899",
+    price: 899,
     featuresParagraphI:
       "These headphones have been created from durable, high-quality materials tough enough to take anywhere. Its compact folding design fuses comfort and minimalist style making it perfect for travel. Flawless transmission is assured by the latest wireless technology engineered for audio synchronization with videos.",
     featuresParagraphII:
@@ -163,7 +163,7 @@ export const speakersList = [
     shortName: "ZX9",
     description:
       "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
-    price: "$ 4,500",
+    price: 4500,
     featuresParagraphI:
       "Connect via Bluetooth or nearly any wired source. This speaker features optical, digital coaxial, USB Type-B, stereo RCA, and stereo XLR inputs, allowing you to have up to five wired source devices connected for easy switching. Improved bluetooth technology offers near lossless audio quality at up to 328ft (100m).",
     featuresParagraphII:
@@ -204,7 +204,7 @@ export const speakersList = [
     shortName: "ZX7",
     description:
       "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
-    price: "$ 3,500",
+    price: 3500,
     featuresParagraphI:
       "Reap the advantages of a flat diaphragm tweeter cone. This provides a fast response rate and excellent high frequencies that lower tiered bookshelf speakers cannot provide. The woofers are made from aluminum that produces a unique and clear sound. XLR inputs allow you to connect to a mixer for more advanced usage.",
     featuresParagraphII:
@@ -248,7 +248,7 @@ export const earphonesList = [
     shortName: "YX1",
     description:
       "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
-    price: "$ 599",
+    price: 599,
     featuresParagraphI:
       "Experience unrivalled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.",
     featuresParagraphII:

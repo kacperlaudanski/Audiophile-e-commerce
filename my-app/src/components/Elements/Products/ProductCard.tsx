@@ -1,12 +1,13 @@
 import React, { ReactNode } from "react";
 import QuantityWidget from "./QuantityWidget";
 import "../../../dist-styles/products.css";
+import formatCurrency from "../../../utilities/currencyFormatter";
 
 const ProductDetails: React.FC<{
   productImage: string;
   productName: string;
   productDescription: string;
-  productPrice: string; 
+  productPrice: number; 
   productFeaturesI: string;
   productFeaturesII: string;
   productBoxContent: ReactNode;
@@ -18,7 +19,7 @@ const ProductDetails: React.FC<{
         <div className="product-description">
           <h1>{props.productName}</h1>
           <p>{props.productDescription}</p>
-          <small className="product-price">{props.productPrice}</small>
+          <small className="product-price">{formatCurrency(props.productPrice)}</small>
           <div className="product-input-section">
             <QuantityWidget 
               containerClass = 'product-amount-container'

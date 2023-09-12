@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import QuantityWidget from "./QuantityWidget";
 import "../../../dist-styles/products.css";
 import formatCurrency from "../../../utilities/currencyFormatter";
+import { useShoppingCart } from "../../../context/CartContext";
 
 const ProductDetails: React.FC<{
   productImage: string;
@@ -12,6 +13,9 @@ const ProductDetails: React.FC<{
   productFeaturesII: string;
   productBoxContent: ReactNode;
 }> = (props) => {
+
+  const {} = useShoppingCart(); 
+
   return (
     <div className="product-card-container">
       <div className="product-presentation">
@@ -26,7 +30,7 @@ const ProductDetails: React.FC<{
               inputClass = 'product-amount-input'
               amountBtnClass = 'change-amount-btn'
             /> 
-            <button className="add-to-cart-btn">ADD TO CART</button>
+            <button className="add-to-cart-btn" onClick={() => {}}>ADD TO CART</button>
           </div>
         </div>
       </div>

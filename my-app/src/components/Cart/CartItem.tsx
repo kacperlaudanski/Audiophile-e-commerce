@@ -1,17 +1,22 @@
-import React from "react";
 import '../../dist-styles/cart.css';
 import QuantityWidget from "../Elements/Products/QuantityWidget";
-import Image from '../../images/product-xx59-headphones/desktop/image-product.jpg'
 
-const CartItem = () => {
+interface CartItem {
+    itemName: string; 
+    itemId: string; 
+    itemPrice: number; 
+    itemImage: string; 
+}
+
+const CartItem = ({itemName, itemId, itemPrice, itemImage}: CartItem) => {
     return (
         <div className="cart-item-container">
           <div className="cart-item-image">
-            <img src={Image} alt='cart-item-image'></img>
+            <img src={itemImage} alt='cart-item-image'></img>
           </div>
           <div className="cart-item-info">
-            <h5>XX99 MK II</h5>
-            <span className="cart-price">$2.999</span>
+            <h5>{itemName}</h5>
+            <span className="cart-price">{itemPrice}</span>
           </div>
           <div className='cart-quantity-widget'>
             <QuantityWidget 

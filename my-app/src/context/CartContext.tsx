@@ -1,6 +1,4 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import CartItem from "../components/Cart/CartItem";
-
 
 type CartItem = {
     id: number; 

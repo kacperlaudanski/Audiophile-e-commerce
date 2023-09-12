@@ -4,6 +4,7 @@ import "../../../dist-styles/navbar.css";
 import CartModal from "../../Cart/CartModal";
 import CategoriesList from "../CategoriesElements/CategoriesList";
 import CartItem from "../../Cart/CartItem";
+import { useShoppingCart } from "../../../context/CartContext";
 
 const Navbar = () => {
   const [modal, setModal] = useState(false);
@@ -28,7 +29,16 @@ const Navbar = () => {
         ></button>
       </div>
       <CartModal closeModal={() => setModal(false)} openModal={modal}>
-        <CartItem />
+        {/*{cartItems.map(item => {
+          return (
+            <CartItem 
+             itemName = {item.name}
+             itemId = {item.id}
+             itemImage = {item.image}
+             itemPrice = {item.price}
+            />
+          )
+        })}*/}
       </CartModal>
     </nav>
   );

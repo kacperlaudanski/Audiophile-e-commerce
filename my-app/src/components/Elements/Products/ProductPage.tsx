@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import HeaderSection from "../Header/HeaderSection";
 import MainSection from "../../Home/MainSection";
 import Navbar from "../Navbar/Navbar";
@@ -36,6 +36,9 @@ const ProductPage: React.FC = (props) => {
     shortName: string;
     link: string;
   }
+
+  const currentProduct = allProducts.filter(products => products.id === product); 
+  console.log(currentProduct); 
 
   const selectedRelatedProducts: RelatedProduct[] = [];
 

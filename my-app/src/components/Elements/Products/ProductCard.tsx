@@ -14,7 +14,7 @@ const ProductDetails: React.FC<{
   productBoxContent: ReactNode;
 }> = (props) => {
 
-  const {} = useShoppingCart(); 
+  const {increaseItemAmount} = useShoppingCart(); 
 
   return (
     <div className="product-card-container">
@@ -30,7 +30,7 @@ const ProductDetails: React.FC<{
               inputClass = 'product-amount-input'
               amountBtnClass = 'change-amount-btn'
             /> 
-            <button className="add-to-cart-btn" onClick={() => {}}>ADD TO CART</button>
+            <button className="add-to-cart-btn">ADD TO CART</button>
           </div>
         </div>
       </div>

@@ -14,6 +14,7 @@ import { headphonesList } from "./ProductData";
 import { speakersList } from "./ProductData";
 import { earphonesList } from "./ProductData";
 import { NavLink, useParams } from "react-router-dom";
+import { useShoppingCart } from "../../../context/CartContext";
 
 const ProductPage: React.FC = (props) => {
   const { category, product } = useParams();
@@ -22,11 +23,11 @@ const ProductPage: React.FC = (props) => {
 
   function selectProduct(category: string | undefined) {
     if (category === "headphones")
-      return headphonesList.filter((item) => item.id === product);
+      return headphonesList.filter((item) => item.product === product);
     if (category === "speakers")
-      return speakersList.filter((item) => item.id === product);
+      return speakersList.filter((item) => item.product === product);
     if (category === "earphones")
-      return earphonesList.filter((item) => item.id === product);
+      return earphonesList.filter((item) => item.product === product);
   }
 
   const allProducts = [...headphonesList, ...earphonesList, ...speakersList];
@@ -37,14 +38,13 @@ const ProductPage: React.FC = (props) => {
     link: string;
   }
 
-  const currentProduct = allProducts.filter(products => products.id === product); 
-  console.log(currentProduct); 
+  const currentProduct = allProducts.filter(products => products.product === product); 
 
   const selectedRelatedProducts: RelatedProduct[] = [];
 
   function randomRelatedProducts() {
     const productsWithoutCurrent = allProducts.filter(
-      (item) => item.id !== product
+      (item) => item.product !== product
     );
     while (selectedRelatedProducts.length < 3) {
       let randomIndex = Math.floor(
@@ -56,6 +56,12 @@ const ProductPage: React.FC = (props) => {
     }
   }
   randomRelatedProducts();
+
+  const {increaseItemAmount} = useShoppingCart(); 
+
+  function addToCart(product: {}){
+    increaseItemAmount(currentProduct[0].id); 
+  }
 
   return (
     <React.Fragment>
@@ -72,6 +78,7 @@ const ProductPage: React.FC = (props) => {
           return (
             <>
               <ProductDetails
+                addToCart={addToCart}
                 productImage={product.mainImage}
                 productName={product.name}
                 productDescription={product.description}

@@ -2,7 +2,7 @@ import { createContext, ReactNode, useContext, useState } from "react";
 
 type CartItem = {
     id: number; 
-    quantity: number; 
+    quantity: number;
 }
 
 type ShoppingCartContextProvider = {
@@ -14,6 +14,7 @@ type CartContextProvider = {
     decreaseItemAmount: (id: number) => void
     increaseItemAmount: (id: number) => void
     removeItem: (id: number) => void
+    cartItems: CartItem[]
 }
 
 const CartContext = createContext({} as CartContextProvider); 
@@ -70,7 +71,7 @@ export function ShoppingCartContextProvider({children}:ShoppingCartContextProvid
 
 
 
-    return <CartContext.Provider value={{getItemAmount, increaseItemAmount, decreaseItemAmount, removeItem}}>
+    return <CartContext.Provider value={{getItemAmount, increaseItemAmount, decreaseItemAmount, removeItem, cartItems}}>
         {children}
     </CartContext.Provider>
 }

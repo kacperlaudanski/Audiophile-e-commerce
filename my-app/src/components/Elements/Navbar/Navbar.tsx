@@ -8,7 +8,8 @@ import { useShoppingCart } from "../../../context/CartContext";
 
 const Navbar = () => {
   const [modal, setModal] = useState(false);
-  const [cartItems, setCartItem] = useState([]); 
+
+  const {cartItems} = useShoppingCart(); 
 
   return (
     <nav className="navbar-desktop">
@@ -29,16 +30,16 @@ const Navbar = () => {
         ></button>
       </div>
       <CartModal closeModal={() => setModal(false)} openModal={modal}>
-        {/*{cartItems.map(item => {
+        {cartItems.map(item => {
           return (
             <CartItem 
-             itemName = {item.name}
-             itemId = {item.id}
-             itemImage = {item.image}
-             itemPrice = {item.price}
+             name = {item.name}
+             id = {item.id}
+             image = {item.image}
+             price = {item.price}
             />
           )
-        })}*/}
+        })}
       </CartModal>
     </nav>
   );

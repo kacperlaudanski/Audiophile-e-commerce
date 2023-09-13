@@ -1,3 +1,4 @@
+import { randomIdGenerator } from '../../../utilities/currencyFormatter'
 //Headphones
  //XX59
 import XX59MainImage from '../../../images/product-xx59-headphones/desktop/image-product.jpg'
@@ -32,9 +33,12 @@ import YX1GalleryImage1 from '../../../images/product-yx1-earphones/desktop/imag
 import YX1GalleryImage2 from '../../../images/product-yx1-earphones/desktop/image-gallery-2.jpg'
 import YX1GalleryImage3 from '../../../images/product-yx1-earphones/desktop/image-gallery-3.jpg'
 
+
+
 export const headphonesList = [
   {
-    id: "xx99markII",
+    id: randomIdGenerator(),
+    product: 'xx99markII',
     shortLink: "./xx99markII",
     link: "../headphones/xx99markII",  
     mainImage: XX99MarkTwoMainImage,
@@ -75,8 +79,9 @@ export const headphonesList = [
     productPreviewReverse: null
   },
   {
-    id: "xx99markI",
+    id: randomIdGenerator(),
     shortLink: "./xx99markI",
+    product: 'xx99markI',
     link: "../headphones/xx99markI",   
     mainImage: XX99MarkOneMainImage, 
     galleryImage1: XX99MarkOneGalleryImage1, 
@@ -112,7 +117,8 @@ export const headphonesList = [
     productPreviewReverse: 'reverse'
   },
   {
-    id: "xx59",
+    id: randomIdGenerator(),
+    product: 'xx59',
     shortLink: "./xx59",
     link: "../headphones/xx59",   
     mainImage: XX59MainImage, 
@@ -152,7 +158,8 @@ export const headphonesList = [
 
 export const speakersList = [
   {
-    id: "zx9",
+    id: randomIdGenerator(),
+    product: 'zx9',
     shortLink: "./zx9",
     link: "../speakers/zx9", 
     mainImage: ZX9MainImage, 
@@ -193,7 +200,8 @@ export const speakersList = [
     productPreviewReverse: null
   },
   {
-    id: "zx7",
+    id: randomIdGenerator(),
+    product: 'zx7',
     shortLink: "./zx7",
     link: "../speakers/zx7",  
     mainImage: ZX7MainImage, 
@@ -237,7 +245,8 @@ export const speakersList = [
 
 export const earphonesList = [
   {
-    id: "yx1",
+    id: randomIdGenerator(),
+    product: 'yx1',
     shortLink: "./yx1",
     link: "../earphones/yx1", 
     mainImage: YX1MainImage, 

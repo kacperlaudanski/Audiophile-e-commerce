@@ -1,8 +1,7 @@
-import React, { ReactNode } from "react";
+import React, { ReactEventHandler, ReactNode } from "react";
 import QuantityWidget from "./QuantityWidget";
 import "../../../dist-styles/products.css";
-import formatCurrency from "../../../utilities/currencyFormatter";
-import { useShoppingCart } from "../../../context/CartContext";
+import {formatCurrency} from "../../../utilities/currencyFormatter";
 
 const ProductDetails: React.FC<{
   productImage: string;
@@ -12,9 +11,8 @@ const ProductDetails: React.FC<{
   productFeaturesI: string;
   productFeaturesII: string;
   productBoxContent: ReactNode;
+  addToCart: ReactEventHandler
 }> = (props) => {
-
-  const {increaseItemAmount} = useShoppingCart(); 
 
   return (
     <div className="product-card-container">
@@ -30,7 +28,7 @@ const ProductDetails: React.FC<{
               inputClass = 'product-amount-input'
               amountBtnClass = 'change-amount-btn'
             /> 
-            <button className="add-to-cart-btn">ADD TO CART</button>
+            <button className="add-to-cart-btn" onClick ={props.addToCart}>ADD TO CART</button>
           </div>
         </div>
       </div>

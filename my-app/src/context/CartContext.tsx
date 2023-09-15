@@ -21,6 +21,9 @@ type CartContextProvider = {
   increaseItemAmount: (id: number) => void;
   removeItem: (id: number) => void;
   renderCartItems: () => void;
+  getTotalPrice: () => number; 
+  removeAllItems: () => void; 
+  cartItemsAmount: number; 
 };
 
 const CartContext = createContext({} as CartContextProvider);
@@ -38,6 +41,7 @@ export function ShoppingCartContextProvider({
   const selectedProducts = cartItems.map((item) =>
     allProducts.filter((product) => product.id === item.id)
   );
+  const cartItemsAmount = selectedProducts.length; 
 
   function getItemAmount(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -81,6 +85,20 @@ export function ShoppingCartContextProvider({
     });
   }
 
+  function removeAllItems(){
+    return setCartItems([]); 
+  }
+
+  function getTotalPrice(){
+     let totalPrice = 0; 
+     selectedProducts.map((productArr, index) => {
+        productArr.map(product => {
+            totalPrice += product.price
+        }) 
+     }) 
+     return totalPrice;
+  }
+
   function renderCartItems() {
     return selectedProducts.map((item) => {
       return item.map((product) => {
@@ -104,6 +122,9 @@ export function ShoppingCartContextProvider({
         decreaseItemAmount,
         removeItem,
         renderCartItems,
+        getTotalPrice,
+        removeAllItems,
+        cartItemsAmount,
       }}
     >
       {children}

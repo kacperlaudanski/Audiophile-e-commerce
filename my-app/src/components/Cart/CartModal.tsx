@@ -1,5 +1,6 @@
 import React, { ReactEventHandler, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
+import { useShoppingCart } from "../../context/CartContext";
 import "../../dist-styles/cart.css";
 
 interface Modal {
@@ -17,6 +18,10 @@ const CartModal: React.FC<Modal> = ({
 }) => {
   const ref = useRef<HTMLDialogElement | null>(null);
 
+  const {cartItemsAmount, getTotalPrice, removeAllItems} = useShoppingCart();
+  const totalPrice = getTotalPrice(); 
+
+
   useEffect(() => {
     if (openModal) {
       ref.current?.showModal();
@@ -28,14 +33,14 @@ const CartModal: React.FC<Modal> = ({
     <dialog ref={ref} onCancel={closeModal}>
       <div className="cart-modal-container">
         <div className="cart-top">
-          <h3>CART(1)</h3>
-          <button className="cart-remove-btn">Remove all</button>
+          <h3>CART ({cartItemsAmount})</h3>
+          <button className="cart-remove-btn" onClick={removeAllItems}>Remove all</button>
         </div>
         <div className="cart-content-container">{children}</div>
         <div className="cart-bottom">
           <div className="cart-price-container">
             <h4>TOTAL</h4>
-            <span className="cart-total-price">$ 5559</span>
+            <span className="cart-total-price">$ {totalPrice}</span>
           </div>
           <NavLink className="checkout-btn" to="/checkout" onClick={closeModal}>
             CHECKOUT

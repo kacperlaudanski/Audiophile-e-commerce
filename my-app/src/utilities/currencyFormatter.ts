@@ -6,5 +6,5 @@ export function formatCurrency(number: number){
 
 
 export function randomIdGenerator(){
-    return Math.floor(Math.random() * 100); 
+    return Math.floor(Math.random() * 100000); 
 }

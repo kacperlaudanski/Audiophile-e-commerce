@@ -1,7 +1,14 @@
-import React, { ReactEventHandler, ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import QuantityWidget from "./QuantityWidget";
 import "../../../dist-styles/products.css";
 import {formatCurrency} from "../../../utilities/currencyFormatter";
+import { useShoppingCart } from "../../../context/CartContext";
+import { useParams } from "react-router-dom";
+import { earphonesList, headphonesList, speakersList } from "./ProductData";
+
+interface CurrentProduct {
+  id:number; 
+}
 
 const ProductDetails: React.FC<{
   productImage: string;
@@ -11,8 +18,31 @@ const ProductDetails: React.FC<{
   productFeaturesI: string;
   productFeaturesII: string;
   productBoxContent: ReactNode;
-  addToCart: ReactEventHandler
 }> = (props) => {
+
+
+  const [currentProduct, setCurrentProduct] = useState<CurrentProduct[]>([]); 
+  console.log(currentProduct);
+
+
+  const {increaseItemAmount} = useShoppingCart(); 
+  const {category, product} = useParams();
+
+  const allProducts = [...headphonesList, ...earphonesList, ...speakersList]; 
+  
+  //const currentProduct = allProducts.filter(item => item.product === product)
+
+  useEffect(() => {
+    takeCurrentProduct(); 
+  }, [product])
+
+  function takeCurrentProduct(){
+   setCurrentProduct(allProducts.filter(item => item.product === product))
+  }
+
+  function addToCart(){
+    increaseItemAmount(currentProduct[0].id); 
+  }
 
   return (
     <div className="product-card-container">
@@ -28,7 +58,7 @@ const ProductDetails: React.FC<{
               inputClass = 'product-amount-input'
               amountBtnClass = 'change-amount-btn'
             /> 
-            <button className="add-to-cart-btn" onClick ={props.addToCart}>ADD TO CART</button>
+            <button className="add-to-cart-btn" onClick ={addToCart}>ADD TO CART</button>
           </div>
         </div>
       </div>

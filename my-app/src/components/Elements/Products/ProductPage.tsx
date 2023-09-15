@@ -14,7 +14,6 @@ import { headphonesList } from "./ProductData";
 import { speakersList } from "./ProductData";
 import { earphonesList } from "./ProductData";
 import { NavLink, useParams } from "react-router-dom";
-import { useShoppingCart } from "../../../context/CartContext";
 
 const ProductPage: React.FC = (props) => {
   const { category, product } = useParams();
@@ -57,12 +56,6 @@ const ProductPage: React.FC = (props) => {
   }
   randomRelatedProducts();
 
-  const {increaseItemAmount} = useShoppingCart(); 
-
-  function addToCart(product: {}){
-    increaseItemAmount(currentProduct[0].id); 
-  }
-
   return (
     <React.Fragment>
       <HeaderSection>
@@ -78,7 +71,6 @@ const ProductPage: React.FC = (props) => {
           return (
             <>
               <ProductDetails
-                addToCart={addToCart}
                 productImage={product.mainImage}
                 productName={product.name}
                 productDescription={product.description}

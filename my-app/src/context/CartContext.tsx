@@ -104,7 +104,7 @@ export function ShoppingCartContextProvider({
       return item.map((product) => {
         return (
           <CartItem
-            name={product.name}
+            name={product.cartName}
             price={product.price}
             image={product.mainImage}
             id={product.id}

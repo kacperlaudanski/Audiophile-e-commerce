@@ -16,7 +16,7 @@ const CartItem = ({name, id, price, image}: CartItem) => {
           </div>
           <div className="cart-item-info">
             <h5>{name}</h5>
-            <span className="cart-price">{price}</span>
+            <span className="cart-price">{price} $</span>
           </div>
           <div className='cart-quantity-widget'>
             <QuantityWidget 

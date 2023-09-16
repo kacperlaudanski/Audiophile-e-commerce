@@ -17,7 +17,7 @@ dialog{
 
     .cart-modal-container{
         width:100%; 
-        height:300px; 
+        min-height:300px; 
         .flex-setup(stretch, space-between, column); 
 
         .cart-top{
@@ -48,16 +48,19 @@ dialog{
 
             .cart-item-container{
                 width:100%; 
-                height:60px; 
+                height:60px;
+                margin-top: 1em; 
                 .flex-setup(center, space-between, row); 
 
                 img{
                     width:60px; 
                     height:60px; 
                     border-radius: 10px;
+                    margin-right:.5em;
                 }
 
                 .cart-item-info{
+                    width:35%;
                    h5{
                     font-size: 1rem;
                     font-weight: 800;

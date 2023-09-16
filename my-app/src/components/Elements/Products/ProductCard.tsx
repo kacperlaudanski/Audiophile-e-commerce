@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import QuantityWidget from "./QuantityWidget";
 import "../../../dist-styles/products.css";
-import {formatCurrency} from "../../../utilities/currencyFormatter";
+
 import { useShoppingCart } from "../../../context/CartContext";
 import { useParams } from "react-router-dom";
 import { earphonesList, headphonesList, speakersList } from "./ProductData";
@@ -14,7 +14,7 @@ const ProductDetails: React.FC<{
   productImage: string;
   productName: string;
   productDescription: string;
-  productPrice: number; 
+  productPrice: string; 
   productFeaturesI: string;
   productFeaturesII: string;
   productBoxContent: ReactNode;
@@ -28,9 +28,7 @@ const ProductDetails: React.FC<{
   const {increaseItemAmount} = useShoppingCart(); 
   const {category, product} = useParams();
 
-  const allProducts = [...headphonesList, ...earphonesList, ...speakersList]; 
-  
-  //const currentProduct = allProducts.filter(item => item.product === product)
+  const allProducts = [...headphonesList, ...earphonesList, ...speakersList];
 
   useEffect(() => {
     takeCurrentProduct(); 
@@ -51,7 +49,7 @@ const ProductDetails: React.FC<{
         <div className="product-description">
           <h1>{props.productName}</h1>
           <p>{props.productDescription}</p>
-          <small className="product-price">{formatCurrency(props.productPrice)}</small>
+          <small className="product-price">{props.productPrice}</small>
           <div className="product-input-section">
             <QuantityWidget 
               containerClass = 'product-amount-container'

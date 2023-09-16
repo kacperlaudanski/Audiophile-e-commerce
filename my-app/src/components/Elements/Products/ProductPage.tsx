@@ -14,6 +14,7 @@ import { headphonesList } from "./ProductData";
 import { speakersList } from "./ProductData";
 import { earphonesList } from "./ProductData";
 import { NavLink, useParams } from "react-router-dom";
+import {formatCurrency} from "../../../utilities/currencyFormatter";
 
 const ProductPage: React.FC = (props) => {
   const { category, product } = useParams();
@@ -74,7 +75,7 @@ const ProductPage: React.FC = (props) => {
                 productImage={product.mainImage}
                 productName={product.name}
                 productDescription={product.description}
-                productPrice={product.price}
+                productPrice={formatCurrency(product.price)}
                 productFeaturesI={product.featuresParagraphI}
                 productFeaturesII={product.featuresParagraphII}
                 productBoxContent={product.boxContent.map((item) => {

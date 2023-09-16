@@ -1,10 +1,9 @@
-const CURRENCY_FORMATTER = new Intl.NumberFormat(undefined, {style: 'currency', currency: 'USD', maximumSignificantDigits: 1, currencyDisplay: 'narrowSymbol'}); 
+//const CURRENCY_FORMATTER = new Intl.NumberFormat(undefined, {style: 'currency', currency: 'USD', maximumSignificantDigits: 1, currencyDisplay: 'narrowSymbol', maximumFractionDigits:2, minimumFractionDigits:2}); 
 
-export function formatCurrency(number: number){
-    return CURRENCY_FORMATTER.format(number); 
+export function formatCurrency(number:number){
+   const roundedNumber = Math.trunc(Math.round(number*100)/100); 
+   
+   return `${roundedNumber.toLocaleString(undefined, {maximumFractionDigits:0, minimumFractionDigits:0})} $`; 
 }
 
 
-export function randomIdGenerator(){
-    return Math.floor(Math.random() * 100000); 
-}

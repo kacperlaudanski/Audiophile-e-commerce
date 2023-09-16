@@ -1,36 +1,21 @@
 import React, {useState} from "react";
 
-interface ClassNames {
+interface QuantityWidget {
     containerClass: string; 
     inputClass: string; 
     amountBtnClass: string; 
+    inputValue: number | undefined; 
+    decreaseInputBtn: () => void; 
+    increaseInputBtn: () => void; 
 }
 
-const QuantityWidget: React.FC<ClassNames> = (props) => {
-  const [inputValue, setInputValue] = useState<number | undefined>(1); 
-
-  function increaseInputValue(){
-      setInputValue(prevValue => {
-        if(prevValue !== undefined){
-          return prevValue + 1
-        }
-      })
-  }
-
-  function decreaseInputValue(){
-    if(inputValue === 1)return;  
-    setInputValue(prevValue => {
-      if(prevValue !== undefined && prevValue > 1){
-        return prevValue - 1; 
-      }
-    })
-  }
+const QuantityWidget: React.FC<QuantityWidget> = (props) => {
 
   return (
     <div className={props.containerClass}>
-      <button className={props.amountBtnClass} onClick={decreaseInputValue}>-</button>
-      <input className={props.inputClass} value={inputValue}></input>
-      <button className={props.amountBtnClass} onClick={increaseInputValue}>+</button>
+      <button className={props.amountBtnClass} onClick={props.decreaseInputBtn}>-</button>
+      <input className={props.inputClass} value={props.inputValue}></input>
+      <button className={props.amountBtnClass} onClick={props.increaseInputBtn}>+</button>
     </div>
   );
 };

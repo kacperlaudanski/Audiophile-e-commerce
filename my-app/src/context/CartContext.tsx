@@ -19,9 +19,9 @@ type CartContextProvider = {
   getItemAmount: (id: number) => number;
   decreaseItemAmount: (id: number) => void;
   increaseItemAmount: (id: number) => void;
-  removeItem: (id: number) => void;
   renderCartItems: () => void;
-  getTotalPrice: () => number; 
+  totalPrice: number; 
+  getTotalPrice: () => void;
   removeAllItems: () => void; 
   cartItemsAmount: number; 
 };
@@ -36,12 +36,12 @@ export function ShoppingCartContextProvider({
   children,
 }: ShoppingCartContextProvider) {
   const [cartItems, setCartItems] = useState<CartItemTypes[]>([]);
+  const [cartItemsAmount, setItemsAmount] = useState(0); 
 
   const allProducts = [...headphonesList, ...speakersList, ...earphonesList];
   const selectedProducts = cartItems.map((item) =>
     allProducts.filter((product) => product.id === item.id)
   );
-  const cartItemsAmount = selectedProducts.length; 
 
   function getItemAmount(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -49,12 +49,12 @@ export function ShoppingCartContextProvider({
 
   function increaseItemAmount(id: number) {
     return setCartItems((currentItems) => {
+    setItemsAmount(prevVal => prevVal + 1)
       if (currentItems.find((item) => item.id === id) == null) {
         return [...currentItems, { id, quantity: 1 }];
       } else {
         return currentItems.map((item) => {
           if (item.id === id) {
-            console.log(item.quantity);
             return { ...item, quantity: item.quantity + 1 };
           } else {
             return item;
@@ -80,24 +80,15 @@ export function ShoppingCartContextProvider({
     });
   }
 
-  function removeItem(id: number) {
-    return setCartItems((currentItems) => {
-      return currentItems.filter((item) => item.id !== id);
-    });
-  }
-
   function removeAllItems(){
-    return setCartItems([]); 
+    setCartItems([])
+    setItemsAmount(0); 
   }
 
-  function getTotalPrice(){
-     let totalPrice = 0; 
-     selectedProducts.map((productArr, index) => {
-        productArr.map(product => {
-            totalPrice += product.price
-        }) 
-     }) 
-     return totalPrice;
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  function getTotalPrice(){ 
+     
   }
 
   function renderCartItems() {
@@ -121,10 +112,10 @@ export function ShoppingCartContextProvider({
         getItemAmount,
         increaseItemAmount,
         decreaseItemAmount,
-        removeItem,
         renderCartItems,
-        getTotalPrice,
         removeAllItems,
+        totalPrice,
+        getTotalPrice,
         cartItemsAmount,
       }}
     >

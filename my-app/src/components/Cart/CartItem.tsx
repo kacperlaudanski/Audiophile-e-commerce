@@ -11,7 +11,7 @@ interface CartItem {
 
 const CartItem = ({name, id, price, image}: CartItem) => {
 
-  const {increaseItemAmount, decreaseItemAmount} = useShoppingCart();
+  const {increaseItemAmount, decreaseItemAmount, getItemAmount} = useShoppingCart();
 
     return (
         <div className="cart-item-container">
@@ -27,7 +27,7 @@ const CartItem = ({name, id, price, image}: CartItem) => {
               containerClass="cart-amount-container"
               inputClass="cart-amount-input"
               amountBtnClass="cart-amount-btn"
-              inputValue={1}
+              inputValue={getItemAmount(id)}
               increaseInputBtn={() => {increaseItemAmount(id)}}
               decreaseInputBtn={() => {decreaseItemAmount(id)}}
             /> 

@@ -16,9 +16,7 @@ const CartModal: React.FC<Modal> = ({
 }) => {
   const ref = useRef<HTMLDialogElement | null>(null);
 
-  const {cartItemsAmount, getTotalPrice, removeAllItems} = useShoppingCart();
-  const totalPrice = getTotalPrice(); 
-
+const {cartItemsAmount, totalPrice, removeAllItems} = useShoppingCart();
 
   useEffect(() => {
     if (openModal) {

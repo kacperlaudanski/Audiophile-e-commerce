@@ -1,4 +1,4 @@
-import { randomIdGenerator } from '../../../utilities/currencyFormatter'
+import { randomIdGenerator } from '../../../utilities/randomIdGenerator'
 //Headphones
  //XX59
 import XX59MainImage from '../../../images/product-xx59-headphones/desktop/image-product.jpg'

@@ -7,14 +7,12 @@ interface Modal {
   openModal: boolean;
   closeModal: ReactEventHandler;
   children: any;
-  // itemsNumber: number;
-  //totalPrice: string;
 }
 
 const CartModal: React.FC<Modal> = ({
   openModal,
   closeModal,
-  children /*itemsNumber, totalPrice*/,
+  children,
 }) => {
   const ref = useRef<HTMLDialogElement | null>(null);
 
@@ -30,7 +28,7 @@ const CartModal: React.FC<Modal> = ({
     }
   }, [openModal]);
   return (
-    <dialog ref={ref} onCancel={closeModal}>
+    <dialog ref={ref} onCancel={closeModal} className='cart-modal-container'>
       <div className="cart-modal-container">
         <div className="cart-top">
           <h3>CART ({cartItemsAmount})</h3>

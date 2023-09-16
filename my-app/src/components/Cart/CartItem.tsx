@@ -1,3 +1,4 @@
+import { useShoppingCart } from '../../context/CartContext';
 import '../../dist-styles/cart.css';
 import QuantityWidget from "../Elements/Products/QuantityWidget";
 
@@ -9,6 +10,9 @@ interface CartItem {
 }
 
 const CartItem = ({name, id, price, image}: CartItem) => {
+
+  const {increaseItemAmount, decreaseItemAmount} = useShoppingCart();
+
     return (
         <div className="cart-item-container">
           <div className="cart-item-image">
@@ -23,6 +27,9 @@ const CartItem = ({name, id, price, image}: CartItem) => {
               containerClass="cart-amount-container"
               inputClass="cart-amount-input"
               amountBtnClass="cart-amount-btn"
+              inputValue={1}
+              increaseInputBtn={() => {increaseItemAmount(id)}}
+              decreaseInputBtn={() => {decreaseItemAmount(id)}}
             /> 
           </div>
         </div>

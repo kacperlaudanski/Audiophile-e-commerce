@@ -54,6 +54,7 @@ export function ShoppingCartContextProvider({
       } else {
         return currentItems.map((item) => {
           if (item.id === id) {
+            console.log(item.quantity);
             return { ...item, quantity: item.quantity + 1 };
           } else {
             return item;

@@ -6,7 +6,8 @@
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
 }
-.cta-button {
+.cta-button,
+.confirmation-modal-container .confirmation-continue-button {
   height: 45px;
   font-weight: bolder;
   color: #ffffff;
@@ -14,21 +15,21 @@
   border: none;
   transition: 0.3s linear;
 }
-dialog {
+.cart-modal-container {
   width: 25%;
   min-height: 200px;
   top: 100px;
   left: 65%;
   border: none;
   box-sizing: border-box;
-  padding: 2em;
+  padding: 1em;
   border-radius: 10px;
   font-family: "Manrope", sans-serif;
 }
-dialog::backdrop {
+.cart-modal-container::backdrop {
   background-color: rgba(25, 25, 25, 0.525);
 }
-dialog .cart-modal-container {
+.cart-modal-container .cart-modal-container {
   width: 100%;
   min-height: 300px;
   display: flex;
@@ -36,17 +37,17 @@ dialog .cart-modal-container {
   justify-content: space-between;
   flex-direction: column;
 }
-dialog .cart-modal-container .cart-top {
+.cart-modal-container .cart-modal-container .cart-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
 }
-dialog .cart-modal-container .cart-top h3 {
+.cart-modal-container .cart-modal-container .cart-top h3 {
   font-size: 1.1rem;
   font-weight: bold;
 }
-dialog .cart-modal-container .cart-top .cart-remove-btn {
+.cart-modal-container .cart-modal-container .cart-top .cart-remove-btn {
   background-color: #ffffff;
   border: none;
   outline: none;
@@ -55,17 +56,17 @@ dialog .cart-modal-container .cart-top .cart-remove-btn {
   cursor: pointer;
   transition: 0.3s linear;
 }
-dialog .cart-modal-container .cart-top .cart-remove-btn:hover {
+.cart-modal-container .cart-modal-container .cart-top .cart-remove-btn:hover {
   color: #d87d4a;
 }
-dialog .cart-modal-container .cart-content-container {
+.cart-modal-container .cart-modal-container .cart-content-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin: 1.5em 0;
 }
-dialog .cart-modal-container .cart-content-container .cart-item-container {
+.cart-modal-container .cart-modal-container .cart-content-container .cart-item-container {
   width: 100%;
   height: 60px;
   margin-top: 1em;
@@ -74,28 +75,28 @@ dialog .cart-modal-container .cart-content-container .cart-item-container {
   justify-content: space-between;
   flex-direction: row;
 }
-dialog .cart-modal-container .cart-content-container .cart-item-container img {
+.cart-modal-container .cart-modal-container .cart-content-container .cart-item-container img {
   width: 60px;
   height: 60px;
   border-radius: 10px;
   margin-right: 0.5em;
 }
-dialog .cart-modal-container .cart-content-container .cart-item-container .cart-item-info {
+.cart-modal-container .cart-modal-container .cart-content-container .cart-item-container .cart-item-info {
   width: 35%;
 }
-dialog .cart-modal-container .cart-content-container .cart-item-container .cart-item-info h5 {
+.cart-modal-container .cart-modal-container .cart-content-container .cart-item-container .cart-item-info h5 {
   font-size: 1rem;
   font-weight: 800;
 }
-dialog .cart-modal-container .cart-content-container .cart-item-container .cart-item-info .cart-price {
+.cart-modal-container .cart-modal-container .cart-content-container .cart-item-container .cart-item-info .cart-price {
   color: #666666;
   font-size: 0.9rem;
   font-weight: 700;
 }
-dialog .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget {
+.cart-modal-container .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget {
   width: 35%;
 }
-dialog .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget .cart-amount-container {
+.cart-modal-container .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget .cart-amount-container {
   width: 100%;
   height: 35px;
   display: flex;
@@ -103,7 +104,7 @@ dialog .cart-modal-container .cart-content-container .cart-item-container .cart-
   justify-content: center;
   flex-direction: row;
 }
-dialog .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget .cart-amount-input {
+.cart-modal-container .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget .cart-amount-input {
   width: 60%;
   height: 100%;
   border: none;
@@ -111,7 +112,7 @@ dialog .cart-modal-container .cart-content-container .cart-item-container .cart-
   background-color: rgba(241, 241, 241, 0.482);
   text-align: center;
 }
-dialog .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget .cart-amount-btn {
+.cart-modal-container .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget .cart-amount-btn {
   width: 20%;
   height: 100%;
   background-color: rgba(241, 241, 241, 0.482);
@@ -121,29 +122,29 @@ dialog .cart-modal-container .cart-content-container .cart-item-container .cart-
   cursor: pointer;
   transition: 0.3s linear;
 }
-dialog .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget .cart-amount-btn:hover {
+.cart-modal-container .cart-modal-container .cart-content-container .cart-item-container .cart-quantity-widget .cart-amount-btn:hover {
   color: #d87d4a;
 }
-dialog .cart-modal-container .cart-bottom {
+.cart-modal-container .cart-modal-container .cart-bottom {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
   flex-direction: column;
 }
-dialog .cart-modal-container .cart-bottom .cart-price-container {
+.cart-modal-container .cart-modal-container .cart-bottom .cart-price-container {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
   flex-direction: row;
 }
-dialog .cart-modal-container .cart-bottom .cart-price-container h4 {
+.cart-modal-container .cart-modal-container .cart-bottom .cart-price-container h4 {
   font-size: 0.9rem;
   color: #666666;
 }
-dialog .cart-modal-container .cart-bottom .cart-price-container .cart-total-price {
+.cart-modal-container .cart-modal-container .cart-bottom .cart-price-container .cart-total-price {
   font-weight: 800;
 }
-dialog .cart-modal-container .cart-bottom .checkout-btn {
+.cart-modal-container .cart-modal-container .cart-bottom .checkout-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,6 +159,30 @@ dialog .cart-modal-container .cart-bottom .checkout-btn {
   text-decoration: none;
   transition: 0.3s linear;
 }
-dialog .cart-modal-container .cart-bottom .checkout-btn:hover {
+.cart-modal-container .cart-modal-container .cart-bottom .checkout-btn:hover {
+  background-color: #fbaf85;
+}
+.confirmation-modal-container {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 2em;
+  border: none;
+  border-radius: 15px;
+}
+.confirmation-modal-container::backdrop {
+  background-color: rgba(25, 25, 25, 0.525);
+}
+.confirmation-modal-container .confirmation-continue-button {
+  width: 60%;
+  background-color: #d87d4a;
+}
+.confirmation-modal-container .confirmation-continue-button:hover {
   background-color: #fbaf85;
 }

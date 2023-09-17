@@ -20,10 +20,10 @@ type CartContextProvider = {
   decreaseItemAmount: (id: number) => void;
   increaseItemAmount: (id: number) => void;
   renderCartItems: () => void;
-  totalPrice: number; 
-  getTotalPrice: () => void;
+  getTotalPrice: () => number[]; 
   removeAllItems: () => void; 
   cartItemsAmount: number; 
+  cartItems: CartItemTypes[]; 
 };
 
 const CartContext = createContext({} as CartContextProvider);
@@ -47,7 +47,7 @@ export function ShoppingCartContextProvider({
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   }
 
-  function increaseItemAmount(id: number) {
+  function increaseItemAmount(id: number) { 
     return setCartItems((currentItems) => {
     setItemsAmount(prevVal => prevVal + 1)
       if (currentItems.find((item) => item.id === id) == null) {
@@ -65,6 +65,7 @@ export function ShoppingCartContextProvider({
   }
 
   function decreaseItemAmount(id: number) {
+    setItemsAmount(prevVal => prevVal - 1); 
     setCartItems((currentItems) => {
       if (cartItems.find((item) => item.id === id)?.quantity === 1) {
         return cartItems.filter((item) => item.id !== id);
@@ -85,11 +86,17 @@ export function ShoppingCartContextProvider({
     setItemsAmount(0); 
   }
 
-  const [totalPrice, setTotalPrice] = useState(0);
-
   function getTotalPrice(){ 
-     
+     const pricesArr = []; 
+     for(let i=0; i<selectedProducts.length; i++){
+      for(let j=0; j<1; j++){
+        pricesArr.push(selectedProducts[i][0]?.price); 
+      }
+     }
+     return pricesArr; 
   }
+
+
 
   function renderCartItems() {
     return selectedProducts.map((item) => {
@@ -114,9 +121,9 @@ export function ShoppingCartContextProvider({
         decreaseItemAmount,
         renderCartItems,
         removeAllItems,
-        totalPrice,
-        getTotalPrice,
+        getTotalPrice, 
         cartItemsAmount,
+        cartItems, 
       }}
     >
       {children}

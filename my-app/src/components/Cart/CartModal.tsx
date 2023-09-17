@@ -1,4 +1,4 @@
-import React, { ReactEventHandler, useEffect, useRef } from "react";
+import React, { ReactEventHandler, useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useShoppingCart } from "../../context/CartContext";
 import "../../dist-styles/cart.css";
@@ -16,7 +16,25 @@ const CartModal: React.FC<Modal> = ({
 }) => {
   const ref = useRef<HTMLDialogElement | null>(null);
 
-const {cartItemsAmount, totalPrice, removeAllItems} = useShoppingCart();
+const {cartItemsAmount, removeAllItems, getTotalPrice, cartItems} = useShoppingCart();
+const [totalPrice, setTotalPrice] = useState(0);
+
+function priceStateHandler(){
+  let totalPrice = 0;
+  const pricesArr = getTotalPrice(); 
+  pricesArr.forEach(price => {
+    totalPrice += price
+  })
+  setTotalPrice(prevVal => {
+     return prevVal += totalPrice
+  }); 
+}
+
+useEffect(() => {
+  setTotalPrice(0); 
+  priceStateHandler(); 
+}, [cartItems])
+
 
   useEffect(() => {
     if (openModal) {

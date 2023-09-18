@@ -17,7 +17,7 @@
 
     .cart-modal-container{
         width:100%; 
-        min-height:300px; 
+        min-height:auto; 
         .flex-setup(stretch, space-between, column); 
 
         .cart-top{
@@ -43,6 +43,16 @@
         }
 
         .cart-content-container{
+            .empty-cart-component{
+                width:100%; 
+                height:100px; 
+                .flex-setup(center, center, row); 
+
+                h5{
+                    font-size: .8rem; 
+                    color:@gray; 
+                }
+            }
             .flex-setup(center, center, column); 
             margin: 1.5em 0; 
 

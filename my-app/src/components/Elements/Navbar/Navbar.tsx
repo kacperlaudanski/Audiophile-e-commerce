@@ -3,13 +3,13 @@ import { NavLink } from "react-router-dom";
 import "../../../dist-styles/navbar.css";
 import CartModal from "../../Cart/CartModal";
 import CategoriesList from "../CategoriesElements/CategoriesList";
-import CartItem from "../../Cart/CartItem";
 import { useShoppingCart } from "../../../context/CartContext";
+import EmptyCart from "../../Cart/EmptyCart";
 
 const Navbar = () => {
   const [modal, setModal] = useState(false);
 
-  const {renderCartItems} = useShoppingCart(); 
+  const {renderCartItems, cartItems} = useShoppingCart(); 
 
   return (
     <nav className="navbar-desktop">
@@ -30,7 +30,7 @@ const Navbar = () => {
         ></button>
       </div>
       <CartModal closeModal={() => setModal(false)} openModal={modal}>
-        {renderCartItems()}
+        {cartItems.length > 0 ? renderCartItems(): <EmptyCart />}
       </CartModal>
     </nav>
   );

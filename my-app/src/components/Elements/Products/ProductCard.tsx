@@ -1,15 +1,49 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import "../../../dist-styles/products.css";
+
+import { useShoppingCart } from "../../../context/CartContext";
+import { useParams } from "react-router-dom";
+import { earphonesList, headphonesList, speakersList } from "./ProductData";
+import ConfirmationModal from "../../Cart/ConfirmationModal";
+
+interface CurrentProduct {
+  id: number;
+}
 
 const ProductDetails: React.FC<{
   productImage: string;
   productName: string;
   productDescription: string;
-  productPrice: string; 
+  productPrice: string;
   productFeaturesI: string;
   productFeaturesII: string;
   productBoxContent: ReactNode;
 }> = (props) => {
+  const [currentProduct, setCurrentProduct] = useState<CurrentProduct[]>([]);
+
+  const [isModalOpen, setModalState] = useState(false);
+
+  function closeModal(){
+    setModalState(false); 
+  }
+
+  const { increaseItemAmount } = useShoppingCart();
+  const { category, product } = useParams();
+  const allProducts = [...headphonesList, ...earphonesList, ...speakersList];
+
+  useEffect(() => {
+    takeCurrentProduct();
+  }, [product]);
+
+  function takeCurrentProduct() {
+    setCurrentProduct(allProducts.filter((item) => item.product === product));
+  }
+
+  function addToCart() {
+    setModalState(true);
+    increaseItemAmount(currentProduct[0].id);
+  }
+
   return (
     <div className="product-card-container">
       <div className="product-presentation">
@@ -18,16 +52,14 @@ const ProductDetails: React.FC<{
           <h1>{props.productName}</h1>
           <p>{props.productDescription}</p>
           <small className="product-price">{props.productPrice}</small>
-          <div className="product-input-section">
-            <div className="product-amount-container">
-              <button className="change-amount-btn">-</button>
-              <input className="product-amount-input" value={1}></input>
-              <button className="change-amount-btn">+</button>
-            </div>
-            <button className="add-to-cart-btn">ADD TO CART</button>
+          <div className="add-to-cart-section">
+            <button className="add-to-cart-btn" onClick={addToCart}>
+              ADD TO CART
+            </button>
           </div>
         </div>
       </div>
+      {isModalOpen && <ConfirmationModal openModal={isModalOpen} closeModal={closeModal}/>}
       <div className="product-spec">
         <div className="product-features">
           <h3>FEATURES</h3>
@@ -37,9 +69,7 @@ const ProductDetails: React.FC<{
         </div>
         <div className="product-in-the-box">
           <h3>IN THE BOX</h3>
-          <ul>
-            {props.productBoxContent}
-          </ul>
+          <ul>{props.productBoxContent}</ul>
         </div>
       </div>
     </div>

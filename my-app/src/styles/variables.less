@@ -1,10 +1,21 @@
 @white: rgb(255, 255, 255);
 @light-gray: rgb(241, 241, 241); 
 @dark-orange: rgb(216,125,74);
+@bright-orange: rgb(251, 175, 133);
 @black: rgb(0,0,0); 
 @dark-gray: rgb(25, 25, 25); 
-@gray: rgba(241, 241, 241, 0.482);
+@gray:rgb(102, 102, 102);
+@lighter-gray:rgb(203, 203, 203); 
+@dark-gray-transparent: rgba(25, 25, 25, 0.525); 
+@gray-transparent: rgba(241, 241, 241, 0.482);
 @font: "Manrope", sans-serif;
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: @font;
+}
 
 .flex-setup(@align-items, @justify-content, @flex-direction) {
     display: flex;

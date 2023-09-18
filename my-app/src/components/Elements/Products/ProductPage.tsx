@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import HeaderSection from "../Header/HeaderSection";
 import MainSection from "../../Home/MainSection";
 import Navbar from "../Navbar/Navbar";
@@ -14,6 +14,7 @@ import { headphonesList } from "./ProductData";
 import { speakersList } from "./ProductData";
 import { earphonesList } from "./ProductData";
 import { NavLink, useParams } from "react-router-dom";
+import {formatCurrency} from "../../../utilities/currencyFormatter";
 
 const ProductPage: React.FC = (props) => {
   const { category, product } = useParams();
@@ -22,11 +23,11 @@ const ProductPage: React.FC = (props) => {
 
   function selectProduct(category: string | undefined) {
     if (category === "headphones")
-      return headphonesList.filter((item) => item.id === product);
+      return headphonesList.filter((item) => item.product === product);
     if (category === "speakers")
-      return speakersList.filter((item) => item.id === product);
+      return speakersList.filter((item) => item.product === product);
     if (category === "earphones")
-      return earphonesList.filter((item) => item.id === product);
+      return earphonesList.filter((item) => item.product === product);
   }
 
   const allProducts = [...headphonesList, ...earphonesList, ...speakersList];
@@ -37,11 +38,13 @@ const ProductPage: React.FC = (props) => {
     link: string;
   }
 
+  const currentProduct = allProducts.filter(products => products.product === product); 
+
   const selectedRelatedProducts: RelatedProduct[] = [];
 
   function randomRelatedProducts() {
     const productsWithoutCurrent = allProducts.filter(
-      (item) => item.id !== product
+      (item) => item.product !== product
     );
     while (selectedRelatedProducts.length < 3) {
       let randomIndex = Math.floor(
@@ -72,7 +75,7 @@ const ProductPage: React.FC = (props) => {
                 productImage={product.mainImage}
                 productName={product.name}
                 productDescription={product.description}
-                productPrice={product.price}
+                productPrice={formatCurrency(product.price)}
                 productFeaturesI={product.featuresParagraphI}
                 productFeaturesII={product.featuresParagraphII}
                 productBoxContent={product.boxContent.map((item) => {

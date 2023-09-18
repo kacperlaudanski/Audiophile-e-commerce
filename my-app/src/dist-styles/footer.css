@@ -1,3 +1,11 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
 .cta-button {
   height: 45px;
   font-weight: bolder;
@@ -5,13 +13,6 @@
   cursor: pointer;
   border: none;
   transition: 0.3s linear;
-}
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 .footer-container {
   width: 100%;

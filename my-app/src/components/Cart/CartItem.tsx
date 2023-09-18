@@ -3,10 +3,10 @@ import '../../dist-styles/cart.css';
 import QuantityWidget from "../Elements/Products/QuantityWidget";
 
 interface CartItem {
-    name: string; 
-    id: number; 
-    price: number; 
-    image: string; 
+    name: string | undefined; 
+    id: number | undefined; 
+    price: number | undefined; 
+    image: string | undefined; 
 }
 
 const CartItem = ({name, id, price, image}: CartItem) => {

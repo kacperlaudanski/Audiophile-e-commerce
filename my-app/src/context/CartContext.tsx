@@ -5,7 +5,7 @@ import {
   speakersList,
 } from "../components/Elements/Products/ProductData";
 import CartItem from "../components/Cart/CartItem";
-import ProductDetails from "../components/Elements/Products/ProductCard";
+import CheckoutCartItem from "../components/Checkout/CheckoutCartItem";
 
 type CartItemTypes = {
   id: number;
@@ -26,6 +26,7 @@ type CartContextProvider = {
   removeAllItems: () => void;
   cartItemsAmount: number;
   cartItems: CartItemTypes[];
+  renderCheckoutItems: () => ReactNode; 
 };
 
 const CartContext = createContext({} as CartContextProvider);
@@ -115,6 +116,20 @@ export function ShoppingCartContextProvider({
     })
   }
 
+  function renderCheckoutItems(){
+    return cartItems.map(item => {
+      const product = allProducts.find(product => product.id === item.id); 
+      return (
+        <CheckoutCartItem 
+          name = {product?.cartName}
+          image = {product?.mainImage}
+          price = {product?.price}
+          quantity = {item.quantity}
+        />
+      )
+    })
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -127,6 +142,7 @@ export function ShoppingCartContextProvider({
         totalPrice, 
         totalPriceHandler, 
         cartItems,
+        renderCheckoutItems,
       }}
     >
       {children}

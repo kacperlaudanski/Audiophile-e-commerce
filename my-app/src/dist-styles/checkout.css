@@ -6,7 +6,8 @@
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
 }
-.cta-button {
+.cta-button,
+.checkout-container .checkout-cart-container .checkout-buy-btn {
   height: 45px;
   font-weight: bolder;
   color: #ffffff;
@@ -121,11 +122,15 @@
 }
 .checkout-container .checkout-cart-container {
   width: 28%;
-  height: 500px;
+  height: auto;
   background-color: #ffffff;
   border: 2px solid #cbcbcb;
   border-radius: 15px;
   padding: 2em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
 }
 .checkout-container .checkout-cart-container .checkout-items-container {
   width: 100%;
@@ -175,4 +180,51 @@
   color: #666666;
   font-size: 0.9rem;
   font-weight: 800;
+}
+.checkout-container .checkout-cart-container .checkout-costs-container {
+  width: 100%;
+  height: auto;
+  margin-top: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.checkout-container .checkout-cart-container .checkout-costs-container .cost-title {
+  color: #666666;
+  font-size: 1rem;
+}
+.checkout-container .checkout-cart-container .checkout-costs-container .checkout-cost {
+  width: 100%;
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.checkout-container .checkout-cart-container .checkout-costs-container .checkout-cost .cost-value {
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.checkout-container .checkout-cart-container .checkout-costs-container .checkout-grand-total {
+  width: 100%;
+  margin-top: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.checkout-container .checkout-cart-container .checkout-costs-container .checkout-grand-total .grand-total-value {
+  color: #d87d4a;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.checkout-container .checkout-cart-container .checkout-buy-btn {
+  width: 100%;
+  margin-top: 2em;
+  background-color: #d87d4a;
+}
+.checkout-container .checkout-cart-container .checkout-buy-btn:hover {
+  background-color: #fbaf85;
 }

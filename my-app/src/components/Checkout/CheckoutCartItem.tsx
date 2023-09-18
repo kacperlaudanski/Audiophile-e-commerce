@@ -23,7 +23,6 @@ const CheckoutCartItem: React.FC<CheckoutCartItem> = ({
           <span className="checkout-price">$ {price}</span>
         </div>
       </div>
-
       <div className="checkout-item-quantity">x {quantity}</div>
     </div>
   );

@@ -9,19 +9,20 @@ interface Modal {
   children: any;
 }
 
-const CartModal: React.FC<Modal> = ({
-  openModal,
-  closeModal,
-  children,
-}) => {
+const CartModal: React.FC<Modal> = ({ openModal, closeModal, children }) => {
   const ref = useRef<HTMLDialogElement | null>(null);
 
-const {cartItemsAmount, removeAllItems, cartItems, totalPrice, totalPriceHandler} = useShoppingCart();
+  const {
+    cartItemsAmount,
+    removeAllItems,
+    cartItems,
+    totalPrice,
+    totalPriceHandler,
+  } = useShoppingCart();
 
-useEffect(() => {
-  totalPriceHandler(); 
-}, [cartItems])
-
+  useEffect(() => {
+    totalPriceHandler();
+  }, [cartItems]);
 
   useEffect(() => {
     if (openModal) {
@@ -31,11 +32,13 @@ useEffect(() => {
     }
   }, [openModal]);
   return (
-    <dialog ref={ref} onCancel={closeModal} className='cart-modal-container'>
+    <dialog ref={ref} onCancel={closeModal} className="cart-modal-container">
       <div className="cart-modal-container">
         <div className="cart-top">
           <h3>CART ({cartItemsAmount})</h3>
-          <button className="cart-remove-btn" onClick={removeAllItems}>Remove all</button>
+          <button className="cart-remove-btn" onClick={removeAllItems}>
+            Remove all
+          </button>
         </div>
         <div className="cart-content-container">{children}</div>
         <div className="cart-bottom">
@@ -43,9 +46,15 @@ useEffect(() => {
             <h4>TOTAL</h4>
             <span className="cart-total-price">$ {totalPrice}</span>
           </div>
-          <NavLink className="checkout-btn" to="/checkout" onClick={closeModal}>
-            CHECKOUT
-          </NavLink>
+          {cartItems.length > 0 && (
+            <NavLink
+              className="checkout-btn"
+              to="/checkout"
+              onClick={closeModal}
+            >
+              CHECKOUT
+            </NavLink>
+          )}
         </div>
       </div>
     </dialog>

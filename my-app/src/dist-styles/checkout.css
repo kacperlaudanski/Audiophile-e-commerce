@@ -51,6 +51,10 @@
   border-radius: 10px;
   text-indent: 25px;
   border: 1px solid #cbcbcb;
+  outline: none;
+}
+.checkout-container .checkout-form-container .checkout-form-section input:focus {
+  border: 1px solid #d87d4a;
 }
 .checkout-container .checkout-form-container .checkout-form-section .checkout-input-container {
   width: 90%;

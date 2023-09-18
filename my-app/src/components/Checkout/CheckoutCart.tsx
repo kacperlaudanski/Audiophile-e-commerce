@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import "../../dist-styles/checkout.css";
 import { useShoppingCart } from "../../context/CartContext";
 import PricingTable from "./CheckoutPricingTable";
+import SummaryModal from "./SummaryModal";
 
 const CheckoutCart: React.FC = (props) => {
   const { cartItems, renderCheckoutItems } = useShoppingCart();
+  const [openModal, setModalState] = useState(false); 
 
   return (
     <React.Fragment>
@@ -12,8 +14,11 @@ const CheckoutCart: React.FC = (props) => {
         <h4>SUMMARY</h4>
         <div className="checkout-items-container">{renderCheckoutItems()}</div>
         <PricingTable /> 
-        <button className="checkout-buy-btn" type="button">BUY NOW</button>
+        <button className="checkout-buy-btn" type="button" onClick={() => {
+            setModalState(true)
+        }}>BUY NOW</button>
       </div>
+      <SummaryModal closeModal={() => setModalState(false)} openModal={openModal}/> 
     </React.Fragment>
   );
 };

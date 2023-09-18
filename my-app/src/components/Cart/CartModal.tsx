@@ -16,23 +16,10 @@ const CartModal: React.FC<Modal> = ({
 }) => {
   const ref = useRef<HTMLDialogElement | null>(null);
 
-const {cartItemsAmount, removeAllItems, getTotalPrice, cartItems} = useShoppingCart();
-const [totalPrice, setTotalPrice] = useState(0);
-
-function priceStateHandler(){
-  let totalPrice = 0;
-  const pricesArr = getTotalPrice(); 
-  pricesArr.forEach(price => {
-    totalPrice += price
-  })
-  setTotalPrice(prevVal => {
-     return prevVal += totalPrice
-  }); 
-}
+const {cartItemsAmount, removeAllItems, cartItems, totalPrice, totalPriceHandler} = useShoppingCart();
 
 useEffect(() => {
-  setTotalPrice(0); 
-  priceStateHandler(); 
+  totalPriceHandler(); 
 }, [cartItems])
 
 

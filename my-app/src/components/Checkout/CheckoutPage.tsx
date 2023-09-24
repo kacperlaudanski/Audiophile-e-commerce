@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Navbar from "../Elements/Navbar/Navbar";
 import HeaderSection from "../Elements/Header/HeaderSection";
 import MainSection from "../Home/MainSection";
@@ -7,7 +7,9 @@ import CheckoutCart from "./CheckoutCart";
 import Footer from "../Elements/Footer/Footer";
 import '../../dist-styles/checkout.css'; 
 
-const CheckoutPage: React.FC = () => {
+const CheckoutPage = () => {
+
+  const [isValidationConfirmed, setValidationConfirm] = useState(true); 
     
     return (
       <>
@@ -16,8 +18,8 @@ const CheckoutPage: React.FC = () => {
         </HeaderSection>
         <MainSection>
            <div className="checkout-container">
-             <CheckoutForm /> 
-             <CheckoutCart /> 
+             <CheckoutForm setValidation={setValidationConfirm}/> 
+             <CheckoutCart isButtonDisabled={isValidationConfirmed}/> 
            </div>
         </MainSection>
         <Footer /> 

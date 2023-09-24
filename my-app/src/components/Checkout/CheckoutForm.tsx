@@ -1,63 +1,10 @@
-import React, { useReducer, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import "../../dist-styles/checkout.css";
 import CheckoutInput from "../Elements/Input/CheckoutInput";
 import RadioInput from "../Elements/Input/RadioCheckoutInput";
 import { checkValidation, conditions } from "../../utilities/validation";
 import CashPaymentInfo from "./CashPaymentInfo";
-
-type DEFAULT_VALUES_TYPE = {
-  name: string | null;
-  email: string | null;
-  phoneNumber: string | null;
-  address: string | null;
-  zip: string | null;
-  city: string | null;
-  country: string | null;
-  eMoneyNumber: string | null;
-  eMoneyPin: string | null;
-};
-
-type Action = {
-  type:
-    | "NAME"
-    | "EMAIL"
-    | "PHONE_NUMBER"
-    | "ADDRESS"
-    | "ZIP"
-    | "CITY"
-    | "COUNTRY"
-    | "E_MONEY_NUMBER"
-    | "E_MONEY_PIN";
-  payload: string;
-};
-
-const CheckoutReducer = (
-  state: DEFAULT_VALUES_TYPE,
-  action: Action
-): DEFAULT_VALUES_TYPE => {
-  switch (action.type) {
-    case "NAME":
-      return { ...state, name: action.payload };
-    case "EMAIL":
-      return { ...state, email: action.payload };
-    case "PHONE_NUMBER":
-      return { ...state, phoneNumber: action.payload };
-    case "ADDRESS":
-      return { ...state, address: action.payload };
-    case "ZIP":
-      return { ...state, zip: action.payload };
-    case "CITY":
-      return { ...state, city: action.payload };
-    case "COUNTRY":
-      return { ...state, country: action.payload };
-    case "E_MONEY_NUMBER":
-      return { ...state, eMoneyNumber: action.payload };
-    case "E_MONEY_PIN":
-      return { ...state, eMoneyPin: action.payload };
-    default:
-      return state;
-  }
-};
+import { CheckoutReducer, DEFAULT_VALUES_TYPE } from "./checkout-reducer";
 
 const DEFAULT_VALUES: DEFAULT_VALUES_TYPE = {
   name: null,
@@ -71,7 +18,7 @@ const DEFAULT_VALUES: DEFAULT_VALUES_TYPE = {
   eMoneyPin: null,
 };
 
-const CheckoutForm = () => {
+const CheckoutForm: React.FC<{setValidation: React.Dispatch<React.SetStateAction<boolean>>}> = ({setValidation}) => {
   const [state, dispatch] = useReducer(CheckoutReducer, DEFAULT_VALUES);
 
   const [nameState, setNameState] = useState(true);
@@ -86,6 +33,19 @@ const CheckoutForm = () => {
 
   const [isEMoneyChecked, setEMoneyCheck] = useState(false);
   const [isCashChecked, setCashCheck] = useState(false);
+
+  function confirmValidation(){
+    if(nameState && emailState && phoneNumberState && addressState && zipState && cityState && countryState && eMoneyNumberState && eMoneyPinState){
+      setValidation(false); 
+    }else{
+      setValidation(false); 
+    }
+  }
+
+  useEffect(() => {
+    confirmValidation()
+  }, [nameState, emailState, phoneNumberState, addressState, zipState, cityState, countryState, eMoneyNumberState, eMoneyPinState]); 
+
 
   function nameHandler(event: React.ChangeEvent<HTMLInputElement>) {
     checkValidation(event.target.value, conditions.name, setNameState);

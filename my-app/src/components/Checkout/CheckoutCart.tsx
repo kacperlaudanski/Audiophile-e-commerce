@@ -4,7 +4,7 @@ import { useShoppingCart } from "../../context/CartContext";
 import PricingTable from "./CheckoutPricingTable";
 import SummaryModal from "./SummaryModal";
 
-const CheckoutCart: React.FC = (props) => {
+const CheckoutCart: React.FC<{isButtonDisabled: boolean}> = (props) => {
   const { cartItems, renderCheckoutItems } = useShoppingCart();
   const [openModal, setModalState] = useState(false); 
 
@@ -16,7 +16,7 @@ const CheckoutCart: React.FC = (props) => {
         <PricingTable /> 
         <button className="checkout-buy-btn" type="button" onClick={() => {
             setModalState(true)
-        }}>BUY NOW</button>
+        }} disabled={props.isButtonDisabled}>BUY NOW</button>
       </div>
       <SummaryModal closeModal={() => setModalState(false)} openModal={openModal}/> 
     </React.Fragment>

@@ -3,6 +3,7 @@ import "../../dist-styles/checkout.css";
 import CheckoutInput from "../Elements/Input/CheckoutInput";
 import RadioInput from "../Elements/Input/RadioCheckoutInput";
 import { checkValidation, conditions } from "../../utilities/validation";
+import CashPaymentInfo from "./CashPaymentInfo";
 
 type DEFAULT_VALUES_TYPE = {
   name: string | null;
@@ -82,6 +83,9 @@ const CheckoutForm = () => {
   const [eMoneyNumberState, setEMoneyNrState] = useState(true);
   const [eMoneyPinState, setEMoneyPinState] = useState(true);
 
+  const [isEMoneyChecked, setEMoneyCheck] = useState(false);
+  const [isCashChecked, setCashCheck] = useState(false);
+
   function nameHandler(event: React.ChangeEvent<HTMLInputElement>) {
     checkValidation(event.target.value, conditions.name, setNameState);
     dispatch({ type: "NAME", payload: event.target.value });
@@ -115,6 +119,16 @@ const CheckoutForm = () => {
   function countryHandler(event: React.ChangeEvent<HTMLInputElement>) {
     checkValidation(event.target.value, conditions.email, setCountryState);
     dispatch({ type: "COUNTRY", payload: event.target.value });
+  }
+
+  function eMoneyHandler() {
+    setEMoneyCheck(true);
+    setCashCheck(false);
+  }
+
+  function cashHandler() {
+    setCashCheck(true);
+    setEMoneyCheck(false);
   }
 
   function eMoneyNumberHandler(event: React.ChangeEvent<HTMLInputElement>) {
@@ -200,12 +214,19 @@ const CheckoutForm = () => {
       <section className="checkout-form-section">
         <h5 className="checkout-form-section-title">PAYMENT DETAILS</h5>
         <div className="payment-details-container">
-          <RadioInput radioInputId="e-money" radioInputLabel="e-Money" />
+          <RadioInput
+            radioInputId="e-money"
+            radioInputLabel="e-Money"
+            isChecked={isEMoneyChecked}
+            onChange={eMoneyHandler}
+          />
           <RadioInput
             radioInputId="cash-on-delivery"
             radioInputLabel="Cash on Delivery"
+            isChecked={isCashChecked}
+            onChange={cashHandler}
           />
-          <CheckoutInput
+          {isEMoneyChecked && <><CheckoutInput
             inputLabel="e-Money Number"
             inputPlaceholder="238521993"
             inputId="e-money-number"
@@ -218,9 +239,10 @@ const CheckoutForm = () => {
             inputId="e-money-pin"
             inputType="text"
             onChange={eMoneyPinHandler}
-          />
+          /></>}
         </div>
       </section>
+      {isCashChecked && <CashPaymentInfo />}
     </form>
   );
 };

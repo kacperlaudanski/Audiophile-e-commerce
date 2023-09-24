@@ -45,6 +45,9 @@
 .checkout-container .checkout-form-container .checkout-form-section .input-error input {
   border: 2px solid #bb0000;
 }
+.checkout-container .checkout-form-container .checkout-form-section .input-error input:focus {
+  border: 2px solid #bb0000;
+}
 .checkout-container .checkout-form-container .checkout-form-section h5 {
   color: #d87d4a;
 }

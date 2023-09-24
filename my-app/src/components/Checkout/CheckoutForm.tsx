@@ -2,10 +2,63 @@ import React, { useReducer, useState } from "react";
 import "../../dist-styles/checkout.css";
 import CheckoutInput from "../Elements/Input/CheckoutInput";
 import RadioInput from "../Elements/Input/RadioCheckoutInput";
-import CheckoutReducer from "./checkout-reducer";
 import { checkValidation, conditions } from "../../utilities/validation";
 
-const DEFAULT_VALUES = {
+type DEFAULT_VALUES_TYPE = {
+  name: string | null;
+  email: string | null;
+  phoneNumber: string | null;
+  address: string | null;
+  zip: string | null;
+  city: string | null;
+  country: string | null;
+  eMoneyNumber: string | null;
+  eMoneyPin: string | null;
+};
+
+type Action = {
+  type:
+    | "NAME"
+    | "EMAIL"
+    | "PHONE_NUMBER"
+    | "ADDRESS"
+    | "ZIP"
+    | "CITY"
+    | "COUNTRY"
+    | "E_MONEY_NUMBER"
+    | "E_MONEY_PIN";
+  payload: string;
+};
+
+const CheckoutReducer = (
+  state: DEFAULT_VALUES_TYPE,
+  action: Action
+): DEFAULT_VALUES_TYPE => {
+  switch (action.type) {
+    case "NAME":
+      return { ...state, name: action.payload };
+    case "EMAIL":
+      return { ...state, email: action.payload };
+    case "PHONE_NUMBER":
+      return { ...state, phoneNumber: action.payload };
+    case "ADDRESS":
+      return { ...state, address: action.payload };
+    case "ZIP":
+      return { ...state, zip: action.payload };
+    case "CITY":
+      return { ...state, city: action.payload };
+    case "COUNTRY":
+      return { ...state, country: action.payload };
+    case "E_MONEY_NUMBER":
+      return { ...state, eMoneyNumber: action.payload };
+    case "E_MONEY_PIN":
+      return { ...state, eMoneyPin: action.payload };
+    default:
+      return state;
+  }
+};
+
+const DEFAULT_VALUES: DEFAULT_VALUES_TYPE = {
   name: null,
   email: null,
   phoneNumber: null,
@@ -13,42 +66,73 @@ const DEFAULT_VALUES = {
   zip: null,
   city: null,
   country: null,
+  eMoneyNumber: null,
+  eMoneyPin: null,
 };
-
-const [state, setValidationState] = useState({
-  name: true, 
-  email: true, 
-  phoneNumber: true, 
-  address: true, 
-  zip: true, 
-  city: true, 
-  country: true, 
-  eMoneyNumber: true,
-  eMoneyPin: true
-})
-
-function emailHandler(event: React.ChangeEvent) {}
-
-function phoneNumberHandler(event: React.ChangeEvent) {}
-
-function addressHandler(event: React.ChangeEvent) {}
-
-function zipHandler(event: React.ChangeEvent) {}
-
-function cityHandler(event: React.ChangeEvent) {}
-
-function countryHandler(event: React.ChangeEvent) {}
-
-function eMoneyNumberHandler(event: React.ChangeEvent) {}
-
-function eMoneyPinHandler(event: React.ChangeEvent) {}
 
 const CheckoutForm = () => {
   const [state, dispatch] = useReducer(CheckoutReducer, DEFAULT_VALUES);
 
+  const [nameState, setNameState] = useState(true);
+  const [emailState, setEmailState] = useState(true);
+  const [addressState, setAddressState] = useState(true);
+  const [zipState, setZipState] = useState(true);
+  const [cityState, setCityState] = useState(true);
+  const [countryState, setCountryState] = useState(true);
+  const [eMoneyNumberState, setEMoneyNrState] = useState(true);
+  const [eMoneyPinState, setEMoneyPinState] = useState(true);
+
   function nameHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    checkValidation(event.target.value, conditions.name, setValidationState((prev) => ({...prev, name: false})))
-    dispatch({type: 'NAME', payload: event.target.value})
+    checkValidation(event.target.value, conditions.name, setNameState);
+    dispatch({ type: "NAME", payload: event.target.value });
+  }
+
+  function emailHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    checkValidation(event.target.value, conditions.email, setEmailState);
+    dispatch({ type: "EMAIL", payload: event.target.value });
+  }
+
+  function phoneNumberHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    checkValidation(event.target.value, conditions.phoneNumber, setEmailState);
+    dispatch({ type: "PHONE_NUMBER", payload: event.target.value });
+  }
+
+  function addressHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    checkValidation(event.target.value, conditions.address, setAddressState);
+    dispatch({ type: "ADDRESS", payload: event.target.value });
+  }
+
+  function zipHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    checkValidation(event.target.value, conditions.zip, setZipState);
+    dispatch({ type: "ZIP", payload: event.target.value });
+  }
+
+  function cityHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    checkValidation(event.target.value, conditions.name, setCityState);
+    dispatch({ type: "CITY", payload: event.target.value });
+  }
+
+  function countryHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    checkValidation(event.target.value, conditions.email, setCountryState);
+    dispatch({ type: "COUNTRY", payload: event.target.value });
+  }
+
+  function eMoneyNumberHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    checkValidation(
+      event.target.value,
+      conditions.eMoneyNumber,
+      setEMoneyNrState
+    );
+    dispatch({ type: "E_MONEY_NUMBER", payload: event.target.value });
+  }
+
+  function eMoneyPinHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    checkValidation(
+      event.target.value,
+      conditions.eMoneyPin,
+      setEMoneyPinState
+    );
+    dispatch({ type: "E_MONEY_PIN", payload: event.target.value });
   }
 
   return (

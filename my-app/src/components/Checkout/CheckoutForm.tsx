@@ -76,6 +76,7 @@ const CheckoutForm = () => {
 
   const [nameState, setNameState] = useState(true);
   const [emailState, setEmailState] = useState(true);
+  const [phoneNumberState, setPhoneNumberState] = useState(true); 
   const [addressState, setAddressState] = useState(true);
   const [zipState, setZipState] = useState(true);
   const [cityState, setCityState] = useState(true);
@@ -97,7 +98,7 @@ const CheckoutForm = () => {
   }
 
   function phoneNumberHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    checkValidation(event.target.value, conditions.phoneNumber, setEmailState);
+    checkValidation(event.target.value, conditions.phoneNumber, setPhoneNumberState);
     dispatch({ type: "PHONE_NUMBER", payload: event.target.value });
   }
 
@@ -156,6 +157,8 @@ const CheckoutForm = () => {
         <h5 className="checkout-form-section-title">BILLING DETAILS</h5>
         <div className="billing-details-container">
           <CheckoutInput
+            className={`checkout-input-container ${!nameState ? `input-error` : ''}`}
+            errorMessage={!nameState ? 'show-error' : ''}
             inputLabel="Name"
             inputPlaceholder="Alexei Ward"
             inputId="name"
@@ -163,6 +166,8 @@ const CheckoutForm = () => {
             onChange={nameHandler}
           />
           <CheckoutInput
+            className={`checkout-input-container ${!emailState ? `input-error` : ''}`}
+            errorMessage={!emailState ? 'show-error' : ''}
             inputLabel="Email Address"
             inputPlaceholder="alexei@gmail.com"
             inputId="email"
@@ -170,6 +175,8 @@ const CheckoutForm = () => {
             onChange={emailHandler}
           />
           <CheckoutInput
+            className={`checkout-input-container ${!phoneNumberState ? `input-error` : ''}`}
+            errorMessage={!phoneNumberState ? 'show-error' : ''}
             inputLabel="Phone Number"
             inputPlaceholder="+1 202-555-0136"
             inputId="phone-number"
@@ -182,6 +189,8 @@ const CheckoutForm = () => {
         <h5 className="checkout-form-section-title">SHIPPING INFO</h5>
         <div className="shipping-info-container">
           <CheckoutInput
+            className={`checkout-input-container ${!addressState ? `input-error` : ''}`}
+            errorMessage={!addressState ? 'show-error' : ''}
             inputLabel="Address"
             inputPlaceholder="1137 Williams Avenue"
             inputId="address"
@@ -189,6 +198,8 @@ const CheckoutForm = () => {
             onChange={addressHandler}
           />
           <CheckoutInput
+            className={`checkout-input-container ${!zipState ? `input-error` : ''}`}
+            errorMessage={!zipState ? 'show-error' : ''}
             inputLabel="ZIP Code"
             inputPlaceholder="10001"
             inputId="zip-code"
@@ -196,6 +207,8 @@ const CheckoutForm = () => {
             onChange={zipHandler}
           />
           <CheckoutInput
+            className={`checkout-input-container ${!cityState ? `input-error` : ''}`}
+            errorMessage={!cityState ? 'show-error' : ''}
             inputLabel="City"
             inputPlaceholder="Ney York"
             inputId="city"
@@ -203,6 +216,8 @@ const CheckoutForm = () => {
             onChange={cityHandler}
           />
           <CheckoutInput
+            className={`checkout-input-container ${!countryState ? `input-error` : ''}`}
+            errorMessage={!countryState ? 'show-error' : ''}
             inputLabel="Country"
             inputPlaceholder="United States"
             inputId="country"
@@ -226,20 +241,28 @@ const CheckoutForm = () => {
             isChecked={isCashChecked}
             onChange={cashHandler}
           />
-          {isEMoneyChecked && <><CheckoutInput
-            inputLabel="e-Money Number"
-            inputPlaceholder="238521993"
-            inputId="e-money-number"
-            inputType="text"
-            onChange={eMoneyNumberHandler}
-          />
-          <CheckoutInput
-            inputLabel="e-Money PIN"
-            inputPlaceholder="6891"
-            inputId="e-money-pin"
-            inputType="text"
-            onChange={eMoneyPinHandler}
-          /></>}
+          {isEMoneyChecked && (
+            <>
+              <CheckoutInput
+                className={`checkout-input-container ${!eMoneyNumberState ? `input-error` : ''}`}
+                errorMessage={!eMoneyNumberState ? 'show-error' : ''}
+                inputLabel="e-Money Number"
+                inputPlaceholder="238521993"
+                inputId="e-money-number"
+                inputType="text"
+                onChange={eMoneyNumberHandler}
+              />
+              <CheckoutInput
+                className={`checkout-input-container ${!eMoneyPinState ? `input-error` : ''}`}
+                errorMessage={!eMoneyPinState ? 'show-error' : ''}
+                inputLabel="e-Money PIN"
+                inputPlaceholder="6891"
+                inputId="e-money-pin"
+                inputType="text"
+                onChange={eMoneyPinHandler}
+              />
+            </>
+          )}
         </div>
       </section>
       {isCashChecked && <CashPaymentInfo />}

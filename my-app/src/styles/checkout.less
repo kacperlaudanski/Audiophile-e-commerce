@@ -17,6 +17,13 @@
       margin-top: 70px;
       .flex-setup(flex-start, space-around, column);
 
+      .input-error{
+        color:@error;
+        input{
+          border: 2px solid @error; 
+        }
+      }
+
       h5 {
         color: @dark-orange;
       }
@@ -43,6 +50,19 @@
         width: 90%;
         height: 120px;
         .flex-setup(flex-start, space-around, column);
+
+        .checkout-input-info {
+          width: 100%;
+          .flex-setup(center, space-between, row);
+
+          .input-error-message{
+            display:none;
+          }
+
+          .show-error{
+            display:block; 
+          }
+        }
       }
 
       .billing-details-container {
@@ -80,7 +100,7 @@
           padding: 0 20px;
           border: 1px solid @lighter-gray;
           .flex-setup(center, flex-start, row);
-          margin-bottom: 1em; 
+          margin-bottom: 1em;
 
           label {
             font-size: 1rem;
@@ -114,20 +134,20 @@
       }
     }
 
-    .payment-info-container{
-      width:100%; 
-      height:100px;
-      margin-top:2em; 
-      .flex-setup(center, space-around, row); 
+    .payment-info-container {
+      width: 100%;
+      height: 100px;
+      margin-top: 2em;
+      .flex-setup(center, space-around, row);
 
-      img{
-        width:60px;
-        height:60px; 
+      img {
+        width: 60px;
+        height: 60px;
       }
 
-      p{
-        color:@dark-gray-transparent; 
-        font-size: .9rem;
+      p {
+        color: @dark-gray-transparent;
+        font-size: 0.9rem;
       }
     }
   }
@@ -193,16 +213,16 @@
           padding: 2em;
           .flex-setup(flex-start, flex-end, column);
 
-          .order-list-grand-total{
+          .order-list-grand-total {
             font-size: 1rem;
-            color:@gray; 
+            color: @gray;
           }
 
-          .order-list-total-price{
+          .order-list-total-price {
             font-size: 1.2rem;
             font-weight: 800;
-            color:@white; 
-            margin-top:.5em; 
+            color: @white;
+            margin-top: 0.5em;
           }
         }
       }
@@ -309,3 +329,4 @@
     background-color: @bright-orange;
   }
 }
+

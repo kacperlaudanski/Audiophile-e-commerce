@@ -39,6 +39,12 @@
   justify-content: space-around;
   flex-direction: column;
 }
+.checkout-container .checkout-form-container .checkout-form-section .input-error {
+  color: #bb0000;
+}
+.checkout-container .checkout-form-container .checkout-form-section .input-error input {
+  border: 2px solid #bb0000;
+}
 .checkout-container .checkout-form-container .checkout-form-section h5 {
   color: #d87d4a;
 }
@@ -64,6 +70,19 @@
   align-items: flex-start;
   justify-content: space-around;
   flex-direction: column;
+}
+.checkout-container .checkout-form-container .checkout-form-section .checkout-input-container .checkout-input-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.checkout-container .checkout-form-container .checkout-form-section .checkout-input-container .checkout-input-info .input-error-message {
+  display: none;
+}
+.checkout-container .checkout-form-container .checkout-form-section .checkout-input-container .checkout-input-info .show-error {
+  display: block;
 }
 .checkout-container .checkout-form-container .checkout-form-section .billing-details-container {
   width: 100%;

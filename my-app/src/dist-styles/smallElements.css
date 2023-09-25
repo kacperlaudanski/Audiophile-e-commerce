@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+.cta-button {
+  height: 45px;
+  font-weight: bolder;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+}
+.go-back-container {
+  width: 100%;
+  margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.go-back-container .go-back-btn {
+  font-size: 1.1rem;
+  background: none;
+  color: rgba(25, 25, 25, 0.525);
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+}
+.go-back-container .go-back-btn:hover {
+  color: #d87d4a;
+}

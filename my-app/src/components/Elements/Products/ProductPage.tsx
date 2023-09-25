@@ -13,8 +13,9 @@ import RelatedProduct from "./RelatedProduct";
 import { headphonesList } from "./ProductData";
 import { speakersList } from "./ProductData";
 import { earphonesList } from "./ProductData";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {formatCurrency} from "../../../utilities/currencyFormatter";
+import GoBackButton from "../GoBackButton/GoBackButton";
 
 const ProductPage: React.FC = (props) => {
   const { category, product } = useParams();
@@ -63,11 +64,7 @@ const ProductPage: React.FC = (props) => {
         <Navbar />
       </HeaderSection>
       <MainSection>
-        <div className="go-back-container">
-          <NavLink to={`/${category}`} className="go-back-btn">
-            Go Back
-          </NavLink>
-        </div>
+        <GoBackButton /> 
         {selectedProduct?.map((product) => {
           return (
             <>

@@ -1,0 +1,97 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+.cta-button,
+.summary-modal-dialog .summary-modal-container .back-to-home-btn {
+  height: 45px;
+  font-weight: bolder;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+}
+.summary-modal-dialog {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 700px;
+  border-radius: 15px;
+  border: none;
+  padding: 3em;
+}
+.summary-modal-dialog .summary-modal-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.summary-modal-dialog .summary-modal-container h1 {
+  font-weight: 800;
+}
+.summary-modal-dialog .summary-modal-container small {
+  color: #666666;
+}
+.summary-modal-dialog .summary-modal-container .summary-order-list {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.summary-modal-dialog .summary-modal-container .summary-order-list .order-list-left {
+  width: 60%;
+  height: 100%;
+  background-color: #f1f1f1;
+  border-radius: 15px 0 0 15px;
+  padding: 2em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.summary-modal-dialog .summary-modal-container .summary-order-list .order-list-right {
+  width: 40%;
+  height: 100%;
+  background-color: #000000;
+  border-radius: 0 15px 15px 0;
+  padding: 2em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.summary-modal-dialog .summary-modal-container .summary-order-list .order-list-right .order-list-grand-total {
+  font-size: 1rem;
+  color: #666666;
+}
+.summary-modal-dialog .summary-modal-container .summary-order-list .order-list-right .order-list-total-price {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 0.5em;
+}
+.summary-modal-dialog .summary-modal-container .back-to-home-btn {
+  width: 100%;
+  background-color: #d87d4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.summary-modal-dialog .summary-modal-container .back-to-home-btn:hover {
+  background-color: #fbaf85;
+}
+.summary-modal-dialog::backdrop {
+  background-color: rgba(25, 25, 25, 0.525);
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer, useState } from "react";
-import "../../dist-styles/checkout.css";
+import "../../dist-styles/checkout-form.css";
 import CheckoutInput from "../Elements/Input/CheckoutInput";
 import RadioInput from "../Elements/Input/RadioCheckoutInput";
 import { checkValidation, conditions } from "../../utilities/validation";

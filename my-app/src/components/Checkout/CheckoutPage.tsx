@@ -6,6 +6,7 @@ import CheckoutForm from "./CheckoutForm";
 import CheckoutCart from "./CheckoutCart";
 import Footer from "../Elements/Footer/Footer";
 import '../../dist-styles/checkout.css'; 
+import GoBackButton from "../Elements/GoBackButton/GoBackButton";
 
 const CheckoutPage = () => {
 
@@ -17,6 +18,7 @@ const CheckoutPage = () => {
             <Navbar /> 
         </HeaderSection>
         <MainSection>
+           <GoBackButton />
            <div className="checkout-container">
              <CheckoutForm setValidation={setValidationConfirm}/> 
              <CheckoutCart isButtonDisabled={isValidationConfirmed}/> 

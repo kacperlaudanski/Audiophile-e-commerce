@@ -1,0 +1,103 @@
+@import './variables.less';
+
+.checkout-cart-container {
+    width: 28%;
+    height: auto;
+    background-color: @white;
+    border: 2px solid @lighter-gray;
+    border-radius: 15px;
+    padding: 2em;
+    .flex-setup(flex-start, space-between, column);
+
+    .checkout-items-container {
+      width: 100%;
+      height: auto;
+      margin-top: 1em;
+      .flex-setup(center, space-between, column);
+
+      .checkout-item-container {
+        width: 100%;
+        height: 60px;
+        margin-top: 0.9em;
+        .flex-setup(center,space-between, row);
+    
+        .checkout-item-info-container {
+          width: 90%;
+          .flex-setup(center, flex-start, row);
+    
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            margin-right: 0.9em;
+          }
+    
+          .checkout-item-info {
+            width: 45%;
+            h5 {
+              font-size: 1rem;
+              font-weight: 800;
+            }
+    
+            .checkout-price {
+              color: @gray;
+              font-size: 0.9rem;
+              font-weight: 700;
+            }
+          }
+        }
+    
+        .checkout-item-quantity {
+          width: 10%;
+          color: @gray;
+          font-size: 0.9rem;
+          font-weight: 800;
+        }
+      }
+    }
+
+    .checkout-costs-container {
+        width: 100%;
+        height: auto;
+        margin-top: 1.1em;
+        .flex-setup(center, space-between, column);
+      
+        .cost-title {
+          color: @gray;
+          font-size: 1rem;
+        }
+      
+        .checkout-cost {
+          width: 100%;
+          margin-top: 1em;
+          .flex-setup(center, space-between, row);
+      
+          .cost-value {
+            color: @black;
+            font-size: 1.1rem;
+            font-weight: 800;
+          }
+        }
+        .checkout-grand-total {
+          width: 100%;
+          margin-top: 1.5em;
+          .flex-setup(center, space-between, row);
+      
+          .grand-total-value {
+            color: @dark-orange;
+            font-size: 1.1rem;
+            font-weight: 800;
+          }
+        }
+      }
+
+      .checkout-buy-btn:extend(.cta-button) {
+        width: 100%;
+        margin-top: 2em;
+        background-color: @dark-orange;
+      
+        &:hover {
+          background-color: @bright-orange;
+        }
+      }
+  }

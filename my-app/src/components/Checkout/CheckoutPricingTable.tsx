@@ -1,4 +1,3 @@
-import React from "react";
 import { useShoppingCart } from "../../context/CartContext";
 import { vatCounter } from "../../utilities/vatCounter";
 import '../../dist-styles/checkout.css'

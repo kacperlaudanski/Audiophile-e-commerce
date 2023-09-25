@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "../../dist-styles/checkout.css";
+import "../../dist-styles/checkout-cart.css";
 import { useShoppingCart } from "../../context/CartContext";
 import PricingTable from "./CheckoutPricingTable";
 import SummaryModal from "./SummaryModal";

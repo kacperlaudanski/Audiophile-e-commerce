@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import '../../../dist-styles/categories.css'; 
 
 const CategoryBanner: React.FC<{children: string}> = (props) => {

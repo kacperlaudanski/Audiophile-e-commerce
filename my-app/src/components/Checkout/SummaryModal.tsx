@@ -1,6 +1,6 @@
 import React, { ReactEventHandler, useEffect, useRef } from "react";
 import ConfirmationIcon from "../../images/checkout/icon-order-confirmation.svg";
-import "../../dist-styles/checkout.css";
+import "../../dist-styles/summary-modal.css";
 import { NavLink } from "react-router-dom";
 import { useShoppingCart } from "../../context/CartContext";
 

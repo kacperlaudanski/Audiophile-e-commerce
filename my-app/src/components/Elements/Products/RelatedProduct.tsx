@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { scrollPageToTop } from "../../../utilities/pageScrolling";
 
 const RelatedProduct: React.FC<{
   relatedProductImage: string;
@@ -15,6 +16,7 @@ const RelatedProduct: React.FC<{
         className="see-related-product-btn"
         onClick={() => {
           navigate(props.relatedProductLink);
+          scrollPageToTop(); 
         }}
       >SEE PRODUCT</button>
     </div>

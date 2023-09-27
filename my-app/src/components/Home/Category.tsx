@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import ArrowIcon from "../../images/shared/desktop/icon-arrow-right.svg";
+import { scrollPageToTop } from "../../utilities/pageScrolling";
 
 const Category: React.FC<{
   categoryImage: string;
@@ -15,7 +16,7 @@ const Category: React.FC<{
         alt="category-image"
       ></img>
       <h4 className="category-name">{props.categoryName}</h4>
-      <NavLink to={props.categoryLink} className="category-link">
+      <NavLink to={props.categoryLink} className="category-link" onClick={() => scrollPageToTop()}>
         SHOP <img src={ArrowIcon}></img>
       </NavLink>
     </div>

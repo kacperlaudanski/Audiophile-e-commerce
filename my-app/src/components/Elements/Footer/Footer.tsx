@@ -25,7 +25,6 @@ const Footer = () => {
           <nav>
             <CategoriesList
               listClass="footer-categories-list"
-              linkClass="footer-list-element"
             />
           </nav>
           <div className="footer-socials">

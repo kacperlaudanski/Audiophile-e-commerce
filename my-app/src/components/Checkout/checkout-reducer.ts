@@ -10,17 +10,8 @@ export type DEFAULT_VALUES_TYPE = {
     eMoneyPin: string | null;
   };
   
-  type Action = {
-    type:
-      | "NAME"
-      | "EMAIL"
-      | "PHONE_NUMBER"
-      | "ADDRESS"
-      | "ZIP"
-      | "CITY"
-      | "COUNTRY"
-      | "E_MONEY_NUMBER"
-      | "E_MONEY_PIN";
+  export type Action = {
+    type: string; 
     payload: string;
   };
   

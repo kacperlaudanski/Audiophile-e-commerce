@@ -1,6 +1,7 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const HeaderProduct: React.FC = (props) => {
+const HeaderProduct = () => {
+  const navigate = useNavigate(); 
   return (
     <div className="header-product-container">
       <div className="header-product-description">
@@ -15,7 +16,7 @@ const HeaderProduct: React.FC = (props) => {
           <span>build quality made for the passionate music</span>{" "}<br></br>
           <span>enthusiast.</span>
         </h6>
-        <button className="header-cta-button cta-button">SEE PRODUCT</button>
+        <button className="header-cta-button cta-button" onClick={() => navigate('./headphones/xx99markII')}>SEE PRODUCT</button>
       </div>
     </div>
   );

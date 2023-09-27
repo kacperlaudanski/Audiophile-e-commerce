@@ -1,5 +1,5 @@
 import React from "react";
-import "../../dist-styles/checkout.css";
+import "../../dist-styles/checkout-cart-item.css";
 
 interface CheckoutCartItem {
   name: string | undefined;

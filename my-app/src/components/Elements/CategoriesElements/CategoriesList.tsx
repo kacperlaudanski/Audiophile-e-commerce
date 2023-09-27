@@ -1,30 +1,38 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "../../../dist-styles/navbar.css";
+import CategoriesListElement from "./CategoriesListElement";
 
-const CategoriesList: React.FC<{listClass: string, linkClass: string}>= (props) => {
+const categoriesList = [
+  {
+    name:'HOME', 
+    link: '/'
+  }, 
+  {
+    name: 'HEADPHONES',
+    link: '/headphones'
+  },
+  {
+    name: 'SPEAKERS', 
+    link: '/speakers'
+  },
+  {
+    name: 'EARPHONES', 
+    link: '/earphones'
+  }
+]
+
+const CategoriesList: React.FC<{listClass: string}>= (props) => {
   return (
     <ul className={props.listClass}>
-      <li>
-        <NavLink to={"/"} className={props.linkClass}>
-          HOME
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={"/headphones"} className={props.linkClass}>
-          HEADPHONES
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={"/speakers"} className={props.linkClass}>
-          SPEAKERS
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={"/earphones"} className={props.linkClass}>
-          EARPHONES
-        </NavLink>
-      </li>
+      {categoriesList.map((categoryListItem, index) => {
+         return (
+          <CategoriesListElement 
+            key={index}
+            name = {categoryListItem.name}
+            link = {categoryListItem.link}
+          />
+         )
+      })}
     </ul>
   );
 };

@@ -20,7 +20,6 @@ const Navbar = () => {
       </div>
       <CategoriesList
         listClass="navbar-categories-list"
-        linkClass="navbar-list-element"
       />
       <div className="cart-button-container">
         <button

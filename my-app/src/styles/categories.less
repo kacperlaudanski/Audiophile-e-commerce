@@ -1,14 +1,28 @@
-@import './variables.less'; 
+@import "./variables.less";
 
-.category-banner{
-   width:100%; 
-   height:200px; 
-   background-color: @dark-gray;
-   font-family: @font;
-   .flex-setup(center, center, row); 
-   
-   h1{
+.category-banner {
+  width: 100%;
+  height: 200px;
+  background-color: @dark-gray;
+  font-family: @font;
+  .flex-setup(center, center, row);
+
+  h1 {
     font-size: 2rem;
-    color:@white; 
-   }
+    color: @white;
+  }
+}
+
+.category-list-element {
+  color: @white;
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  font-size: 0.9rem;
+  font-weight: bolder;
+  transition: 0.3s linear;
+
+  &:hover {
+    color: @dark-orange;
+    cursor: pointer;
+  }
 }

@@ -28,3 +28,15 @@
   font-size: 2rem;
   color: #ffffff;
 }
+.category-list-element {
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  font-size: 0.9rem;
+  font-weight: bolder;
+  transition: 0.3s linear;
+}
+.category-list-element:hover {
+  color: #d87d4a;
+  cursor: pointer;
+}

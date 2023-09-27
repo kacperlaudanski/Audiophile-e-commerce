@@ -124,6 +124,7 @@ const CheckoutForm: React.FC<{setValidation: React.Dispatch<React.SetStateAction
             inputId="name"
             inputType="text"
             onChange={nameHandler}
+            maxLength={50}
           />
           <CheckoutInput
             className={`checkout-input-container ${!emailState ? `input-error` : ''}`}
@@ -133,6 +134,7 @@ const CheckoutForm: React.FC<{setValidation: React.Dispatch<React.SetStateAction
             inputId="email"
             inputType="text"
             onChange={emailHandler}
+            maxLength={50}
           />
           <CheckoutInput
             className={`checkout-input-container ${!phoneNumberState ? `input-error` : ''}`}
@@ -142,6 +144,7 @@ const CheckoutForm: React.FC<{setValidation: React.Dispatch<React.SetStateAction
             inputId="phone-number"
             inputType="text"
             onChange={phoneNumberHandler}
+            maxLength={10}
           />
         </div>
       </section>
@@ -156,6 +159,7 @@ const CheckoutForm: React.FC<{setValidation: React.Dispatch<React.SetStateAction
             inputId="address"
             inputType="text"
             onChange={addressHandler}
+            maxLength={70}
           />
           <CheckoutInput
             className={`checkout-input-container ${!zipState ? `input-error` : ''}`}
@@ -165,6 +169,7 @@ const CheckoutForm: React.FC<{setValidation: React.Dispatch<React.SetStateAction
             inputId="zip-code"
             inputType="text"
             onChange={zipHandler}
+            maxLength={5}
           />
           <CheckoutInput
             className={`checkout-input-container ${!cityState ? `input-error` : ''}`}
@@ -174,6 +179,7 @@ const CheckoutForm: React.FC<{setValidation: React.Dispatch<React.SetStateAction
             inputId="city"
             inputType="text"
             onChange={cityHandler}
+            maxLength={40}
           />
           <CheckoutInput
             className={`checkout-input-container ${!countryState ? `input-error` : ''}`}
@@ -183,6 +189,7 @@ const CheckoutForm: React.FC<{setValidation: React.Dispatch<React.SetStateAction
             inputId="country"
             inputType="text"
             onChange={countryHandler}
+            maxLength={40}
           />
         </div>
       </section>
@@ -207,10 +214,11 @@ const CheckoutForm: React.FC<{setValidation: React.Dispatch<React.SetStateAction
                 className={`checkout-input-container ${!eMoneyNumberState ? `input-error` : ''}`}
                 errorMessage={!eMoneyNumberState ? 'show-error' : ''}
                 inputLabel="e-Money Number"
-                inputPlaceholder="238521993"
+                inputPlaceholder="2385219934"
                 inputId="e-money-number"
                 inputType="text"
                 onChange={eMoneyNumberHandler}
+                maxLength={10}
               />
               <CheckoutInput
                 className={`checkout-input-container ${!eMoneyPinState ? `input-error` : ''}`}
@@ -220,6 +228,7 @@ const CheckoutForm: React.FC<{setValidation: React.Dispatch<React.SetStateAction
                 inputId="e-money-pin"
                 inputType="text"
                 onChange={eMoneyPinHandler}
+                maxLength={4}
               />
             </>
           )}

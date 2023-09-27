@@ -9,6 +9,7 @@ interface Input {
   inputId: string;
   inputPlaceholder: string | undefined;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  maxLength: number; 
 }
 
 const CheckoutInput: React.FC<Input> = (props) => {
@@ -24,6 +25,7 @@ const CheckoutInput: React.FC<Input> = (props) => {
         className="checkout-input"
         placeholder={props.inputPlaceholder}
         onChange={props.onChange}
+        maxLength={props.maxLength}
       ></input>
     </div>
   );

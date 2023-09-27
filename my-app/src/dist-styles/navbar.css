@@ -42,18 +42,6 @@
   justify-content: space-between;
   flex-direction: row;
 }
-.navbar-desktop .navbar-categories-list .navbar-list-element {
-  color: #ffffff;
-  text-decoration: none;
-  letter-spacing: 0.8px;
-  font-size: 0.9rem;
-  font-weight: bolder;
-  transition: 0.3s linear;
-}
-.navbar-desktop .navbar-categories-list .navbar-list-element:hover {
-  color: #d87d4a;
-  cursor: pointer;
-}
 .navbar-desktop .cart-button-container {
   width: 25%;
   display: flex;

@@ -1,9 +1,8 @@
-import React, { ReactEventHandler, useEffect, useRef } from "react";
+import React, { ReactEventHandler, useEffect, useRef, useState } from "react";
 import ConfirmationIcon from "../../images/checkout/icon-order-confirmation.svg";
 import "../../dist-styles/summary-modal.css";
 import { NavLink } from "react-router-dom";
 import { useShoppingCart } from "../../context/CartContext";
-
 
 interface Modal {
   openModal: boolean;

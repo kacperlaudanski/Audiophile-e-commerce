@@ -41,7 +41,7 @@
 }
 .summary-modal-dialog .summary-modal-container .summary-order-list {
   width: 100%;
-  min-height: 300px;
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;

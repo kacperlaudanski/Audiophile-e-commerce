@@ -49,7 +49,9 @@
 }
 .summary-modal-dialog .summary-modal-container .summary-order-list .order-list-left {
   width: 60%;
-  height: 100%;
+  min-height: 200px;
+  max-height: 300px;
+  overflow: auto;
   background-color: #f1f1f1;
   border-radius: 15px 0 0 15px;
   padding: 2em;
@@ -57,6 +59,23 @@
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
+}
+.summary-modal-dialog .summary-modal-container .summary-order-list .order-list-left .show-more-btn-container {
+  width: 100%;
+  height: 40px;
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border-top: 1px solid #666666;
+}
+.summary-modal-dialog .summary-modal-container .summary-order-list .order-list-left .show-more-btn-container button {
+  background: none;
+  border: none;
+  color: rgba(25, 25, 25, 0.525);
+  margin-top: 0.5em;
+  cursor: pointer;
 }
 .summary-modal-dialog .summary-modal-container .summary-order-list .order-list-right {
   width: 40%;

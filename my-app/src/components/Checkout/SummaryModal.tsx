@@ -20,10 +20,17 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
     }
   }, [openModal]);
 
-  const { cartItems, renderCheckoutItems, totalPrice } = useShoppingCart();
+  const {
+    cartItems,
+    renderFirstCheckoutItem,
+    renderCheckoutItems,
+    totalPrice,
+  } = useShoppingCart();
 
-  const shippingCost = 50; 
+  const shippingCost = 50;
   const grandTotal = totalPrice + shippingCost;
+
+  const [isShowMoreActive, setShowMore] = useState(false);
 
   return (
     <dialog className="summary-modal-dialog" ref={ref} onCancel={closeModal}>
@@ -39,7 +46,22 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
         </h1>
         <small>You will recieve an email confirmation shortly.</small>
         <div className="summary-order-list">
-          <div className="order-list-left">{renderCheckoutItems()}</div>
+          <div className="order-list-left">
+            {isShowMoreActive
+              ? renderCheckoutItems()
+              : renderFirstCheckoutItem()}
+            <div className="show-more-btn-container">
+              <button
+                onClick={() => {
+                  setShowMore((prevVal) => !prevVal);
+                }}
+              >
+                {isShowMoreActive
+                  ? "Show less"
+                  : `Show ${cartItems.length - 1} more items`}
+              </button>
+            </div>
+          </div>
           <div className="order-list-right">
             <span className="order-list-grand-total">GRAND TOTAL</span>
             <span className="order-list-total-price">$ {grandTotal}</span>

@@ -21,12 +21,13 @@ type CartContextProvider = {
   decreaseItemAmount: (id: number | undefined) => void;
   increaseItemAmount: (id: number | undefined) => void;
   renderCartItems: () => void;
-  totalPriceHandler : () => void; 
-  totalPrice: number; 
+  totalPriceHandler: () => void;
+  totalPrice: number;
   removeAllItems: () => void;
   cartItemsAmount: number;
   cartItems: CartItemTypes[];
-  renderCheckoutItems: () => ReactNode; 
+  renderCheckoutItems: () => ReactNode;
+  renderFirstCheckoutItem: () => ReactNode; 
 };
 
 const CartContext = createContext({} as CartContextProvider);
@@ -48,7 +49,7 @@ export function ShoppingCartContextProvider({
   }
 
   function increaseItemAmount(id: number | undefined) {
-    if(id !== undefined){
+    if (id !== undefined) {
       return setCartItems((currentItems) => {
         setItemsAmount((prevVal) => prevVal + 1);
         if (currentItems.find((item) => item.id === id) == null) {
@@ -64,7 +65,6 @@ export function ShoppingCartContextProvider({
         }
       });
     }
-
   }
 
   function decreaseItemAmount(id: number | undefined) {
@@ -89,45 +89,62 @@ export function ShoppingCartContextProvider({
     setItemsAmount(0);
   }
 
-  const [totalPrice, setTotalPrice] = useState(0); 
+  const [totalPrice, setTotalPrice] = useState(0);
 
   function totalPriceHandler() {
-    let totalPrice = 0; 
-    cartItems.map(item => {
-      const product = allProducts.find(product => product.id === item.id); 
-      if(product !== undefined){
-        totalPrice += product?.price * item.quantity
+    let totalPrice = 0;
+    cartItems.map((item) => {
+      const product = allProducts.find((product) => product.id === item.id);
+      if (product !== undefined) {
+        totalPrice += product?.price * item.quantity;
       }
-    })
-    setTotalPrice(totalPrice); 
+    });
+    setTotalPrice(totalPrice);
   }
 
   function renderCartItems() {
-   return cartItems.map(item => {
-      const product = allProducts.find(product => product.id === item.id); 
+    return cartItems.map((item) => {
+      const product = allProducts.find((product) => product.id === item.id);
       return (
-        <CartItem 
+        <CartItem
           name={product?.cartName}
           price={product?.price}
           image={product?.mainImage}
           id={product?.id}
         />
-      )
-    })
+      );
+    });
   }
 
-  function renderCheckoutItems(){
-    return cartItems.map(item => {
-      const product = allProducts.find(product => product.id === item.id); 
+  function renderFirstCheckoutItem() {
+    return cartItems.map((item, index) => {
+      const product = allProducts.find((product) => product.id === item.id);
+      if (index === 0) {
+        return (
+          <CheckoutCartItem
+            name={product?.cartName}
+            image={product?.mainImage}
+            price={product?.price}
+            quantity={item.quantity}
+          />
+        );
+      }
+      return null;
+    });
+  }
+
+  function renderCheckoutItems() {
+    return cartItems.map((item) => {
+      const product = allProducts.find((product) => product.id === item.id);
       return (
-        <CheckoutCartItem 
-          name = {product?.cartName}
-          image = {product?.mainImage}
-          price = {product?.price}
-          quantity = {item.quantity}
+        <CheckoutCartItem
+          name={product?.cartName}
+          image={product?.mainImage}
+          price={product?.price}
+          quantity={item.quantity}
         />
-      )
-    })
+      );
+    });
   }
 
   return (
@@ -139,10 +156,11 @@ export function ShoppingCartContextProvider({
         renderCartItems,
         removeAllItems,
         cartItemsAmount,
-        totalPrice, 
-        totalPriceHandler, 
+        totalPrice,
+        totalPriceHandler,
         cartItems,
         renderCheckoutItems,
+        renderFirstCheckoutItem
       }}
     >
       {children}

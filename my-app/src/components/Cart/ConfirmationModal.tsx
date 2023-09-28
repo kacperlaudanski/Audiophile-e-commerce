@@ -48,7 +48,7 @@ const ConfirmationModal: React.FC<{
             scrollPageToTop();
           }}
         >
-          CHECKOUT
+          GO TO CHECKOUT
         </button>
       </div>
     </dialog>

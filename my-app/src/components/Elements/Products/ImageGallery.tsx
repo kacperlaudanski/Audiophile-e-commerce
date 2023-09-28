@@ -2,9 +2,9 @@ import React from "react";
 import "../../../dist-styles/products.css";
 
 interface GalleryImages {
-    galleryImage1: string; 
-    galleryImage2: string; 
-    galleryImage3: string; 
+    galleryImage1: string | undefined; 
+    galleryImage2: string | undefined; 
+    galleryImage3: string | undefined; 
 }
 
 const ImageGallery: React.FC<GalleryImages> = (props) => {

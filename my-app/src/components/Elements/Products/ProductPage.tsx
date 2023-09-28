@@ -14,32 +14,24 @@ import { headphonesList } from "./ProductData";
 import { speakersList } from "./ProductData";
 import { earphonesList } from "./ProductData";
 import { useParams } from "react-router-dom";
-import {formatCurrency} from "../../../utilities/currencyFormatter";
 import GoBackButton from "../GoBackButton/GoBackButton";
+import { v4 as uuidv4 } from "uuid";
 
 const ProductPage: React.FC = (props) => {
-  const { category, product } = useParams();
-
-  const selectedProduct = selectProduct(category);
-
-  function selectProduct(category: string | undefined) {
-    if (category === "headphones")
-      return headphonesList.filter((item) => item.product === product);
-    if (category === "speakers")
-      return speakersList.filter((item) => item.product === product);
-    if (category === "earphones")
-      return earphonesList.filter((item) => item.product === product);
-  }
-
   const allProducts = [...headphonesList, ...earphonesList, ...speakersList];
+  const { product } = useParams();
+
+  const selectedProduct = selectProduct();
+
+  function selectProduct(){
+    return allProducts.find((item) => item.product === product); 
+  }
 
   interface RelatedProduct {
     mainImage: string;
     shortName: string;
     link: string;
   }
-
-  const currentProduct = allProducts.filter(products => products.product === product); 
 
   const selectedRelatedProducts: RelatedProduct[] = [];
 
@@ -65,19 +57,17 @@ const ProductPage: React.FC = (props) => {
       </HeaderSection>
       <MainSection>
         <GoBackButton /> 
-        {selectedProduct?.map((product) => {
-          return (
-            <>
               <ProductDetails
-                productImage={product.mainImage}
-                productName={product.name}
-                productDescription={product.description}
-                productPrice={formatCurrency(product.price)}
-                productFeaturesI={product.featuresParagraphI}
-                productFeaturesII={product.featuresParagraphII}
-                productBoxContent={product.boxContent.map((item) => {
+                productImage={selectedProduct?.mainImage}
+                productName={selectedProduct?.name}
+                productDescription={selectedProduct?.description}
+                productPrice={selectedProduct?.price}
+                productFeaturesI={selectedProduct?.featuresParagraphI}
+                productFeaturesII={selectedProduct?.featuresParagraphII}
+                productBoxContent={selectedProduct?.boxContent.map((item) => {
                   return (
                     <BoxContentItem
+                      key={uuidv4()}
                       pieces={item.pieces}
                       boxItem={item.boxItem}
                     />
@@ -85,18 +75,15 @@ const ProductPage: React.FC = (props) => {
                 })}
               />
               <ImageGallery
-                galleryImage1={product.galleryImage1}
-                galleryImage2={product.galleryImage2}
-                galleryImage3={product.galleryImage3}
+                galleryImage1={selectedProduct?.galleryImage1}
+                galleryImage2={selectedProduct?.galleryImage2}
+                galleryImage3={selectedProduct?.galleryImage3}
               />
-            </>
-          );
-        })}
-
         <RelatedProductsPanel>
           {selectedRelatedProducts.map((product) => {
             return (
               <RelatedProduct
+                key={uuidv4()}
                 relatedProductImage={product.mainImage}
                 relatedProductName={product.shortName}
                 relatedProductLink={product.link}

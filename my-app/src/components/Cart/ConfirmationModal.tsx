@@ -1,7 +1,8 @@
 import React, { ReactEventHandler, useEffect, useRef } from "react";
 import ConfirmationIcon from "../../images/checkout/icon-order-confirmation.svg";
 import "../../dist-styles/cart.css";
-import { NavLink } from "react-router-dom";
+import { scrollPageToTop } from "../../utilities/pageScrolling";
+import { useNavigate } from "react-router-dom";
 
 const ConfirmationModal: React.FC<{
   closeModal: ReactEventHandler;
@@ -16,6 +17,8 @@ const ConfirmationModal: React.FC<{
       ref.current?.close();
     }
   }, [openModal]);
+
+  const navigate = useNavigate();
 
   return (
     <dialog
@@ -38,7 +41,15 @@ const ConfirmationModal: React.FC<{
           CONTINUE SHOPPING
         </button>
         <small>OR</small>
-        <NavLink to="/checkout" className='confirmation-checkout-button'>CHECKOUT</NavLink>
+        <button
+          className="confirmation-checkout-button"
+          onClick={() => {
+            navigate("/checkout");
+            scrollPageToTop();
+          }}
+        >
+          CHECKOUT
+        </button>
       </div>
     </dialog>
   );

@@ -11,13 +11,13 @@ interface CurrentProduct {
 }
 
 const ProductDetails: React.FC<{
-  productImage: string;
-  productName: string;
-  productDescription: string;
-  productPrice: string;
-  productFeaturesI: string;
-  productFeaturesII: string;
-  productBoxContent: ReactNode;
+  productImage: string | undefined;
+  productName: string | undefined;
+  productDescription: string | undefined;
+  productPrice: number | undefined;
+  productFeaturesI: string | undefined;
+  productFeaturesII: string | undefined;
+  productBoxContent: ReactNode | undefined;
 }> = (props) => {
   const [currentProduct, setCurrentProduct] = useState<CurrentProduct[]>([]);
 
@@ -51,7 +51,7 @@ const ProductDetails: React.FC<{
         <div className="product-description">
           <h1>{props.productName}</h1>
           <p>{props.productDescription}</p>
-          <small className="product-price">{props.productPrice}</small>
+          <small className="product-price">$ {props.productPrice}</small>
           <div className="add-to-cart-section">
             <button className="add-to-cart-btn" onClick={addToCart}>
               ADD TO CART

@@ -1,6 +1,6 @@
 import { useShoppingCart } from '../../context/CartContext';
 import '../../dist-styles/cart.css';
-import QuantityWidget from "../Elements/Products/QuantityWidget";
+import QuantityWidget from "../Elements/QuantityWidget/QuantityWidget";
 
 interface CartItem {
     name: string | undefined; 

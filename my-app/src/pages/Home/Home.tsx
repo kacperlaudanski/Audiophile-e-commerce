@@ -1,12 +1,12 @@
 import React from "react";
-import HeaderSection from "../Elements/Header/HeaderSection";
-import Navbar from "../Elements/Navbar/Navbar";
+import HeaderSection from "../../components/Elements/Header/HeaderSection";
+import Navbar from "../../components/Elements/Navbar/Navbar";
 import HeaderProduct from "./HeaderProduct";
 import MainSection from "./MainSection";
 import CategorySelectionPanel from "./CategorySelectionPanel";
 import ProductsBanner from "./ProductBanners";
 import AboutCompany from "./AboutCompany";
-import Footer from "../Elements/Footer/Footer";
+import Footer from "../../components/Elements/Footer/Footer";
 
 const Home: React.FC = () => {
   return (

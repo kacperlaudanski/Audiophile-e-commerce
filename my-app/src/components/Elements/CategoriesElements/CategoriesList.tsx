@@ -1,25 +1,7 @@
 import React from "react";
 import "../../../dist-styles/navbar.css";
 import CategoriesListElement from "./CategoriesListElement";
-
-const categoriesList = [
-  {
-    name:'HOME', 
-    link: '/'
-  }, 
-  {
-    name: 'HEADPHONES',
-    link: '/headphones'
-  },
-  {
-    name: 'SPEAKERS', 
-    link: '/speakers'
-  },
-  {
-    name: 'EARPHONES', 
-    link: '/earphones'
-  }
-]
+import { categoriesList } from "../../../data/CategoriesList";
 
 const CategoriesList: React.FC<{listClass: string}>= (props) => {
   return (

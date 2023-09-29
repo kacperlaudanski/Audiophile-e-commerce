@@ -83,3 +83,7 @@
 .checkout-cart-container .checkout-buy-btn:hover {
   background-color: #fbaf85;
 }
+.checkout-cart-container .checkout-buy-btn:disabled {
+  background-color: #cacaca;
+  cursor: default;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { Dispatch, useEffect, useReducer, useState } from "react";
 import "../../dist-styles/checkout-form.css";
 import CheckoutInput from "../Elements/Input/CheckoutInput";
 import RadioInput from "../Elements/Input/RadioCheckoutInput";
@@ -19,20 +19,22 @@ const DEFAULT_VALUES: DEFAULT_VALUES_TYPE = {
   eMoneyPin: null,
 };
 
+type FormState = boolean | null;
+
 const CheckoutForm: React.FC<{
   setValidation: React.Dispatch<React.SetStateAction<boolean>>;
 }> = ({ setValidation }) => {
   const [state, dispatch] = useReducer(CheckoutReducer, DEFAULT_VALUES);
 
-  const [nameState, setNameState] = useState(true);
-  const [emailState, setEmailState] = useState(true);
-  const [phoneNumberState, setPhoneNumberState] = useState(true);
-  const [addressState, setAddressState] = useState(true);
-  const [zipState, setZipState] = useState(true);
-  const [cityState, setCityState] = useState(true);
-  const [countryState, setCountryState] = useState(true);
-  const [eMoneyNumberState, setEMoneyNrState] = useState(true);
-  const [eMoneyPinState, setEMoneyPinState] = useState(true);
+  const [nameState, setNameState] = useState<FormState>(null);
+  const [emailState, setEmailState] = useState<FormState>(null);
+  const [phoneNumberState, setPhoneNumberState] = useState<FormState>(null);
+  const [addressState, setAddressState] = useState<FormState>(null);
+  const [zipState, setZipState] = useState<FormState>(null);
+  const [cityState, setCityState] = useState<FormState>(null);
+  const [countryState, setCountryState] = useState<FormState>(null);
+  const [eMoneyNumberState, setEMoneyNrState] = useState<FormState>(null);
+  const [eMoneyPinState, setEMoneyPinState] = useState<FormState>(null);
 
   const [isEMoneyChecked, setEMoneyCheck] = useState(false);
   const [isCashChecked, setCashCheck] = useState(false);
@@ -49,9 +51,9 @@ const CheckoutForm: React.FC<{
       eMoneyNumberState &&
       eMoneyPinState
     ) {
-      setValidation(false);
+      return setValidation(true);
     } else {
-      setValidation(false);
+      return setValidation(false);
     }
   }
 
@@ -73,7 +75,7 @@ const CheckoutForm: React.FC<{
     event: React.ChangeEvent<HTMLInputElement>,
     fieldAction: string,
     condition: RegExp,
-    setState: React.Dispatch<React.SetStateAction<boolean>>,
+    setState: React.Dispatch<React.SetStateAction<boolean | null>>,
     dispatch: (value: Action) => void
   ) {
     checkValidation(event.target.value, condition, setState);
@@ -155,11 +157,15 @@ const CheckoutForm: React.FC<{
   function eMoneyHandler() {
     setEMoneyCheck(true);
     setCashCheck(false);
+    setEMoneyNrState(null);
+    setEMoneyPinState(null);
   }
 
   function cashHandler() {
     setCashCheck(true);
     setEMoneyCheck(false);
+    setEMoneyNrState(true);
+    setEMoneyPinState(true);
   }
 
   return (
@@ -170,9 +176,9 @@ const CheckoutForm: React.FC<{
         <div className="billing-details-container">
           <CheckoutInput
             className={`checkout-input-container ${
-              !nameState ? `input-error` : ""
+              nameState === false ? `input-error` : ""
             }`}
-            errorMessage={!nameState ? "show-error" : ""}
+            errorMessage={nameState === false ? "show-error" : ""}
             inputLabel="Name"
             inputPlaceholder="Alexei Ward"
             inputId="name"
@@ -182,9 +188,9 @@ const CheckoutForm: React.FC<{
           />
           <CheckoutInput
             className={`checkout-input-container ${
-              !emailState ? `input-error` : ""
+              emailState === false ? `input-error` : ""
             }`}
-            errorMessage={!emailState ? "show-error" : ""}
+            errorMessage={emailState === false ? "show-error" : ""}
             inputLabel="Email Address"
             inputPlaceholder="alexei@gmail.com"
             inputId="email"
@@ -194,9 +200,9 @@ const CheckoutForm: React.FC<{
           />
           <CheckoutInput
             className={`checkout-input-container ${
-              !phoneNumberState ? `input-error` : ""
+              phoneNumberState === false ? `input-error` : ""
             }`}
-            errorMessage={!phoneNumberState ? "show-error" : ""}
+            errorMessage={phoneNumberState === false ? "show-error" : ""}
             inputLabel="Phone Number"
             inputPlaceholder="+1 202-555-0136"
             inputId="phone-number"
@@ -211,9 +217,9 @@ const CheckoutForm: React.FC<{
         <div className="shipping-info-container">
           <CheckoutInput
             className={`checkout-input-container ${
-              !addressState ? `input-error` : ""
+              addressState === false ? `input-error` : ""
             }`}
-            errorMessage={!addressState ? "show-error" : ""}
+            errorMessage={addressState === false ? "show-error" : ""}
             inputLabel="Address"
             inputPlaceholder="1137 Williams Avenue"
             inputId="address"
@@ -223,9 +229,9 @@ const CheckoutForm: React.FC<{
           />
           <CheckoutInput
             className={`checkout-input-container ${
-              !zipState ? `input-error` : ""
+              zipState === false ? `input-error` : ""
             }`}
-            errorMessage={!zipState ? "show-error" : ""}
+            errorMessage={zipState === false ? "show-error" : ""}
             inputLabel="ZIP Code"
             inputPlaceholder="10001"
             inputId="zip-code"
@@ -235,9 +241,9 @@ const CheckoutForm: React.FC<{
           />
           <CheckoutInput
             className={`checkout-input-container ${
-              !cityState ? `input-error` : ""
+              cityState === false ? `input-error` : ""
             }`}
-            errorMessage={!cityState ? "show-error" : ""}
+            errorMessage={cityState === false ? "show-error" : ""}
             inputLabel="City"
             inputPlaceholder="Ney York"
             inputId="city"
@@ -247,9 +253,9 @@ const CheckoutForm: React.FC<{
           />
           <CheckoutInput
             className={`checkout-input-container ${
-              !countryState ? `input-error` : ""
+              countryState === false ? `input-error` : ""
             }`}
-            errorMessage={!countryState ? "show-error" : ""}
+            errorMessage={countryState === false ? "show-error" : ""}
             inputLabel="Country"
             inputPlaceholder="United States"
             inputId="country"
@@ -278,9 +284,9 @@ const CheckoutForm: React.FC<{
             <>
               <CheckoutInput
                 className={`checkout-input-container ${
-                  !eMoneyNumberState ? `input-error` : ""
+                  eMoneyNumberState === false ? `input-error` : ""
                 }`}
-                errorMessage={!eMoneyNumberState ? "show-error" : ""}
+                errorMessage={eMoneyNumberState === false ? "show-error" : ""}
                 inputLabel="e-Money Number"
                 inputPlaceholder="2385219934"
                 inputId="e-money-number"
@@ -290,9 +296,9 @@ const CheckoutForm: React.FC<{
               />
               <CheckoutInput
                 className={`checkout-input-container ${
-                  !eMoneyPinState ? `input-error` : ""
+                  eMoneyPinState === false ? `input-error` : ""
                 }`}
-                errorMessage={!eMoneyPinState ? "show-error" : ""}
+                errorMessage={eMoneyPinState === false ? "show-error" : ""}
                 inputLabel="e-Money PIN"
                 inputPlaceholder="6891"
                 inputId="e-money-pin"

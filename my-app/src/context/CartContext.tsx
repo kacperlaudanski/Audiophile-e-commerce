@@ -7,7 +7,7 @@ import {
 import CartItem from "../components/Cart/CartItem";
 import CheckoutCartItem from "../components/Checkout/CheckoutCartItem";
 
-type CartItemTypes = {
+export type CartItemTypes = {
   id: number;
   quantity: number;
 };

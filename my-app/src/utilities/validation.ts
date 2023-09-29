@@ -8,7 +8,7 @@ export const conditions = {
     eMoneyPin: /^\d{4}$/
 }
 
-export function checkValidation(input: string, condition: RegExp, setValidationState: React.Dispatch<React.SetStateAction<boolean>>){
+export function checkValidation(input: string, condition: RegExp, setValidationState: React.Dispatch<React.SetStateAction<boolean | null>>){
    if(!input.trim().match(condition)){
     setValidationState(false);
    }else{

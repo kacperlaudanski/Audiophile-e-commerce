@@ -32,7 +32,7 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
   const grandTotal = totalPrice + shippingCost;
 
   const [isShowMoreActive, setShowMore] = useState(false);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   return (
     <dialog className="summary-modal-dialog" ref={ref} onCancel={closeModal}>
@@ -53,15 +53,17 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
               ? renderCheckoutItems()
               : renderFirstCheckoutItem()}
             <div className="show-more-btn-container">
-              <button
-                onClick={() => {
-                  setShowMore((prevVal) => !prevVal);
-                }}
-              >
-                {isShowMoreActive
-                  ? "Show less"
-                  : `Show ${cartItems.length - 1} more items`}
-              </button>
+              {cartItems.length > 1 && (
+                <button
+                  onClick={() => {
+                    setShowMore((prevVal) => !prevVal);
+                  }}
+                >
+                  {isShowMoreActive
+                    ? "Show less"
+                    : `Show ${cartItems.length - 1} more`}
+                </button>
+              )}
             </div>
           </div>
           <div className="order-list-right">
@@ -69,10 +71,15 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
             <span className="order-list-total-price">$ {grandTotal}</span>
           </div>
         </div>
-        <button className="back-to-home-btn" onClick={() => {
-           navigate('/'); 
-           scrollPageToTop(); 
-        }}>BACK TO HOME</button>
+        <button
+          className="back-to-home-btn"
+          onClick={() => {
+            navigate("/");
+            scrollPageToTop();
+          }}
+        >
+          BACK TO HOME
+        </button>
       </div>
     </dialog>
   );

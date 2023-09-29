@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import {
   headphonesList,
   earphonesList,
@@ -6,6 +6,7 @@ import {
 } from "../components/Elements/Products/ProductData";
 import CartItem from "../components/Cart/CartItem";
 import CheckoutCartItem from "../components/Checkout/CheckoutCartItem";
+import { addToStorage, deleteFromStorage, getFromStorage } from "../utilities/cartStorageHandler";
 
 export type CartItemTypes = {
   id: number;
@@ -39,19 +40,19 @@ export function useShoppingCart() {
 export function ShoppingCartContextProvider({
   children,
 }: ShoppingCartContextProvider) {
-  const [cartItems, setCartItems] = useState<CartItemTypes[]>([]);
-  const [cartItemsAmount, setItemsAmount] = useState(0);
+  const [cartItems, setCartItems] = useState<CartItemTypes[]>(getFromStorage('cart'));
+  const [cartItemsAmount, setItemsAmount] = useState(getFromStorage('cartItemsAmount'));
 
   const allProducts = [...headphonesList, ...speakersList, ...earphonesList];
 
   function getItemAmount(id: number | undefined) {
-    return cartItems.find((item) => item.id === id)?.quantity || 0;
+    return getFromStorage('cart').find((item: {id: number, quantity: number}) => item.id === id)?.quantity || 0;
   }
 
   function increaseItemAmount(id: number | undefined) {
     if (id !== undefined) {
       return setCartItems((currentItems) => {
-        setItemsAmount((prevVal) => prevVal + 1);
+        setItemsAmount((prevVal: number) => prevVal + 1);
         if (currentItems.find((item) => item.id === id) == null) {
           return [...currentItems, { id, quantity: 1 }];
         } else {
@@ -68,7 +69,7 @@ export function ShoppingCartContextProvider({
   }
 
   function decreaseItemAmount(id: number | undefined) {
-    setItemsAmount((prevVal) => prevVal - 1);
+    setItemsAmount((prevVal: number) => prevVal - 1);
     setCartItems((currentItems) => {
       if (cartItems.find((item) => item.id === id)?.quantity === 1) {
         return cartItems.filter((item) => item.id !== id);
@@ -87,6 +88,8 @@ export function ShoppingCartContextProvider({
   function removeAllItems() {
     setCartItems([]);
     setItemsAmount(0);
+    addToStorage('cartItemsAmount', cartItemsAmount);
+    deleteFromStorage('cart'); 
   }
 
   const [totalPrice, setTotalPrice] = useState(0);
@@ -103,8 +106,9 @@ export function ShoppingCartContextProvider({
   }
 
   function renderCartItems() {
-    return cartItems.map((item) => {
+    return getFromStorage('cart')?.map((item: {id: number}) => {
       const product = allProducts.find((product) => product.id === item.id);
+      console.log(allProducts);
       return (
         <CartItem
           name={product?.cartName}
@@ -117,7 +121,7 @@ export function ShoppingCartContextProvider({
   }
 
   function renderFirstCheckoutItem() {
-    return cartItems.map((item, index) => {
+    return getFromStorage('cart')?.map((item:{id: number, quantity:number}, index:number) => {
       const product = allProducts.find((product) => product.id === item.id);
       if (index === 0) {
         return (
@@ -134,7 +138,7 @@ export function ShoppingCartContextProvider({
   }
 
   function renderCheckoutItems() {
-    return cartItems.map((item) => {
+    return getFromStorage('cart')?.map((item: {id: number, quantity: number}) => {
       const product = allProducts.find((product) => product.id === item.id);
       return (
         <CheckoutCartItem
@@ -146,6 +150,18 @@ export function ShoppingCartContextProvider({
       );
     });
   }
+
+  useEffect(() => {
+   addToStorage('cart', cartItems)
+  }, [cartItems])
+
+  useEffect(() => {
+    addToStorage('cartItemsAmount', cartItemsAmount); 
+  }, [cartItemsAmount])
+
+  useEffect(() => {
+    console.log(getFromStorage('cart'))
+  }, [])
 
   return (
     <CartContext.Provider

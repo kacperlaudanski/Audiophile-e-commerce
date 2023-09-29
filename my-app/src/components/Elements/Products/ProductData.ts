@@ -37,7 +37,7 @@ import YX1GalleryImage3 from '../../../images/product-yx1-earphones/desktop/imag
 
 export const headphonesList = [
   {
-    id: randomIdGenerator(),
+    id: 1,
     product: 'xx99markII',
     shortLink: "./xx99markII",
     link: "../headphones/xx99markII",  
@@ -80,7 +80,7 @@ export const headphonesList = [
     productPreviewReverse: null
   },
   {
-    id: randomIdGenerator(),
+    id: 2,
     shortLink: "./xx99markI",
     product: 'xx99markI',
     link: "../headphones/xx99markI",   
@@ -119,7 +119,7 @@ export const headphonesList = [
     productPreviewReverse: 'reverse'
   },
   {
-    id: randomIdGenerator(),
+    id: 3,
     product: 'xx59',
     shortLink: "./xx59",
     link: "../headphones/xx59",   
@@ -161,7 +161,7 @@ export const headphonesList = [
 
 export const speakersList = [
   {
-    id: randomIdGenerator(),
+    id: 4,
     product: 'zx9',
     shortLink: "./zx9",
     link: "../speakers/zx9", 
@@ -204,7 +204,7 @@ export const speakersList = [
     productPreviewReverse: null
   },
   {
-    id: randomIdGenerator(),
+    id: 5,
     product: 'zx7',
     shortLink: "./zx7",
     link: "../speakers/zx7",  
@@ -250,7 +250,7 @@ export const speakersList = [
 
 export const earphonesList = [
   {
-    id: randomIdGenerator(),
+    id: 6,
     product: 'yx1',
     shortLink: "./yx1",
     link: "../earphones/yx1", 

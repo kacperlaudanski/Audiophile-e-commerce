@@ -27,7 +27,7 @@ const ProductDetails: React.FC<{
     setModalState(false); 
   }
 
-  const { increaseItemAmount } = useShoppingCart();
+  const { cartItems, increaseItemAmount } = useShoppingCart();
   const { category, product } = useParams();
   const allProducts = [...headphonesList, ...earphonesList, ...speakersList];
 

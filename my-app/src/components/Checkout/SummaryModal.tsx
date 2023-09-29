@@ -1,8 +1,9 @@
 import React, { ReactEventHandler, useEffect, useRef, useState } from "react";
 import ConfirmationIcon from "../../images/checkout/icon-order-confirmation.svg";
 import "../../dist-styles/summary-modal.css";
-import { NavLink } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import { useShoppingCart } from "../../context/CartContext";
+import { scrollPageToTop } from "../../utilities/pageScrolling";
 
 interface Modal {
   openModal: boolean;
@@ -31,6 +32,7 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
   const grandTotal = totalPrice + shippingCost;
 
   const [isShowMoreActive, setShowMore] = useState(false);
+  const navigate = useNavigate(); 
 
   return (
     <dialog className="summary-modal-dialog" ref={ref} onCancel={closeModal}>
@@ -67,9 +69,10 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
             <span className="order-list-total-price">$ {grandTotal}</span>
           </div>
         </div>
-        <NavLink to="/" className="back-to-home-btn">
-          BACK TO HOME
-        </NavLink>
+        <button className="back-to-home-btn" onClick={() => {
+           navigate('/'); 
+           scrollPageToTop(); 
+        }}>BACK TO HOME</button>
       </div>
     </dialog>
   );

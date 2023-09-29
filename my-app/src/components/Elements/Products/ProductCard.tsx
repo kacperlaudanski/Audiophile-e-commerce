@@ -5,6 +5,7 @@ import { useShoppingCart } from "../../../context/CartContext";
 import { useParams } from "react-router-dom";
 import { earphonesList, headphonesList, speakersList } from "./ProductData";
 import ConfirmationModal from "../../Cart/ConfirmationModal";
+import { addToStorage } from "../../../utilities/cartStorageHandler";
 
 interface CurrentProduct {
   id: number;

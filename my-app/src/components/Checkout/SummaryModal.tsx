@@ -4,6 +4,7 @@ import "../../dist-styles/summary-modal.css";
 import { useNavigate, NavLink } from "react-router-dom";
 import { useShoppingCart } from "../../context/CartContext";
 import { scrollPageToTop } from "../../utilities/pageScrolling";
+import { deleteFromStorage } from "../../utilities/cartStorageHandler";
 
 interface Modal {
   openModal: boolean;
@@ -76,6 +77,7 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
           onClick={() => {
             navigate("/");
             scrollPageToTop();
+            deleteFromStorage('cart'); 
           }}
         >
           BACK TO HOME

@@ -3,9 +3,9 @@ import {
   headphonesList,
   earphonesList,
   speakersList,
-} from "../components/Elements/Products/ProductData";
+} from "../data/ProductData";
 import CartItem from "../components/Cart/CartItem";
-import CheckoutCartItem from "../components/Checkout/CheckoutCartItem";
+import CheckoutCartItem from "../pages/Checkout/CheckoutCartItem";
 import { addToStorage, deleteFromStorage, getFromStorage } from "../utilities/cartStorageHandler";
 
 export type CartItemTypes = {
@@ -158,10 +158,6 @@ export function ShoppingCartContextProvider({
   useEffect(() => {
     addToStorage('cartItemsAmount', cartItemsAmount); 
   }, [cartItemsAmount])
-
-  useEffect(() => {
-    console.log(getFromStorage('cart'))
-  }, [])
 
   return (
     <CartContext.Provider

@@ -1,39 +1,36 @@
-import { randomIdGenerator } from '../../../utilities/randomIdGenerator'
 //Headphones
  //XX59
-import XX59MainImage from '../../../images/product-xx59-headphones/desktop/image-product.jpg'
-import XX59GalleryImage1 from '../../../images/product-xx59-headphones/desktop/image-gallery-1.jpg'
-import XX59GalleryImage2 from '../../../images/product-xx59-headphones/desktop/image-gallery-2.jpg'
-import XX59GalleryImage3 from '../../../images/product-xx59-headphones/desktop/image-gallery-3.jpg'
+import XX59MainImage from '../images/product-xx59-headphones/desktop/image-product.jpg'
+import XX59GalleryImage1 from '../images/product-xx59-headphones/desktop/image-gallery-1.jpg'
+import XX59GalleryImage2 from '../images/product-xx59-headphones/desktop/image-gallery-2.jpg'
+import XX59GalleryImage3 from '../images/product-xx59-headphones/desktop/image-gallery-3.jpg'
  //XX99MarkI
-import XX99MarkOneMainImage from '../../../images/product-xx99-mark-one-headphones/desktop/image-product.jpg'
-import XX99MarkOneGalleryImage1 from '../../../images/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg'
-import XX99MarkOneGalleryImage2 from '../../../images/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg'
-import XX99MarkOneGalleryImage3 from '../../../images/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg'
+import XX99MarkOneMainImage from '../images/product-xx99-mark-one-headphones/desktop/image-product.jpg'
+import XX99MarkOneGalleryImage1 from '../images/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg'
+import XX99MarkOneGalleryImage2 from '../images/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg'
+import XX99MarkOneGalleryImage3 from '../images/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg'
  //XX99MarkII
-import XX99MarkTwoMainImage from '../../../images/product-xx99-mark-two-headphones/desktop/image-product.jpg'
-import XX99MarkTwoGalleryImage1 from '../../../images/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg'
-import XX99MarkTwoGalleryImage2 from '../../../images/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg'
-import XX99MarkTwoGalleryImage3 from '../../../images/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg'
+import XX99MarkTwoMainImage from '../images/product-xx99-mark-two-headphones/desktop/image-product.jpg'
+import XX99MarkTwoGalleryImage1 from '../images/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg'
+import XX99MarkTwoGalleryImage2 from '../images/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg'
+import XX99MarkTwoGalleryImage3 from '../images/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg'
 //Speakres
  //ZX9
-import ZX9MainImage from '../../../images/product-zx9-speaker/desktop/image-product.jpg'
-import ZX9GalleryImage1 from '../../../images/product-zx9-speaker/desktop/image-gallery-1.jpg'
-import ZX9GalleryImage2 from '../../../images/product-zx9-speaker/desktop/image-gallery-2.jpg'
-import ZX9GalleryImage3 from '../../../images/product-zx9-speaker/desktop/image-gallery-3.jpg'
+import ZX9MainImage from '../images/product-zx9-speaker/desktop/image-product.jpg'
+import ZX9GalleryImage1 from '../images/product-zx9-speaker/desktop/image-gallery-1.jpg'
+import ZX9GalleryImage2 from '../images/product-zx9-speaker/desktop/image-gallery-2.jpg'
+import ZX9GalleryImage3 from '../images/product-zx9-speaker/desktop/image-gallery-3.jpg'
  //ZX7
-import ZX7MainImage from '../../../images/product-zx7-speaker/desktop/image-product.jpg'
-import ZX7GalleryImage1 from '../../../images/product-zx7-speaker/desktop/image-gallery-1.jpg'
-import ZX7GalleryImage2 from '../../../images/product-zx7-speaker/desktop/image-gallery-2.jpg'
-import ZX7GalleryImage3 from '../../../images/product-zx7-speaker/desktop/image-gallery-3.jpg'
+import ZX7MainImage from '../images/product-zx7-speaker/desktop/image-product.jpg'
+import ZX7GalleryImage1 from '../images/product-zx7-speaker/desktop/image-gallery-1.jpg'
+import ZX7GalleryImage2 from '../images/product-zx7-speaker/desktop/image-gallery-2.jpg'
+import ZX7GalleryImage3 from '../images/product-zx7-speaker/desktop/image-gallery-3.jpg'
 //Earphones
  //YX1
-import YX1MainImage from '../../../images/product-yx1-earphones/desktop/image-product.jpg'
-import YX1GalleryImage1 from '../../../images/product-yx1-earphones/desktop/image-gallery-1.jpg'
-import YX1GalleryImage2 from '../../../images/product-yx1-earphones/desktop/image-gallery-2.jpg'
-import YX1GalleryImage3 from '../../../images/product-yx1-earphones/desktop/image-gallery-3.jpg'
-
-
+import YX1MainImage from '../images/product-yx1-earphones/desktop/image-product.jpg'
+import YX1GalleryImage1 from '../images/product-yx1-earphones/desktop/image-gallery-1.jpg'
+import YX1GalleryImage2 from '../images/product-yx1-earphones/desktop/image-gallery-2.jpg'
+import YX1GalleryImage3 from '../images/product-yx1-earphones/desktop/image-gallery-3.jpg'
 
 export const headphonesList = [
   {

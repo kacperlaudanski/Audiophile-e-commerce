@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Home from "./components/Home/Home";
-import HeadphonesPage from "./components/Categories/Headphones/HeadphonesPage";
-import EarphonesPage from "./components/Categories/Earphones/EarphonePage";
-import SpeakersPage from "./components/Categories/Speakers/SpeakersPage";
+import Home from "./pages/Home/Home";
+import HeadphonesPage from "./pages/Headphones/HeadphonesPage";
+import EarphonesPage from "./pages/Earphones/EarphonePage";
+import SpeakersPage from "./pages/Speakers/SpeakersPage";
 import ProductPage from "./components/Elements/Products/ProductPage";
-import CheckoutPage from "./components/Checkout/CheckoutPage";
+import CheckoutPage from "./pages/Checkout/CheckoutPage";
 import { ShoppingCartContextProvider } from "./context/CartContext";
 
 function App() {

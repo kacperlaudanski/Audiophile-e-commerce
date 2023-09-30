@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../dist-styles/products.css";
+import "../../dist-styles/products.css";
 
 interface GalleryImages {
     galleryImage1: string | undefined; 

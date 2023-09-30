@@ -27,6 +27,7 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
     renderFirstCheckoutItem,
     renderCheckoutItems,
     totalPrice,
+    removeAllItems,
   } = useShoppingCart();
 
   const shippingCost = 50;
@@ -77,7 +78,7 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
           onClick={() => {
             navigate("/");
             scrollPageToTop();
-            deleteFromStorage('cart'); 
+            removeAllItems(); 
           }}
         >
           BACK TO HOME

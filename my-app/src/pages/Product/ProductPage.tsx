@@ -1,20 +1,20 @@
 import React from "react";
-import HeaderSection from "../Header/HeaderSection";
-import MainSection from "../../../pages/Home/MainSection";
-import Navbar from "../Navbar/Navbar";
-import ProductDetails from "./ProductCard";
-import CategorySelectionPanel from "../../../pages/Home/CategorySelectionPanel";
-import AboutCompany from "../../../pages/Home/AboutCompany";
-import Footer from "../Footer/Footer";
-import BoxContentItem from "./BoxContentItem";
-import ImageGallery from "./ImageGallery";
-import RelatedProductsPanel from "./RelatedProductsPanel";
-import RelatedProduct from "./RelatedProduct";
-import { headphonesList } from "../../../data/ProductData";
-import { speakersList } from "../../../data/ProductData";
-import { earphonesList } from "../../../data/ProductData";
+import HeaderSection from "../../components/Elements/Header/HeaderSection";
+import MainSection from "../Home/MainSection";
+import Navbar from "../../components/Elements/Navbar/Navbar";
+import ProductDetails from "../../components/Elements/Products/ProductCard";
+import CategorySelectionPanel from "../Home/CategorySelectionPanel";
+import AboutCompany from "../Home/AboutCompany";
+import Footer from "../../components/Elements/Footer/Footer";
+import BoxContentItem from "../../components/Elements/Products/BoxContentElement";
+import ImageGallery from "../../components/Elements/Products/ImageGallery";
+import RelatedProductsPanel from "../../components/Elements/Products/RelatedProductsPanel";
+import RelatedProduct from "../../components/Elements/Products/RelatedProduct";
+import { headphonesList } from "../../data/ProductData";
+import { speakersList } from "../../data/ProductData";
+import { earphonesList } from "../../data/ProductData";
 import { useParams } from "react-router-dom";
-import GoBackButton from "../GoBackButton/GoBackButton";
+import GoBackButton from "../../components/Elements/GoBackButton/GoBackButton";
 import { v4 as uuidv4 } from "uuid";
 
 const ProductPage: React.FC = (props) => {

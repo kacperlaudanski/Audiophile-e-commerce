@@ -4,7 +4,7 @@ import Home from "./pages/Home/Home";
 import HeadphonesPage from "./pages/Headphones/HeadphonesPage";
 import EarphonesPage from "./pages/Earphones/EarphonePage";
 import SpeakersPage from "./pages/Speakers/SpeakersPage";
-import ProductPage from "./components/Elements/Products/ProductPage";
+import ProductPage from "./pages/Product/ProductPage";
 import CheckoutPage from "./pages/Checkout/CheckoutPage";
 import { ShoppingCartContextProvider } from "./context/CartContext";
 

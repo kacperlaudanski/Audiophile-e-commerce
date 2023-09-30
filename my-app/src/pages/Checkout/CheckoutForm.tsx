@@ -121,14 +121,14 @@ const CheckoutForm: React.FC<{
   }
 
   function cityHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    handleInputChange(event, "CITY", conditions.name, setCityState, dispatch);
+    handleInputChange(event, "CITY", conditions.city, setCityState, dispatch);
   }
 
   function countryHandler(event: React.ChangeEvent<HTMLInputElement>) {
     handleInputChange(
       event,
       "COUNTRY",
-      conditions.name,
+      conditions.country,
       setCountryState,
       dispatch
     );

@@ -1,10 +1,10 @@
 import React, { ReactNode, useEffect, useState } from "react";
-import "../../../dist-styles/products.css";
+import "../../dist-styles/products.css";
 
-import { useShoppingCart } from "../../../context/CartContext";
+import { useShoppingCart } from "../../context/CartContext";
 import { useParams } from "react-router-dom";
-import { earphonesList, headphonesList, speakersList } from "../../../data/ProductData";
-import ConfirmationModal from "../../Cart/ConfirmationModal";
+import { earphonesList, headphonesList, speakersList } from "../../data/ProductData";
+import ConfirmationModal from "../Cart/ConfirmationModal";
 
 interface CurrentProduct {
   id: number;

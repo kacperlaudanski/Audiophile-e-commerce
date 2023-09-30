@@ -1,15 +1,14 @@
-import React from "react";
 import HeaderSection from "../../components/Elements/Header/HeaderSection";
 import MainSection from "../Home/MainSection";
 import Navbar from "../../components/Elements/Navbar/Navbar";
-import ProductDetails from "../../components/Elements/Products/ProductCard";
+import ProductDetails from "../../components/Products/ProductCard";
 import CategorySelectionPanel from "../Home/CategorySelectionPanel";
 import AboutCompany from "../Home/AboutCompany";
 import Footer from "../../components/Elements/Footer/Footer";
-import BoxContentItem from "../../components/Elements/Products/BoxContentElement";
-import ImageGallery from "../../components/Elements/Products/ImageGallery";
-import RelatedProductsPanel from "../../components/Elements/Products/RelatedProductsPanel";
-import RelatedProduct from "../../components/Elements/Products/RelatedProduct";
+import BoxContentItem from "../../components/Products/BoxContentElement";
+import ImageGallery from "../../components/Products/ImageGallery";
+import RelatedProductsPanel from "../../components/Products/RelatedProductsPanel";
+import RelatedProductItem from "../../components/Products/RelatedProduct";
 import { headphonesList } from "../../data/ProductData";
 import { speakersList } from "../../data/ProductData";
 import { earphonesList } from "../../data/ProductData";
@@ -17,25 +16,23 @@ import { useParams } from "react-router-dom";
 import GoBackButton from "../../components/Elements/GoBackButton/GoBackButton";
 import { v4 as uuidv4 } from "uuid";
 
+interface RelatedProduct {
+  mainImage: string;
+  shortName: string;
+  link: string;
+}
+
 const ProductPage: React.FC = (props) => {
   const allProducts = [...headphonesList, ...earphonesList, ...speakersList];
   const { product } = useParams();
 
-  const selectedProduct = selectProduct();
-
   function selectProduct(){
     return allProducts.find((item) => item.product === product); 
   }
-
-  interface RelatedProduct {
-    mainImage: string;
-    shortName: string;
-    link: string;
-  }
-
-  const selectedRelatedProducts: RelatedProduct[] = [];
+  const selectedProduct = selectProduct();
 
   function randomRelatedProducts() {
+    const selectedRelatedProducts: RelatedProduct[] = [];
     const productsWithoutCurrent = allProducts.filter(
       (item) => item.product !== product
     );
@@ -47,11 +44,11 @@ const ProductPage: React.FC = (props) => {
         continue;
       selectedRelatedProducts.push(productsWithoutCurrent[randomIndex]);
     }
+    return selectedRelatedProducts; 
   }
-  randomRelatedProducts();
 
   return (
-    <React.Fragment>
+    <>
       <HeaderSection>
         <Navbar />
       </HeaderSection>
@@ -80,9 +77,9 @@ const ProductPage: React.FC = (props) => {
                 galleryImage3={selectedProduct?.galleryImage3}
               />
         <RelatedProductsPanel>
-          {selectedRelatedProducts.map((product) => {
+          {randomRelatedProducts().map((product) => {
             return (
-              <RelatedProduct
+              <RelatedProductItem
                 key={uuidv4()}
                 relatedProductImage={product.mainImage}
                 relatedProductName={product.shortName}
@@ -95,7 +92,7 @@ const ProductPage: React.FC = (props) => {
         <AboutCompany />
       </MainSection>
       <Footer />
-    </React.Fragment>
+    </>
   );
 };
 

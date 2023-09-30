@@ -4,6 +4,8 @@ export const conditions = {
     phoneNumber:/^\d{6,10}$/,
     address: /^[a-zA-Z0-9\s/]+$/, 
     zip: /^\d{5}$/,
+    city: /^[a-zA-Z]+$/,
+    country: /^[a-zA-Z]+$/, 
     eMoneyNumber: /^\d{10}$/,
     eMoneyPin: /^\d{4}$/
 }

@@ -1,16 +1,29 @@
-import React, { ReactEventHandler, useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { ReactEventHandler, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "../../context/CartContext";
 import "../../dist-styles/cart.css";
 
-interface Modal {
+interface CartModal {
   openModal: boolean;
   closeModal: ReactEventHandler;
   children: any;
 }
 
-const CartModal: React.FC<Modal> = ({ openModal, closeModal, children }) => {
+const CartModal: React.FC<CartModal> = ({
+  openModal,
+  closeModal,
+  children,
+}) => {
   const ref = useRef<HTMLDialogElement | null>(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (openModal) {
+      ref.current?.showModal();
+    } else {
+      ref.current?.close();
+    }
+  }, [openModal]);
 
   const {
     cartItemsAmount,
@@ -24,13 +37,6 @@ const CartModal: React.FC<Modal> = ({ openModal, closeModal, children }) => {
     totalPriceHandler();
   }, [cartItems]);
 
-  useEffect(() => {
-    if (openModal) {
-      ref.current?.showModal();
-    } else {
-      ref.current?.close();
-    }
-  }, [openModal]);
   return (
     <dialog ref={ref} onCancel={closeModal} className="cart-modal-container">
       <div className="cart-modal-container">
@@ -47,13 +53,14 @@ const CartModal: React.FC<Modal> = ({ openModal, closeModal, children }) => {
             <span className="cart-total-price">$ {totalPrice}</span>
           </div>
           {cartItems.length > 0 && (
-            <NavLink
-              className="checkout-btn"
-              to="/checkout"
-              onClick={closeModal}
+            <button
+              className="cart-checkout-btn"
+              onClick={() => {
+                navigate("/checkout");
+              }}
             >
               CHECKOUT
-            </NavLink>
+            </button>
           )}
         </div>
       </div>

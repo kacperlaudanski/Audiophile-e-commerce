@@ -1,14 +1,17 @@
-import React from "react";
 import "../../../dist-styles/navbar.css";
-import CategoriesListElement from "./CategoriesListElement";
+import CategoryListElement from "./CategoriesListElement";
 import { categoriesList } from "../../../data/CategoriesList";
 
-const CategoriesList: React.FC<{listClass: string}>= (props) => {
+interface ListClass {
+  listClass: string; 
+}; 
+
+const CategoriesNavList: React.FC<ListClass> = ({listClass}) => {
   return (
-    <ul className={props.listClass}>
+    <ul className={listClass}>
       {categoriesList.map((categoryListItem, index) => {
          return (
-          <CategoriesListElement 
+          <CategoryListElement 
             key={index}
             name = {categoryListItem.name}
             link = {categoryListItem.link}
@@ -19,4 +22,4 @@ const CategoriesList: React.FC<{listClass: string}>= (props) => {
   );
 };
 
-export default CategoriesList;
+export default CategoriesNavList;

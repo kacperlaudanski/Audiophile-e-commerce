@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import "../../dist-styles/products.css";
 
 const relatedProductsPanel: React.FC<{ children: ReactNode }> = (props) => {

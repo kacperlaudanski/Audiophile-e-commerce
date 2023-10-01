@@ -1,4 +1,4 @@
-import '../../../dist-styles/smallElements.css'; 
+import "../../../dist-styles/smallElements.css";
 const GoBackButton = () => {
   return (
     <div className="go-back-container">

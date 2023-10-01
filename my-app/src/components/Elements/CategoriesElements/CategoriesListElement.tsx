@@ -1,14 +1,13 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import { scrollPageToTop } from "../../../utilities/pageScrolling";
 import '../../../dist-styles/categories.css'; 
 
-type CategoryLink = {
+interface CategoryLink {
     name: string;
     link: string; 
 }
 
-const CategoriesListElement: React.FC<CategoryLink> = (props) => {
+const CategoryListElement: React.FC<CategoryLink> = (props) => {
   return (
     <>
       <li>
@@ -24,4 +23,4 @@ const CategoriesListElement: React.FC<CategoryLink> = (props) => {
   );
 };
 
-export default CategoriesListElement;
+export default CategoryListElement;

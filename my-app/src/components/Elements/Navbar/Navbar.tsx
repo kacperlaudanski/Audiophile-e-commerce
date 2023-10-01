@@ -1,26 +1,23 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import "../../../dist-styles/navbar.css";
-import CartModal from "../../Cart/CartModal";
-import CategoriesList from "../CategoriesElements/CategoriesList";
 import { useShoppingCart } from "../../../context/CartContext";
+import { NavLink } from "react-router-dom";
+import CartModal from "../../Cart/CartModal";
+import CategoriesNavList from "../CategoriesElements/CategoriesNavList";
 import EmptyCart from "../../Cart/EmptyCart";
+import "../../../dist-styles/navbar.css";
 
 const Navbar = () => {
   const [modal, setModal] = useState(false);
-
-  const {renderCartItems, cartItems} = useShoppingCart(); 
+  const { renderCartItems, cartItems } = useShoppingCart();
 
   return (
     <nav className="navbar-desktop">
-      <div className="logo-container">
+      <div className="navbar-logo-container">
         <NavLink to={"/"} className="navbar-logo">
           audiophile
         </NavLink>
       </div>
-      <CategoriesList
-        listClass="navbar-categories-list"
-      />
+      <CategoriesNavList listClass="navbar-categories-list" />
       <div className="cart-button-container">
         <button
           type="button"
@@ -29,7 +26,7 @@ const Navbar = () => {
         ></button>
       </div>
       <CartModal closeModal={() => setModal(false)} openModal={modal}>
-        {cartItems.length > 0 ? renderCartItems(): <EmptyCart />}
+        {cartItems.length > 0 ? renderCartItems() : <EmptyCart />}
       </CartModal>
     </nav>
   );

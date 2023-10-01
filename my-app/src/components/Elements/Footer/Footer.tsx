@@ -1,5 +1,5 @@
 import "../../../dist-styles/footer.css";
-import CategoriesList from "../CategoriesElements/CategoriesList";
+import CategoriesNavList from "../CategoriesElements/CategoriesNavList";
 import FacebookIcon from "../../../images/shared/desktop/icon-facebook.svg";
 import InstagramIcon from "../../../images/shared/desktop/icon-instagram.svg";
 import TwitterIcon from "../../../images/shared/desktop/icon-twitter.svg";
@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
         <div className="footer-nav-social-container">
           <nav>
-            <CategoriesList
+            <CategoriesNavList
               listClass="footer-categories-list"
             />
           </nav>

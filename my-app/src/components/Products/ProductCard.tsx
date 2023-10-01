@@ -1,16 +1,19 @@
-import React, { ReactNode, useEffect, useState } from "react";
-import "../../dist-styles/products.css";
-
+import { ReactNode, useEffect, useState } from "react";
 import { useShoppingCart } from "../../context/CartContext";
 import { useParams } from "react-router-dom";
-import { earphonesList, headphonesList, speakersList } from "../../data/ProductData";
+import {
+  earphonesList,
+  headphonesList,
+  speakersList,
+} from "../../data/ProductData";
 import ConfirmationModal from "../Cart/ConfirmationModal";
+import "../../dist-styles/products.css";
 
 interface CurrentProduct {
   id: number;
 }
 
-const ProductDetails: React.FC<{
+interface ProductCardType {
   productImage: string | undefined;
   productName: string | undefined;
   productDescription: string | undefined;
@@ -18,31 +21,33 @@ const ProductDetails: React.FC<{
   productFeaturesI: string | undefined;
   productFeaturesII: string | undefined;
   productBoxContent: ReactNode | undefined;
-}> = (props) => {
+}
+
+const ProductCard: React.FC<ProductCardType> = (props) => {
   const [currentProduct, setCurrentProduct] = useState<CurrentProduct[]>([]);
-
-  const [isModalOpen, setModalState] = useState(false);
-
-  function closeModal(){
-    setModalState(false); 
-  }
-
-  const { cartItems, increaseItemAmount } = useShoppingCart();
-  const { category, product } = useParams();
   const allProducts = [...headphonesList, ...earphonesList, ...speakersList];
-
-  useEffect(() => {
-    takeCurrentProduct();
-  }, [product]);
 
   function takeCurrentProduct() {
     setCurrentProduct(allProducts.filter((item) => item.product === product));
   }
 
+  const [isModalOpen, setModalState] = useState(false);
+
+  function closeModal() {
+    setModalState(false);
+  }
+
+  const { increaseItemAmount } = useShoppingCart();
+  const { product } = useParams();
+
   function addToCart() {
     setModalState(true);
     increaseItemAmount(currentProduct[0].id);
   }
+
+  useEffect(() => {
+    takeCurrentProduct();
+  }, [product]);
 
   return (
     <div className="product-card-container">
@@ -59,7 +64,9 @@ const ProductDetails: React.FC<{
           </div>
         </div>
       </div>
-      {isModalOpen && <ConfirmationModal openModal={isModalOpen} closeModal={closeModal}/>}
+      {isModalOpen && (
+        <ConfirmationModal openModal={isModalOpen} closeModal={closeModal} />
+      )}
       <div className="product-spec">
         <div className="product-features">
           <h3>FEATURES</h3>
@@ -76,4 +83,4 @@ const ProductDetails: React.FC<{
   );
 };
 
-export default ProductDetails;
+export default ProductCard;

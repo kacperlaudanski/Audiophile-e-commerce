@@ -1,14 +1,13 @@
-import React from "react";
 import "../../dist-styles/checkout-cart-item.css";
 
-interface CheckoutCartItem {
+interface CheckoutCartItemType {
   name: string | undefined;
   image: string | undefined;
   price: number | undefined;
   quantity: number | undefined;
 }
 
-const CheckoutCartItem: React.FC<CheckoutCartItem> = ({
+const CheckoutCartItem: React.FC<CheckoutCartItemType> = ({
   name,
   image,
   price,

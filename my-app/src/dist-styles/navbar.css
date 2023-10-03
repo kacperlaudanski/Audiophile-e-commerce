@@ -25,10 +25,10 @@
   justify-content: center;
   flex-direction: row;
 }
-.navbar-desktop .logo-container {
+.navbar-desktop .navbar-logo-container {
   width: 25%;
 }
-.navbar-desktop .logo-container .navbar-logo {
+.navbar-desktop .navbar-logo-container .navbar-logo {
   color: #ffffff;
   text-decoration: none;
   font-size: 1.5rem;

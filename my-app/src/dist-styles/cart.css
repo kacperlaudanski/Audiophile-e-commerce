@@ -157,7 +157,7 @@
 .cart-modal-container .cart-modal-container .cart-bottom .cart-price-container .cart-total-price {
   font-weight: 800;
 }
-.cart-modal-container .cart-modal-container .cart-bottom .checkout-btn {
+.cart-modal-container .cart-modal-container .cart-bottom .cart-checkout-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,8 +171,10 @@
   color: #ffffff;
   text-decoration: none;
   transition: 0.3s linear;
+  border: none;
+  cursor: pointer;
 }
-.cart-modal-container .cart-modal-container .cart-bottom .checkout-btn:hover {
+.cart-modal-container .cart-modal-container .cart-bottom .cart-checkout-btn:hover {
   background-color: #fbaf85;
 }
 .confirmation-modal-container {

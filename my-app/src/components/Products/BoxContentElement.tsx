@@ -1,4 +1,9 @@
-const BoxContentItem: React.FC<{ pieces: number; boxItem: string }> = (props) => {
+interface BoxContentType {
+  pieces: number; 
+  boxItem: string; 
+}
+
+const BoxContentItem: React.FC<BoxContentType> = (props) => {
   return (
     <li>
       <span className="product-box-pieces">{props.pieces}x</span>

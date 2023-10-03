@@ -1,7 +1,6 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../../dist-styles/products.css";
 import { scrollPageToTop } from "../../utilities/pageScrolling";
+import "../../dist-styles/products.css";
 
 type ProductLayout = string | null;
 

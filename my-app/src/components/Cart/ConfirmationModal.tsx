@@ -1,14 +1,20 @@
-import React, { ReactEventHandler, useEffect, useRef } from "react";
+import { ReactEventHandler, useEffect, useRef } from "react";
 import ConfirmationIcon from "../../images/checkout/icon-order-confirmation.svg";
 import "../../dist-styles/cart.css";
 import { scrollPageToTop } from "../../utilities/pageScrolling";
 import { useNavigate } from "react-router-dom";
 
-const ConfirmationModal: React.FC<{
-  closeModal: ReactEventHandler;
+interface ConfirmationModal {
   openModal: boolean;
-}> = ({ closeModal, openModal }) => {
+  closeModal: ReactEventHandler;
+}
+
+const ConfirmationModal: React.FC<ConfirmationModal> = ({
+  openModal,
+  closeModal,
+}) => {
   const ref = useRef<HTMLDialogElement | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (openModal) {
@@ -17,8 +23,6 @@ const ConfirmationModal: React.FC<{
       ref.current?.close();
     }
   }, [openModal]);
-
-  const navigate = useNavigate();
 
   return (
     <dialog

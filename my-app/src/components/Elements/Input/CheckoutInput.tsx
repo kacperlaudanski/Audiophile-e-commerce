@@ -1,4 +1,3 @@
-import React from "react";
 import '../../../dist-styles/variables.css'
 
 interface Input {
@@ -32,4 +31,3 @@ const CheckoutInput: React.FC<Input> = (props) => {
 };
 
 export default CheckoutInput;
-//checkout-input-container

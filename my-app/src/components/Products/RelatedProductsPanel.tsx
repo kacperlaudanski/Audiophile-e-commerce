@@ -1,3 +1,8 @@
+import {
+  headphonesList,
+  speakersList,
+  earphonesList,
+} from "../../data/ProductData";
 import "../../dist-styles/products.css";
 import { useParams } from "react-router-dom";
 import RelatedProductItem from "../../components/Products/RelatedProduct";

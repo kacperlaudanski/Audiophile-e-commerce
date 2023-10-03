@@ -3,6 +3,7 @@ import ConfirmationIcon from "../../images/checkout/icon-order-confirmation.svg"
 import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "../../context/CartContext";
 import { scrollPageToTop } from "../../utilities/pageScrolling";
+import { calculateGrandTotal } from "../../utilities/grandTotalCounter";
 import "../../dist-styles/summary-modal.css";
 
 interface Modal {
@@ -13,13 +14,8 @@ interface Modal {
 const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
   const ref = useRef<HTMLDialogElement | null>(null);
 
-  useEffect(() => {
-    if (openModal) {
-      ref.current?.showModal();
-    } else {
-      ref.current?.close();
-    }
-  }, [openModal]);
+  const [isShowMoreActive, setShowMore] = useState(false);
+  const navigate = useNavigate();
 
   const {
     cartItems,
@@ -29,12 +25,13 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
     removeAllItems,
   } = useShoppingCart();
 
-  const shippingCost = 50;
-  const grandTotal = totalPrice + shippingCost;
-
-  const [isShowMoreActive, setShowMore] = useState(false);
-  const navigate = useNavigate();
-
+  useEffect(() => {
+    if (openModal) {
+      ref.current?.showModal();
+    } else {
+      ref.current?.close();
+    }
+  }, [openModal]);
   return (
     <dialog className="summary-modal-dialog" ref={ref} onCancel={closeModal}>
       <div className="summary-modal-container">
@@ -69,7 +66,9 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
           </div>
           <div className="order-list-right">
             <span className="order-list-grand-total">GRAND TOTAL</span>
-            <span className="order-list-total-price">$ {grandTotal}</span>
+            <span className="order-list-total-price">
+              $ {calculateGrandTotal(totalPrice)}
+            </span>
           </div>
         </div>
         <button

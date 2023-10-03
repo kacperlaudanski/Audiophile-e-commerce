@@ -32,6 +32,7 @@ import YX1GalleryImage1 from '../images/product-yx1-earphones/desktop/image-gall
 import YX1GalleryImage2 from '../images/product-yx1-earphones/desktop/image-gallery-2.jpg'
 import YX1GalleryImage3 from '../images/product-yx1-earphones/desktop/image-gallery-3.jpg'
 
+
 export const headphonesList = [
   {
     id: 1,

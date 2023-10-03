@@ -1,206 +1,126 @@
-@import './variables.less';
+@import "./variables.less";
 
-.main-section-container{
-  width:80%;
-  .flex-setup(center, space-between, column); 
-  margin: 150px auto;
-
-  .home-categories-container{
-    .flex-setup(center, space-between, row); 
-    width:100%;
-
-    .category-container{
-      width:30%;
-      height:200px; 
-      background-color: @light-gray;
-      text-align: center;
-      position:relative;
-      padding-top:7em;
-      font-weight: bolder;
-
-      .category-image{
-        width:220px;
-        height:200px;
-        position: absolute;
-        left:50%;
-        top:-70px;
-        transform: translate(-50%);
-      }
-
-      .category-name{
-        margin-bottom:1em; 
-      }
-
-      .category-link{
-        color:rgba(16, 16, 16, 0.623); 
-        text-decoration: none;
-        font-size: .8rem;
-        transition: .3s linear; 
-
-        &:hover{
-          color:@dark-orange; 
-        }
-      }
-    }
-  }
-
-  .home-product-banners{
-    width:100%; 
-    margin-top:8em;
-    height:1200px;
+  .home-product-banners {
+    width: 100%;
+    margin-top: 8em;
+    height: 1200px;
     display: grid;
     grid-template-rows: 45% 25% 25%;
     grid-template-columns: 47.5% 47.5%;
-    gap:5%;
+    gap: 5%;
+    grid-template-areas:
+      "product1 product1"
+      "product2 product2"
+      "product3left product3right";
 
-
-    .product-banner-1{
-      width:100%; 
+    .product-banner-1 {
+      width: 100%;
       grid-area: product1;
       background-color: @dark-orange;
       overflow: hidden;
       .flex-setup(center, center, row);
-      
 
-      .pr-banner-1-image{
-        width:60%;
-        height:100%;
+      .pr-banner-1-image {
+        width: 60%;
+        height: 100%;
         position: relative;
-        
-        img{
-          width:50%;
-          height:80%;
-          position:absolute; 
-          left:50%;
-          bottom:-2%;
+
+        img {
+          width: 50%;
+          height: 80%;
+          position: absolute;
+          left: 50%;
+          bottom: -2%;
           transform: translate(-50%);
           z-index: 2;
         }
 
-        .circle-pattern{
-          width:150%; 
-          height:170%; 
+        .circle-pattern {
+          width: 150%;
+          height: 170%;
           position: absolute;
-          bottom:-50%;
+          bottom: -50%;
           z-index: 1;
         }
       }
-      .pr-banner-1-description{
-        width:40%; 
+      .pr-banner-1-description {
+        width: 40%;
         height: 60%;
         .flex-setup(flex-start, space-around, column);
         position: relative;
         z-index: 2;
 
-        h2{
+        h2 {
           font-size: 3rem;
-          color:@white; 
+          color: @white;
         }
-        p{
-          color:@light-gray;
+        p {
+          color: @light-gray;
         }
 
-        .banner1-cta-button:extend(.cta-button){
-          width:30%;
+        .banner1-cta-button:extend(.cta-button) {
+          width: 30%;
           background-color: @black;
-          &:hover{
+          &:hover {
             background-color: rgba(16, 16, 16, 0.632);
           }
         }
-
       }
     }
-    .product-banner-2{
-      width:100%; 
-      height:100%;
-      padding-left:4em;
+    .product-banner-2 {
+      width: 100%;
+      height: 100%;
+      padding-left: 4em;
       grid-area: product2;
-      .background-image-setup('../images/home/desktop/image-speaker-zx7.jpg');
+      .background-image-setup("../images/home/desktop/image-speaker-zx7.jpg");
       .flex-setup(center, flex-start, row);
 
-      .pr-banner-2-description{
-        width:40%; 
-        height:40%; 
+      .pr-banner-2-description {
+        width: 40%;
+        height: 40%;
         .flex-setup(flex-start, space-between, column);
 
-        h3{
+        h3 {
           font-size: 2rem;
         }
       }
 
-      .banner2-cta-button:extend(.cta-button){
-        width:30%;
+      .banner2-cta-button:extend(.cta-button) {
+        width: 30%;
         background: none;
-        border:1px solid @black; 
-        color:@black; 
+        border: 1px solid @black;
+        color: @black;
 
-        &:hover{
-          color:@white; 
+        &:hover {
+          color: @white;
           background-color: @black;
         }
       }
     }
-    .product-banner-3-left{
+    .product-banner-3-left {
       grid-area: product3left;
-      .background-image-setup('../images/home/desktop/image-earphones-yx1.jpg');
+      .background-image-setup("../images/home/desktop/image-earphones-yx1.jpg");
     }
-    .product-banner-3-right{
+    .product-banner-3-right {
       grid-area: product3right;
-      .flex-setup(flex-start, space-around, column); 
+      .flex-setup(flex-start, space-around, column);
       background-color: @light-gray;
-      padding:4em;
+      padding: 4em;
 
-      h3{
+      h3 {
         font-size: 2rem;
       }
 
-      .banner3-cta-button:extend(.cta-button){
-        width:30%;
+      .banner3-cta-button:extend(.cta-button) {
+        width: 30%;
         background: none;
-        border:1px solid @black; 
-        color:@black; 
+        border: 1px solid @black;
+        color: @black;
 
-        &:hover{
-          color:@white; 
+        &:hover {
+          color: @white;
           background-color: @black;
         }
       }
     }
-
-    grid-template-areas: 
-    'product1 product1'
-    'product2 product2'
-    'product3left product3right';
   }
-
-  .about-company-container{
-    width:100%; 
-    margin-top:15em;
-    .flex-setup(center, space-between, row); 
-    gap: 5%;
-
-    .about-company-text{
-      width:47.5%; 
-      .flex-setup(flex-start, space-around, column); 
-
-      h2{
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom:1em; 
-
-        span{
-          color:@dark-orange; 
-        }
-      }
-      p{
-        color:@dark-gray;
-      }
-    }
-
-    .about-company-image{
-      width:47.5%; 
-      height:600px; 
-      .background-image-setup('../images/shared/desktop/image-best-gear.jpg')
-    }
-  }
-}

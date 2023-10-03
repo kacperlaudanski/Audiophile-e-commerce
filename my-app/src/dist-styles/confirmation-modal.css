@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+.cta-button,
+.confirmation-modal-container .confirmation-buttons-container .confirmation-modal-button {
+  height: 45px;
+  font-weight: bolder;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+}
+.confirmation-modal-container {
+  width: 40%;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 2em;
+  border: none;
+  border-radius: 15px;
+}
+.confirmation-modal-container::backdrop {
+  background-color: rgba(25, 25, 25, 0.525);
+}
+.confirmation-modal-container .confirmation-buttons-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.confirmation-modal-container .confirmation-buttons-container button {
+  width: 40%;
+  background-color: #d87d4a;
+}
+.confirmation-modal-container .confirmation-buttons-container .confirmation-modal-button:hover {
+  background-color: #fbaf85;
+}

@@ -1,7 +1,7 @@
 import { ReactEventHandler, useEffect, useRef } from "react";
-import ConfirmationIcon from "../../images/checkout/icon-order-confirmation.svg";
-import "../../dist-styles/cart.css";
-import { scrollPageToTop } from "../../utilities/pageScrolling";
+import ConfirmationIcon from "../../../images/checkout/icon-order-confirmation.svg";
+import "../../../dist-styles/confirmation-modal.css";
+import { scrollPageToTop } from "../../../utilities/pageScrolling";
 import { useNavigate } from "react-router-dom";
 
 interface ConfirmationModal {
@@ -38,7 +38,7 @@ const ConfirmationModal: React.FC<ConfirmationModal> = ({
       <h2>PRODUCT ADDED TO THE CART</h2>
       <div className="confirmation-buttons-container">
         <button
-          className="confirmation-continue-button"
+          className="confirmation-modal-button"
           type="button"
           onClick={closeModal}
         >
@@ -46,7 +46,7 @@ const ConfirmationModal: React.FC<ConfirmationModal> = ({
         </button>
         <small>OR</small>
         <button
-          className="confirmation-checkout-button"
+          className="confirmation-modal-button"
           onClick={() => {
             navigate("/checkout");
             scrollPageToTop();

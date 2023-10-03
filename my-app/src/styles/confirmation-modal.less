@@ -1,0 +1,31 @@
+@import "./variables.less";
+.confirmation-modal-container {
+  width: 40%;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .flex-setup(center, space-around, column);
+  padding: 2em;
+  border: none;
+  border-radius: 15px;
+
+  &::backdrop {
+    background-color: @dark-gray-transparent;
+  }
+
+  .confirmation-buttons-container {
+    width: 100%;
+    .flex-setup(center, space-between, row);
+
+    button {
+      width: 40%;
+      background-color: @dark-orange;
+    }
+    .confirmation-modal-button:extend(.cta-button) {
+      &:hover {
+        background-color: @bright-orange;
+      }
+    }
+  }
+}

@@ -6,9 +6,7 @@
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
 }
-.cta-button,
-.confirmation-modal-container .confirmation-buttons-container .confirmation-continue-button,
-.confirmation-modal-container .confirmation-buttons-container .confirmation-checkout-button {
+.cta-button {
   height: 45px;
   font-weight: bolder;
   color: #ffffff;
@@ -175,49 +173,5 @@
   cursor: pointer;
 }
 .cart-modal-container .cart-modal-container .cart-bottom .cart-checkout-btn:hover {
-  background-color: #fbaf85;
-}
-.confirmation-modal-container {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  padding: 2em;
-  border: none;
-  border-radius: 15px;
-}
-.confirmation-modal-container::backdrop {
-  background-color: rgba(25, 25, 25, 0.525);
-}
-.confirmation-modal-container .confirmation-buttons-container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-}
-.confirmation-modal-container .confirmation-buttons-container .confirmation-continue-button {
-  width: 40%;
-  background-color: #d87d4a;
-}
-.confirmation-modal-container .confirmation-buttons-container .confirmation-continue-button:hover {
-  background-color: #fbaf85;
-}
-.confirmation-modal-container .confirmation-buttons-container .confirmation-checkout-button {
-  width: 40%;
-  background-color: #d87d4a;
-  text-decoration: none;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-}
-.confirmation-modal-container .confirmation-buttons-container .confirmation-checkout-button:hover {
   background-color: #fbaf85;
 }

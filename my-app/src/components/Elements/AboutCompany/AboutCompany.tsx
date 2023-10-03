@@ -1,6 +1,5 @@
-import React from "react";
-
-const AboutCompany: React.FC = () => {
+import '../../../dist-styles/about-company.css'; 
+const AboutCompany = () => {
   return (
     <div className="about-company-container">
       <div className="about-company-text">

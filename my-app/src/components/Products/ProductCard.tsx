@@ -6,7 +6,7 @@ import {
   headphonesList,
   speakersList,
 } from "../../data/ProductData";
-import ConfirmationModal from "../Cart/ConfirmationModal";
+import ConfirmationModal from "../Elements/ConfirmationModal/ConfirmationModal";
 import "../../dist-styles/products.css";
 
 interface CurrentProduct {

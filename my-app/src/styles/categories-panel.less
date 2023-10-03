@@ -1,0 +1,40 @@
+@import './variables.less'; 
+
+.categories-panel-container {
+    .flex-setup(center, space-between, row);
+    width: 100%;
+
+    .category-container {
+      width: 30%;
+      height: 200px;
+      background-color: @light-gray;
+      text-align: center;
+      position: relative;
+      padding-top: 7em;
+      font-weight: bolder;
+
+      .category-image {
+        width: 220px;
+        height: 200px;
+        position: absolute;
+        left: 50%;
+        top: -70px;
+        transform: translate(-50%);
+      }
+
+      .category-name {
+        margin-bottom: 1em;
+      }
+
+      .category-link {
+        color: @dark-gray-transparent;
+        text-decoration: none;
+        font-size: 0.8rem;
+        transition: 0.3s linear;
+
+        &:hover {
+          color: @dark-orange;
+        }
+      }
+    }
+  }

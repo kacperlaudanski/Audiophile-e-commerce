@@ -1,5 +1,5 @@
 import HeaderSection from "../../components/Elements/Header/HeaderSection";
-import MainSection from "../Home/MainSection";
+import MainSection from "../../components/Elements/MainSection/MainSection";
 import Navbar from "../../components/Elements/Navbar/Navbar";
 import ProductDetails from "../../components/Products/ProductCard";
 import CategoryPanel from "../../components/Elements/CategoriesElements/CategoryPanel";

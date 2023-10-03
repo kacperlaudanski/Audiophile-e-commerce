@@ -7,9 +7,9 @@
   font-family: "Manrope", sans-serif;
 }
 .cta-button,
-.main-section-container .home-product-banners .product-banner-1 .pr-banner-1-description .banner1-cta-button,
-.main-section-container .home-product-banners .product-banner-2 .banner2-cta-button,
-.main-section-container .home-product-banners .product-banner-3-right .banner3-cta-button {
+.home-product-banners .product-banner-1 .pr-banner-1-description .banner1-cta-button,
+.home-product-banners .product-banner-2 .banner2-cta-button,
+.home-product-banners .product-banner-3-right .banner3-cta-button {
   height: 45px;
   font-weight: bolder;
   color: #ffffff;
@@ -17,51 +17,7 @@
   border: none;
   transition: 0.3s linear;
 }
-.main-section-container {
-  width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  margin: 150px auto;
-}
-.main-section-container .home-categories-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 100%;
-}
-.main-section-container .home-categories-container .category-container {
-  width: 30%;
-  height: 200px;
-  background-color: #f1f1f1;
-  text-align: center;
-  position: relative;
-  padding-top: 7em;
-  font-weight: bolder;
-}
-.main-section-container .home-categories-container .category-container .category-image {
-  width: 220px;
-  height: 200px;
-  position: absolute;
-  left: 50%;
-  top: -70px;
-  transform: translate(-50%);
-}
-.main-section-container .home-categories-container .category-container .category-name {
-  margin-bottom: 1em;
-}
-.main-section-container .home-categories-container .category-container .category-link {
-  color: rgba(16, 16, 16, 0.623);
-  text-decoration: none;
-  font-size: 0.8rem;
-  transition: 0.3s linear;
-}
-.main-section-container .home-categories-container .category-container .category-link:hover {
-  color: #d87d4a;
-}
-.main-section-container .home-product-banners {
+.home-product-banners {
   width: 100%;
   margin-top: 8em;
   height: 1200px;
@@ -69,9 +25,9 @@
   grid-template-rows: 45% 25% 25%;
   grid-template-columns: 47.5% 47.5%;
   gap: 5%;
-  grid-template-areas: 'product1 product1' 'product2 product2' 'product3left product3right';
+  grid-template-areas: "product1 product1" "product2 product2" "product3left product3right";
 }
-.main-section-container .home-product-banners .product-banner-1 {
+.home-product-banners .product-banner-1 {
   width: 100%;
   grid-area: product1;
   background-color: #d87d4a;
@@ -81,12 +37,12 @@
   justify-content: center;
   flex-direction: row;
 }
-.main-section-container .home-product-banners .product-banner-1 .pr-banner-1-image {
+.home-product-banners .product-banner-1 .pr-banner-1-image {
   width: 60%;
   height: 100%;
   position: relative;
 }
-.main-section-container .home-product-banners .product-banner-1 .pr-banner-1-image img {
+.home-product-banners .product-banner-1 .pr-banner-1-image img {
   width: 50%;
   height: 80%;
   position: absolute;
@@ -95,14 +51,14 @@
   transform: translate(-50%);
   z-index: 2;
 }
-.main-section-container .home-product-banners .product-banner-1 .pr-banner-1-image .circle-pattern {
+.home-product-banners .product-banner-1 .pr-banner-1-image .circle-pattern {
   width: 150%;
   height: 170%;
   position: absolute;
   bottom: -50%;
   z-index: 1;
 }
-.main-section-container .home-product-banners .product-banner-1 .pr-banner-1-description {
+.home-product-banners .product-banner-1 .pr-banner-1-description {
   width: 40%;
   height: 60%;
   display: flex;
@@ -112,26 +68,26 @@
   position: relative;
   z-index: 2;
 }
-.main-section-container .home-product-banners .product-banner-1 .pr-banner-1-description h2 {
+.home-product-banners .product-banner-1 .pr-banner-1-description h2 {
   font-size: 3rem;
   color: #ffffff;
 }
-.main-section-container .home-product-banners .product-banner-1 .pr-banner-1-description p {
+.home-product-banners .product-banner-1 .pr-banner-1-description p {
   color: #f1f1f1;
 }
-.main-section-container .home-product-banners .product-banner-1 .pr-banner-1-description .banner1-cta-button {
+.home-product-banners .product-banner-1 .pr-banner-1-description .banner1-cta-button {
   width: 30%;
   background-color: #000000;
 }
-.main-section-container .home-product-banners .product-banner-1 .pr-banner-1-description .banner1-cta-button:hover {
+.home-product-banners .product-banner-1 .pr-banner-1-description .banner1-cta-button:hover {
   background-color: rgba(16, 16, 16, 0.632);
 }
-.main-section-container .home-product-banners .product-banner-2 {
+.home-product-banners .product-banner-2 {
   width: 100%;
   height: 100%;
   padding-left: 4em;
   grid-area: product2;
-  background-image: url('../images/home/desktop/image-speaker-zx7.jpg');
+  background-image: url("../images/home/desktop/image-speaker-zx7.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -140,7 +96,7 @@
   justify-content: flex-start;
   flex-direction: row;
 }
-.main-section-container .home-product-banners .product-banner-2 .pr-banner-2-description {
+.home-product-banners .product-banner-2 .pr-banner-2-description {
   width: 40%;
   height: 40%;
   display: flex;
@@ -148,27 +104,27 @@
   justify-content: space-between;
   flex-direction: column;
 }
-.main-section-container .home-product-banners .product-banner-2 .pr-banner-2-description h3 {
+.home-product-banners .product-banner-2 .pr-banner-2-description h3 {
   font-size: 2rem;
 }
-.main-section-container .home-product-banners .product-banner-2 .banner2-cta-button {
+.home-product-banners .product-banner-2 .banner2-cta-button {
   width: 30%;
   background: none;
   border: 1px solid #000000;
   color: #000000;
 }
-.main-section-container .home-product-banners .product-banner-2 .banner2-cta-button:hover {
+.home-product-banners .product-banner-2 .banner2-cta-button:hover {
   color: #ffffff;
   background-color: #000000;
 }
-.main-section-container .home-product-banners .product-banner-3-left {
+.home-product-banners .product-banner-3-left {
   grid-area: product3left;
-  background-image: url('../images/home/desktop/image-earphones-yx1.jpg');
+  background-image: url("../images/home/desktop/image-earphones-yx1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.main-section-container .home-product-banners .product-banner-3-right {
+.home-product-banners .product-banner-3-right {
   grid-area: product3right;
   display: flex;
   align-items: flex-start;
@@ -177,51 +133,16 @@
   background-color: #f1f1f1;
   padding: 4em;
 }
-.main-section-container .home-product-banners .product-banner-3-right h3 {
+.home-product-banners .product-banner-3-right h3 {
   font-size: 2rem;
 }
-.main-section-container .home-product-banners .product-banner-3-right .banner3-cta-button {
+.home-product-banners .product-banner-3-right .banner3-cta-button {
   width: 30%;
   background: none;
   border: 1px solid #000000;
   color: #000000;
 }
-.main-section-container .home-product-banners .product-banner-3-right .banner3-cta-button:hover {
+.home-product-banners .product-banner-3-right .banner3-cta-button:hover {
   color: #ffffff;
   background-color: #000000;
-}
-.main-section-container .about-company-container {
-  width: 100%;
-  margin-top: 15em;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  gap: 5%;
-}
-.main-section-container .about-company-container .about-company-text {
-  width: 47.5%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
-  flex-direction: column;
-}
-.main-section-container .about-company-container .about-company-text h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1em;
-}
-.main-section-container .about-company-container .about-company-text h2 span {
-  color: #d87d4a;
-}
-.main-section-container .about-company-container .about-company-text p {
-  color: #191919;
-}
-.main-section-container .about-company-container .about-company-image {
-  width: 47.5%;
-  height: 600px;
-  background-image: url('../images/shared/desktop/image-best-gear.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }

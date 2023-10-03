@@ -1,0 +1,31 @@
+@import "./variables.less";
+.about-company-container {
+  width: 100%;
+  margin-top: 15em;
+  .flex-setup(center, space-between, row);
+
+  .about-company-text {
+    width: 47.5%;
+    .flex-setup(flex-start, space-around, column);
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1em;
+
+      span {
+        color: @dark-orange;
+      }
+    }
+
+    p {
+      color: @dark-gray;
+    }
+  }
+
+  .about-company-image {
+    width: 47.5%;
+    height: 600px;
+    .background-image-setup("../images/shared/desktop/image-best-gear.jpg");
+  }
+}

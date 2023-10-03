@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+.cta-button {
+  height: 45px;
+  font-weight: bolder;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+}
+.about-company-container {
+  width: 100%;
+  margin-top: 15em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.about-company-container .about-company-text {
+  width: 47.5%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.about-company-container .about-company-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+.about-company-container .about-company-text h2 span {
+  color: #d87d4a;
+}
+.about-company-container .about-company-text p {
+  color: #191919;
+}
+.about-company-container .about-company-image {
+  width: 47.5%;
+  height: 600px;
+  background-image: url("../images/shared/desktop/image-best-gear.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

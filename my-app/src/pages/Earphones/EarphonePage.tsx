@@ -2,17 +2,16 @@ import '../../dist-styles/categories.css'
 import Navbar from '../../components/Elements/Navbar/Navbar';
 import HeaderSection from "../../components/Elements/Header/HeaderSection";
 import CategoryBanner from "../../components/Elements/CategoriesElements/CategoryBanner";
-import MainSection from "../Home/MainSection";
+import MainSection from "../../components/Elements/MainSection/MainSection";
 import ProductPreview from "../../components/Products/ProductPreview";
 import CategoryPanel from "../../components/Elements/CategoriesElements/CategoryPanel";
 import AboutCompany from "../../components/Elements/AboutCompany/AboutCompany";
 import Footer from "../../components/Elements/Footer/Footer";
 import { earphonesList } from '../../data/ProductData';
-import React from 'react';
 
-const EarphonesPage: React.FC = (props) => {
+const EarphonesPage = () => {
   return (
-    <React.Fragment>
+    <>
       <HeaderSection>
         <Navbar />
         <CategoryBanner>EARPHONES</CategoryBanner>
@@ -33,7 +32,7 @@ const EarphonesPage: React.FC = (props) => {
         <AboutCompany /> 
       </MainSection>
       <Footer /> 
-    </React.Fragment>
+    </>
   )
 };
 

@@ -1,6 +1,6 @@
-import { useShoppingCart } from "../../context/CartContext";
-import { vatCounter } from "../../utilities/vatCounter";
-import '../../dist-styles/checkout.css'
+import { useShoppingCart } from "../../../context/CartContext";
+import { vatCounter } from "../../../utilities/vatCounter";
+import '../../../dist-styles/checkout-cart.css'
 
 const PricingTable = () => {
 

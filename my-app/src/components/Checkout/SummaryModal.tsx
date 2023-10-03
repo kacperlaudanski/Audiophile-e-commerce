@@ -1,10 +1,9 @@
-import React, { ReactEventHandler, useEffect, useRef, useState } from "react";
+import { ReactEventHandler, useEffect, useRef, useState } from "react";
 import ConfirmationIcon from "../../images/checkout/icon-order-confirmation.svg";
-import "../../dist-styles/summary-modal.css";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "../../context/CartContext";
 import { scrollPageToTop } from "../../utilities/pageScrolling";
-import { deleteFromStorage } from "../../utilities/cartStorageHandler";
+import "../../dist-styles/summary-modal.css";
 
 interface Modal {
   openModal: boolean;
@@ -78,7 +77,7 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
           onClick={() => {
             navigate("/");
             scrollPageToTop();
-            removeAllItems(); 
+            removeAllItems();
           }}
         >
           BACK TO HOME

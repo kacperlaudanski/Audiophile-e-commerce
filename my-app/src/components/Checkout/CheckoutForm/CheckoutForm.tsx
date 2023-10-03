@@ -1,8 +1,8 @@
 import { useEffect, useReducer, useState } from "react";
-import "../../dist-styles/checkout-form.css";
-import CheckoutInput from "../../components/Elements/Input/CheckoutInput";
-import RadioInput from "../../components/Elements/Input/RadioCheckoutInput";
-import { checkValidation, conditions } from "../../utilities/validation";
+import "../../../dist-styles/checkout-form.css";
+import CheckoutInput from "../../Elements/Input/CheckoutInput";
+import RadioInput from "../../Elements/Input/RadioCheckoutInput";
+import { checkValidation, conditions } from "../../../utilities/validation";
 import CashPaymentInfo from "./CashPaymentInfo";
 import { CheckoutReducer, DEFAULT_VALUES_TYPE } from "./checkout-reducer";
 import { Action } from "./checkout-reducer";

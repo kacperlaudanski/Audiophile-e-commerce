@@ -1,6 +1,5 @@
-import React from "react";
-import "../../dist-styles/checkout.css";
-import CashPaymentIcon from '../../images/checkout/icon-cash-on-delivery.svg'
+import "../../../dist-styles/checkout-form.css";
+import CashPaymentIcon from '../../../images/checkout/icon-cash-on-delivery.svg'
 
 const CashPaymentInfo = () => {
   return (

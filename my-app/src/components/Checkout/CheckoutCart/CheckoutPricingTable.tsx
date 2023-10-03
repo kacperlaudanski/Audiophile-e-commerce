@@ -1,14 +1,13 @@
 import { useShoppingCart } from "../../../context/CartContext";
 import { vatCounter } from "../../../utilities/vatCounter";
+import { calculateGrandTotal } from "../../../utilities/grandTotalCounter";
 import '../../../dist-styles/checkout-cart.css'
 
 const PricingTable = () => {
 
     const {totalPrice} = useShoppingCart();
-
-    const shippingCost = 50; 
     const vat = vatCounter(totalPrice); 
-    const grandTotal = totalPrice + shippingCost; 
+    const grandTotal = calculateGrandTotal(totalPrice)
 
     return (
         <div className="checkout-costs-container">
@@ -18,7 +17,7 @@ const PricingTable = () => {
         </div>
         <div className="checkout-cost">
             <span className="cost-title">SHIPPING</span>
-            <span className="cost-value">$ {shippingCost}</span>
+            <span className="cost-value">$ 50</span>
         </div>
         <div className="checkout-cost">
             <span className="cost-title">VAT (INCLUDED)</span>

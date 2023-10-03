@@ -15,8 +15,6 @@ export type DEFAULT_VALUES_TYPE = {
     payload: string;
   };
   
-
-
 export const CheckoutReducer = (
     state: DEFAULT_VALUES_TYPE,
     action: Action

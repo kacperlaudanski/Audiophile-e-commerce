@@ -2,14 +2,14 @@ import { useShoppingCart } from '../../context/CartContext';
 import '../../dist-styles/cart.css';
 import QuantityWidget from "../Elements/QuantityWidget/QuantityWidget";
 
-interface CartItem {
+interface CartItemType {
     name: string | undefined; 
     id: number | undefined; 
     price: number | undefined; 
     image: string | undefined; 
 }
 
-const CartItem = ({name, id, price, image}: CartItem) => {
+const CartItem: React.FC<CartItemType> = ({name, id, price, image}) => {
 
   const {increaseItemAmount, decreaseItemAmount, getItemAmount} = useShoppingCart();
 
@@ -24,9 +24,9 @@ const CartItem = ({name, id, price, image}: CartItem) => {
           </div>
           <div className='cart-quantity-widget'>
             <QuantityWidget 
-              containerClass="cart-amount-container"
-              inputClass="cart-amount-input"
-              amountBtnClass="cart-amount-btn"
+              containerClass="cart-quantity-container"
+              inputClass="cart-quantity-input"
+              amountBtnClass="cart-quantity-btn"
               inputValue={getItemAmount(id)}
               increaseInputBtn={() => {increaseItemAmount(id)}}
               decreaseInputBtn={() => {decreaseItemAmount(id)}}

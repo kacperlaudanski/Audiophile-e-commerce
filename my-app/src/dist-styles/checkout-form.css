@@ -16,14 +16,12 @@
 }
 .checkout-form-container {
   width: 70%;
-  height: auto;
   background-color: #ffffff;
   border-radius: 15px;
   padding: 3em;
   border: 2px solid #cbcbcb;
 }
 .checkout-form-container .checkout-form-section {
-  height: auto;
   margin-top: 70px;
   display: flex;
   align-items: flex-start;
@@ -96,7 +94,6 @@
 }
 .checkout-form-container .checkout-form-section .payment-details-container {
   width: 100%;
-  height: auto;
   margin-top: 20px;
   display: grid;
   grid-template-columns: auto auto;

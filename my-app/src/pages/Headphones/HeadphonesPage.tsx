@@ -4,8 +4,8 @@ import Navbar from "../../components/Elements/Navbar/Navbar";
 import CategoryBanner from "../../components/Elements/CategoriesElements/CategoryBanner";
 import MainSection from "../Home/MainSection";
 import ProductPreview from "../../components/Products/ProductPreview";
-import CategorySelectionPanel from "../Home/CategorySelectionPanel";
-import AboutCompany from "../Home/AboutCompany";
+import CategoryPanel from "../../components/Elements/CategoriesElements/CategoryPanel";
+import AboutCompany from "../../components/Elements/AboutCompany/AboutCompany";
 import Footer from "../../components/Elements/Footer/Footer";
 import React from "react";
 import { headphonesList } from "../../data/ProductData";
@@ -29,7 +29,7 @@ const HeadphonesPage: React.FC = (props) => {
             />
           );
         })}
-        <CategorySelectionPanel />
+        <CategoryPanel />
         <AboutCompany />
       </MainSection>
       <Footer />

@@ -1,9 +1,9 @@
 import React from "react";
-import "../../dist-styles/home.css";
-import SpeakerImage from "../../images/home/desktop/image-speaker-zx9.png";
-import PatternCircles from "../../images/home/desktop/pattern-circles.svg";
+import "../../../dist-styles/home.css";
+import SpeakerImage from "../../../images/home/desktop/image-speaker-zx9.png";
+import PatternCircles from "../../../images/home/desktop/pattern-circles.svg";
 import { useNavigate } from "react-router-dom";
-import { scrollPageToTop } from "../../utilities/pageScrolling";
+import { scrollPageToTop } from "../../../utilities/pageScrolling";
 
 const ProductsBanner: React.FC = () => {
   const navigate = useNavigate();

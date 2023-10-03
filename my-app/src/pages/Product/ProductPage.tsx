@@ -2,8 +2,8 @@ import HeaderSection from "../../components/Elements/Header/HeaderSection";
 import MainSection from "../Home/MainSection";
 import Navbar from "../../components/Elements/Navbar/Navbar";
 import ProductDetails from "../../components/Products/ProductCard";
-import CategorySelectionPanel from "../Home/CategorySelectionPanel";
-import AboutCompany from "../Home/AboutCompany";
+import CategoryPanel from "../../components/Elements/CategoriesElements/CategoryPanel";
+import AboutCompany from "../../components/Elements/AboutCompany/AboutCompany";
 import Footer from "../../components/Elements/Footer/Footer";
 import BoxContentItem from "../../components/Products/BoxContentElement";
 import ImageGallery from "../../components/Products/ImageGallery";
@@ -56,7 +56,7 @@ const ProductPage: React.FC = (props) => {
           galleryImage3={selectedProduct?.galleryImage3}
         />
         <RelatedProductsPanel />
-        <CategorySelectionPanel />
+        <CategoryPanel />
         <AboutCompany />
       </MainSection>
       <Footer />

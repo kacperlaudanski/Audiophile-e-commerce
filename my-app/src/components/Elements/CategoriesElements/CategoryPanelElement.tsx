@@ -1,13 +1,14 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
-import ArrowIcon from "../../images/shared/desktop/icon-arrow-right.svg";
-import { scrollPageToTop } from "../../utilities/pageScrolling";
+import ArrowIcon from "../../../images/shared/desktop/icon-arrow-right.svg";
+import { scrollPageToTop } from "../../../utilities/pageScrolling";
 
-const Category: React.FC<{
+interface CategoryType {
   categoryImage: string;
   categoryName: string;
   categoryLink: string;
-}> = (props) => {
+}
+
+const Category: React.FC<CategoryType> = (props) => {
   return (
     <div className="category-container">
       <img

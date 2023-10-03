@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { scrollPageToTop } from "../../utilities/pageScrolling";
+import { scrollPageToTop } from "../../../utilities/pageScrolling";
 
 const HeaderProduct = () => {
   const navigate = useNavigate();
@@ -12,12 +12,12 @@ const HeaderProduct = () => {
           <br></br>
           <span>HEADPHONES</span>
         </h1>
-        <h6 className="header-product-note">
+        <p className="header-product-note">
           <span>Experience natural, lifelike audio and exceptional</span>{" "}
           <br></br>
           <span>build quality made for the passionate music</span> <br></br>
           <span>enthusiast.</span>
-        </h6>
+        </p>
         <button
           className="header-cta-button cta-button"
           onClick={() => {

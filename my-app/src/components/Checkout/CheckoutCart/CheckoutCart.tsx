@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useShoppingCart } from "../../context/CartContext";
+import { useShoppingCart } from "../../../context/CartContext";
 import PricingTable from "./CheckoutPricingTable";
-import SummaryModal from "./SummaryModal";
-import "../../dist-styles/checkout-cart.css";
+import SummaryModal from "../SummaryModal";
+import "../../../dist-styles/checkout-cart.css";
 
 const CheckoutCart: React.FC<{ isButtonDisabled: boolean }> = (props) => {
   const { renderCheckoutItems } = useShoppingCart();

@@ -1,4 +1,4 @@
-import "../../dist-styles/checkout-cart-item.css";
+import "../../../dist-styles/checkout-cart-item.css";
 
 interface CheckoutCartItemType {
   name: string | undefined;

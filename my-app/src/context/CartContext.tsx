@@ -5,7 +5,7 @@ import {
   speakersList,
 } from "../data/ProductData";
 import CartItem from "../components/Cart/CartItem";
-import CheckoutCartItem from "../pages/Checkout/CheckoutCartItem";
+import CheckoutCartItem from "../components/Checkout/CheckoutCart/CheckoutCartItem";
 import { addToStorage, deleteFromStorage, getFromStorage } from "../utilities/cartStorageHandler";
 
 export type CartItemTypes = {

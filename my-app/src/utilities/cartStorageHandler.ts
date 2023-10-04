@@ -1,6 +1,6 @@
-import { CartItemTypes } from "../context/CartContext";
+import { CartItemType } from "../context/CartContext";
 
-export function addToStorage(key: string, data: CartItemTypes[] | number) {
+export function addToStorage(key: string, data: CartItemType[] | number) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 

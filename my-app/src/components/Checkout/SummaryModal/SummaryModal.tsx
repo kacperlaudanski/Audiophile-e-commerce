@@ -1,10 +1,10 @@
 import { ReactEventHandler, useEffect, useRef, useState } from "react";
-import ConfirmationIcon from "../../images/checkout/icon-order-confirmation.svg";
+import ConfirmationIcon from "../../../images/checkout/icon-order-confirmation.svg";
 import { useNavigate } from "react-router-dom";
-import { useShoppingCart } from "../../context/CartContext";
-import { scrollPageToTop } from "../../utilities/pageScrolling";
-import { calculateGrandTotal } from "../../utilities/grandTotalCounter";
-import "../../dist-styles/summary-modal.css";
+import { useShoppingCart } from "../../../context/CartContext";
+import { scrollPageToTop } from "../../../utilities/pageScrolling";
+import { calculateGrandTotal } from "../../../utilities/grandTotalCounter";
+import "../../../dist-styles/summary-modal.css";
 
 interface Modal {
   openModal: boolean;
@@ -19,7 +19,6 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
 
   const {
     cartItems,
-    renderFirstCheckoutItem,
     renderCheckoutItems,
     totalPrice,
     removeAllItems,
@@ -48,8 +47,8 @@ const SummaryModal: React.FC<Modal> = ({ openModal, closeModal }) => {
         <div className="summary-order-list">
           <div className="order-list-left">
             {isShowMoreActive
-              ? renderCheckoutItems()
-              : renderFirstCheckoutItem()}
+              ? renderCheckoutItems(false)
+              : renderCheckoutItems(true)}
             <div className="show-more-btn-container">
               {cartItems.length > 1 && (
                 <button

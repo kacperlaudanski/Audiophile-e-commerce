@@ -1,4 +1,4 @@
-import "../../dist-styles/products.css";
+import "../../dist-styles/image-gallery.css";
 
 interface GalleryImages {
   galleryImage1: string | undefined;

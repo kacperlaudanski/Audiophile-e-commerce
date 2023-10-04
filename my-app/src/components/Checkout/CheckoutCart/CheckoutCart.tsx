@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useShoppingCart } from "../../../context/CartContext";
 import PricingTable from "./CheckoutPricingTable";
-import SummaryModal from "../SummaryModal";
+import SummaryModal from "../SummaryModal/SummaryModal";
 import "../../../dist-styles/checkout-cart.css";
 
 const CheckoutCart: React.FC<{ isButtonDisabled: boolean }> = (props) => {
@@ -12,7 +12,7 @@ const CheckoutCart: React.FC<{ isButtonDisabled: boolean }> = (props) => {
     <>
       <div className="checkout-cart-container">
         <h4>SUMMARY</h4>
-        <div className="checkout-items-container">{renderCheckoutItems()}</div>
+        <div className="checkout-items-container">{renderCheckoutItems(false)}</div>
         <PricingTable />
         <button
           className="checkout-buy-btn"

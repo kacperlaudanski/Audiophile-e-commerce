@@ -1,0 +1,33 @@
+@import './variables.less'; 
+
+.image-gallery-container{
+    width:100%; 
+    height: 600px;
+    margin: 100px 0 200px; 
+    .flex-setup(center, space-between, row);
+
+    img{
+        border-radius: 10px;
+    }
+
+    .small-images-container{
+        width:39%;
+        height:100%;
+        .flex-setup(left, space-between, column); 
+
+        .small-image{
+            width:100%; 
+            height:48%; 
+        }
+    }
+
+    .big-image-container{
+        width:59%; 
+        height:100%; 
+
+        .big-image{
+            width:100%; 
+            height:100%; 
+        }
+    }
+}

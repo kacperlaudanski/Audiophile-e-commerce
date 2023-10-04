@@ -1,0 +1,33 @@
+@import './variables.less'; 
+
+.related-panel-container {
+    width: 100%;
+    height: 350px;
+    .flex-setup(center, space-between, row);
+    margin-bottom: 200px;
+  
+    .related-product-container {
+      width: 30%;
+      .flex-setup(center, space-between, column);
+  
+      img {
+        width: 90%;
+      }
+  
+      .related-product-name {
+        font-size: 1.3rem;
+        font-weight: bolder;
+        margin: 1em 0;
+      }
+  
+      .see-related-product-btn:extend(.cta-button) {
+        width: 45%;
+        max-width: 150px;
+        background-color: @dark-orange;
+  
+        &:hover{
+          background-color: @bright-orange;
+        }
+      }
+    }
+  }

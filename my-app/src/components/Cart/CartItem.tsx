@@ -27,9 +27,9 @@ const CartItem: React.FC<CartItemType> = ({name, id, price, image}) => {
               containerClass="cart-quantity-container"
               inputClass="cart-quantity-input"
               amountBtnClass="cart-quantity-btn"
-              inputValue={getItemAmount(id)}
-              increaseInputBtn={() => {increaseItemAmount(id)}}
-              decreaseInputBtn={() => {decreaseItemAmount(id)}}
+              inputValue={getItemAmount(id!)}
+              increaseInputBtn={() => {increaseItemAmount(id!)}}
+              decreaseInputBtn={() => {decreaseItemAmount(id!)}}
             /> 
           </div>
         </div>

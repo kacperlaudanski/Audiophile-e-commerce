@@ -3,10 +3,10 @@ import '../../dist-styles/cart.css';
 import QuantityWidget from "../Elements/QuantityWidget/QuantityWidget";
 
 interface CartItemType {
-    name: string | undefined; 
-    id: number | undefined; 
-    price: number | undefined; 
-    image: string | undefined; 
+    name: string; 
+    id: number; 
+    price: number; 
+    image: string; 
 }
 
 const CartItem: React.FC<CartItemType> = ({name, id, price, image}) => {

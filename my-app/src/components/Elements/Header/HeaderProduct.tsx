@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { scrollPageToTop } from "../../../utilities/pageScrolling";
+import '../../../dist-styles/header.css';
 
 const HeaderProduct = () => {
   const navigate = useNavigate();

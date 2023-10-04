@@ -1,9 +1,9 @@
 import "../../dist-styles/image-gallery.css";
 
 interface GalleryImages {
-  galleryImage1: string | undefined;
-  galleryImage2: string | undefined;
-  galleryImage3: string | undefined;
+  galleryImage1: string;
+  galleryImage2: string;
+  galleryImage3: string;
 }
 
 const ImageGallery: React.FC<GalleryImages> = (props) => {

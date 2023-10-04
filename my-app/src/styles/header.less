@@ -1,49 +1,50 @@
-@import './variables.less';
+@import "./variables.less";
 
 .header-section-container {
-    width: 100%;
-    background-color: @dark-gray;
-    .flex-setup(center, flex-start, column);
-  
-    .header-product-container {
-      width: 80%;
-      height: 600px;
-      color: @white;
-      .flex-setup(center, space-between, row);
-  
-      .header-product-description {
-        width: 100%;
-        height: 100%;
-        .flex-setup(flex-start, center, column);
-        .background-image-setup('../images/home/desktop/image-hero.jpg');
-  
-        .new-product-sign {
-          color: @gray-transparent;
-          letter-spacing: 6px;
-          font-size: 0.9rem;
-          margin: 1.7em 0;
-        }
-  
-        .header-product-name {
-          font-size: 3rem;
-          color: @white;
-        }
-  
-        .header-product-note {
-          font-size: 1rem;
-          line-height: 1.7em;
-          color: @light-gray;
-          margin: 1.7em 0;
-        }
-  
-        .header-cta-button:extend(.cta-button){
-          width:12%;
-          background-color: @dark-orange;
-  
-          &:hover {
-            background-color: @bright-orange;
-          }
+  width: 100%;
+  background-color: @dark-gray;
+  .flex-setup(center, flex-start, column);
+
+  .header-product-container {
+    width: 80%;
+    height: 600px;
+    color: @white;
+    .flex-setup(center, space-between, row);
+
+    .header-product-description {
+      width: 100%;
+      height: 100%;
+      .flex-setup(flex-start, center, column);
+      .background-image-setup("../images/home/desktop/image-hero.jpg");
+
+      .new-product-sign {
+        color: @gray-transparent;
+        letter-spacing: 6px;
+        font-size: 0.9rem;
+        margin: 1.7em 0;
+      }
+
+      .header-product-name {
+        font-size: 3rem;
+        color: @white;
+      }
+
+      .header-product-note {
+        font-size: 1rem;
+        line-height: 1.7em;
+        color: @light-gray;
+        margin: 1.7em 0;
+      }
+
+      .header-cta-button:extend(.cta-button) {
+        width: 12%;
+        background-color: @dark-orange;
+
+        &:hover {
+          background-color: @bright-orange;
         }
       }
     }
   }
+}
+

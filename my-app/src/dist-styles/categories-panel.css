@@ -50,3 +50,12 @@
 .categories-panel-container .category-container .category-link:hover {
   color: #d87d4a;
 }
+@media screen and (max-width: 767px) {
+  .categories-panel-container {
+    flex-direction: column;
+  }
+  .categories-panel-container .category-container {
+    width: 100%;
+    margin-bottom: 6em;
+  }
+}

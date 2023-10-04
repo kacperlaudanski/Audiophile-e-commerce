@@ -126,10 +126,10 @@ export function ShoppingCartContextProvider({
       return (
         <CartItem
           key={index}
-          name={product?.cartName}
-          price={product?.price}
-          image={product?.mainImage}
-          id={product?.id}
+          name={product?.cartName!}
+          price={product?.price!}
+          image={product?.mainImage!}
+          id={product?.id!}
         />
       );
     });

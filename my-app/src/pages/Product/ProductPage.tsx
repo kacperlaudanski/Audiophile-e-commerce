@@ -51,9 +51,9 @@ const ProductPage: React.FC = (props) => {
           })}
         />
         <ImageGallery
-          galleryImage1={selectedProduct?.galleryImage1}
-          galleryImage2={selectedProduct?.galleryImage2}
-          galleryImage3={selectedProduct?.galleryImage3}
+          galleryImage1={selectedProduct?.galleryImage1!}
+          galleryImage2={selectedProduct?.galleryImage2!}
+          galleryImage3={selectedProduct?.galleryImage3!}
         />
         <RelatedProductsPanel />
         <CategoryPanel />

@@ -16,7 +16,7 @@ const HeaderProduct = () => {
         <p className="header-product-note">
           <span>Experience natural, lifelike audio and exceptional</span>{" "}
           <br></br>
-          <span>build quality made for the passionate music</span> <br></br>
+          <span>build quality made for the passionate music</span><br></br>
           <span>enthusiast.</span>
         </p>
         <button

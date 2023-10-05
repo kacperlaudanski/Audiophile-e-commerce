@@ -28,13 +28,13 @@ const Footer = () => {
             />
           </nav>
           <div className="footer-socials">
-            <a href="#">
+            <a href="javascript:void(0)">
               <img src={FacebookIcon} alt="facebook-icon" className="social-icon"></img>
             </a>
-            <a href="#">
+            <a href="javascript:void(0)">
               <img src={TwitterIcon} alt="twitter-icon" className="social-icon"></img>
             </a>
-            <a href="#">
+            <a href="javascript:void(0)">
               <img src={InstagramIcon} alt="instagram-icon" className="social-icon"></img>
             </a>
           </div>

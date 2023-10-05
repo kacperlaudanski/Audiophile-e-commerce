@@ -1,18 +1,23 @@
-import React from "react";
 import "../../../dist-styles/home.css";
-import SpeakerImage from "../../../images/home/desktop/image-speaker-zx9.png";
+import SpeakerImageDesktop from "../../../images/home/desktop/image-speaker-zx9.png";
+import SpeakerImageMobile from "../../../images/home/mobile/image-speaker-zx9.png";
 import PatternCircles from "../../../images/home/desktop/pattern-circles.svg";
 import { useNavigate } from "react-router-dom";
 import { scrollPageToTop } from "../../../utilities/pageScrolling";
 
-const ProductsBanner: React.FC = () => {
+const ProductsBanner = () => {
   const navigate = useNavigate();
 
   return (
     <div className="home-product-banners">
       <div className="product-banner-1">
         <div className="pr-banner-1-image">
-          <img src={SpeakerImage} alt="speaker-image"></img>
+          <img
+            srcSet={`${SpeakerImageDesktop} 800w, ${SpeakerImageMobile}, 400w`}
+            src={SpeakerImageDesktop}
+            sizes="(max-width:767px) 320px, 758px"
+            alt="speaker-image"
+          ></img>
           <img
             src={PatternCircles}
             alt="circle-pattern"
@@ -27,9 +32,7 @@ const ProductsBanner: React.FC = () => {
           </h2>
           <p>
             <span>Upgrade to premium speakers that are</span>
-            <br></br>
             <span>phenomenallu built to deliver truly remarkable</span>
-            <br></br>
             <span>sound.</span>
           </p>
           <button

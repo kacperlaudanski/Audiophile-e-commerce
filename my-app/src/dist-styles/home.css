@@ -20,7 +20,7 @@
 .home-product-banners {
   width: 100%;
   margin-top: 8em;
-  height: 1200px;
+  height: 1400px;
   display: grid;
   grid-template-rows: 45% 25% 25%;
   grid-template-columns: 47.5% 47.5%;
@@ -29,6 +29,8 @@
 }
 .home-product-banners .product-banner-1 {
   width: 100%;
+  padding: 2em;
+  border-radius: 10px;
   grid-area: product1;
   background-color: #d87d4a;
   overflow: hidden;
@@ -85,6 +87,7 @@
 .home-product-banners .product-banner-2 {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
   padding-left: 4em;
   grid-area: product2;
   background-image: url("../images/home/desktop/image-speaker-zx7.jpg");
@@ -119,12 +122,14 @@
 }
 .home-product-banners .product-banner-3-left {
   grid-area: product3left;
+  border-radius: 10px;
   background-image: url("../images/home/desktop/image-earphones-yx1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .home-product-banners .product-banner-3-right {
+  border-radius: 10px;
   grid-area: product3right;
   display: flex;
   align-items: flex-start;
@@ -145,4 +150,61 @@
 .home-product-banners .product-banner-3-right .banner3-cta-button:hover {
   color: #ffffff;
   background-color: #000000;
+}
+@media screen and (max-width: 767px) {
+  .home-product-banners {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .home-product-banners .product-banner-1 {
+    height: 850px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .home-product-banners .product-banner-1 .pr-banner-1-image img {
+    width: 70%;
+    height: 70%;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+  }
+  .home-product-banners .product-banner-1 .pr-banner-1-image .circle-pattern {
+    width: 150%;
+    height: 170%;
+    position: absolute;
+    bottom: -50%;
+    z-index: 1;
+  }
+  .home-product-banners .product-banner-1 .pr-banner-1-description {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+  }
+  .home-product-banners .product-banner-1 .pr-banner-1-description h2 {
+    font-size: 2rem;
+  }
+  .home-product-banners .product-banner-1 .pr-banner-1-description .banner1-cta-button {
+    width: 50%;
+    margin-top: 1em;
+  }
+  .home-product-banners .product-banner-2 {
+    width: 100%;
+    height: 300px;
+  }
+  .home-product-banners .product-banner-3-left {
+    width: 100%;
+    height: 250px;
+  }
+  .home-product-banners .product-banner-3-right {
+    width: 100%;
+    height: 250px;
+  }
 }

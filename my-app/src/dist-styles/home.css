@@ -29,7 +29,6 @@
 }
 .home-product-banners .product-banner-1 {
   width: 100%;
-  padding: 2em;
   border-radius: 10px;
   grid-area: product1;
   background-color: #d87d4a;
@@ -157,9 +156,11 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    gap: 3%;
   }
   .home-product-banners .product-banner-1 {
     height: 850px;
+    padding: 2em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -173,10 +174,10 @@
     transform: translate(-50%);
   }
   .home-product-banners .product-banner-1 .pr-banner-1-image .circle-pattern {
-    width: 150%;
-    height: 170%;
+    width: 290%;
+    height: 210%;
     position: absolute;
-    bottom: -50%;
+    top: -50%;
     z-index: 1;
   }
   .home-product-banners .product-banner-1 .pr-banner-1-description {
@@ -197,14 +198,26 @@
   }
   .home-product-banners .product-banner-2 {
     width: 100%;
-    height: 300px;
+    height: 500px;
+    background-image: url("../images/home/mobile/image-speaker-zx7.jpg");
+  }
+  .home-product-banners .product-banner-2 .pr-banner-2-description {
+    width: 100%;
+  }
+  .home-product-banners .product-banner-2 .banner2-cta-button {
+    width: 50%;
   }
   .home-product-banners .product-banner-3-left {
     width: 100%;
     height: 250px;
+    background-image: url("../images/home/mobile/image-earphones-yx1.jpg");
   }
   .home-product-banners .product-banner-3-right {
     width: 100%;
     height: 250px;
+    padding: 2em;
+  }
+  .home-product-banners .product-banner-3-right .banner3-cta-button {
+    width: 50%;
   }
 }

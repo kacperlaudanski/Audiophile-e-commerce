@@ -39,3 +39,9 @@
   color: #d87d4a;
   cursor: pointer;
 }
+@media screen and (min-width: 767px) {
+  .category-list-element {
+    margin-top: 1em;
+    font-weight: bolder;
+  }
+}

@@ -1,11 +1,13 @@
 @import './variables.less'; 
 
-.navbar-desktop{
+.navbar{
     width:80%; 
     height: 90px;
     background-color: @dark-gray; 
-    font-family: @font; 
     border-bottom: .7px solid @light-gray;
+}
+
+.navbar-desktop:extend(.navbar){
     .flex-setup(center, center, row);
 
     .navbar-logo-container{
@@ -26,6 +28,42 @@
     .cart-button-container{
         width:25%; 
         .flex-setup(center, flex-end, row);
+
+        .cart-button{
+            width:30px;
+            height:30px; 
+            background: none;
+            border:none;
+            .background-image-setup('../images/shared/desktop/icon-cart.svg'); 
+            background-size: auto;
+            color: @white;
+            outline:none; 
+            cursor: pointer;
+        }
+    }
+}
+
+.navbar-mobile:extend(.navbar){
+    .flex-setup(center, center, row); 
+
+    .navbar-mobile-logo-list{
+        width: 50%; 
+        .flex-setup(center, space-between, row); 
+
+        .navbar-logo{
+            color:@white;
+            text-decoration: none;
+            font-size: 1.5rem; 
+            font-weight: 600;
+        }
+
+        .navbar-mobile-list{
+           
+        }
+    }
+
+    .cart-button-container{
+        width:50%; 
 
         .cart-button{
             width:30px;

@@ -1,6 +1,6 @@
 import "../../dist-styles/categories.css";
 import HeaderSection from "../../components/Elements/Header/HeaderSection";
-import Navbar from "../../components/Elements/Navbar/Navbar";
+import Navbar from "../../components/Elements/Navbar/DesktopNavbar";
 import CategoryBanner from "../../components/Elements/CategoriesElements/CategoryBanner";
 import MainSection from "../../components/Elements/MainSection/MainSection";
 import ProductPreview from "../../components/Products/ProductPreview";

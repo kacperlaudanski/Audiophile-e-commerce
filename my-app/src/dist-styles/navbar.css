@@ -14,12 +14,15 @@
   border: none;
   transition: 0.3s linear;
 }
-.navbar-desktop {
+.navbar,
+.navbar-desktop,
+.navbar-mobile {
   width: 80%;
   height: 90px;
   background-color: #191919;
-  font-family: "Manrope", sans-serif;
   border-bottom: 0.7px solid #f1f1f1;
+}
+.navbar-desktop {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,6 +53,42 @@
   flex-direction: row;
 }
 .navbar-desktop .cart-button-container .cart-button {
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  background-image: url('../images/shared/desktop/icon-cart.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: auto;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+.navbar-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.navbar-mobile .navbar-mobile-logo-list {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.navbar-mobile .navbar-mobile-logo-list .navbar-logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.navbar-mobile .cart-button-container {
+  width: 50%;
+}
+.navbar-mobile .cart-button-container .cart-button {
   width: 30px;
   height: 30px;
   background: none;

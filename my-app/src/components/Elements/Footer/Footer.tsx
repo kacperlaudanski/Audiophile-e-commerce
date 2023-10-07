@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
         <div className="footer-nav-social-container">
           <nav>
-            <CategoriesNavList listClass="footer-categories-list" />
+              <CategoriesNavList listClass="footer-categories-list" />
           </nav>
           <div className="footer-socials">
             <a href="javascript:void(0)">

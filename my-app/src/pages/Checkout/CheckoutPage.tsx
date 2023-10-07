@@ -1,5 +1,5 @@
 import {useState} from "react";
-import Navbar from "../../components/Elements/Navbar/Navbar";
+import Navbar from "../../components/Elements/Navbar/DesktopNavbar";
 import HeaderSection from "../../components/Elements/Header/HeaderSection";
 import MainSection from "../../components/Elements/MainSection/MainSection";
 import CheckoutForm from "../../components/Checkout/CheckoutForm/CheckoutForm";

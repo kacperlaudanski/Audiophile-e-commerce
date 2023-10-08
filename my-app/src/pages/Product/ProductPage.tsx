@@ -1,6 +1,7 @@
 import HeaderSection from "../../components/Elements/Header/HeaderSection";
 import MainSection from "../../components/Elements/MainSection/MainSection";
 import Navbar from "../../components/Elements/Navbar/DesktopNavbar";
+import MobileNavbar from "../../components/Elements/Navbar/MobileNavbar";
 import ProductDetails from "../../components/Products/ProductCard";
 import CategoryPanel from "../../components/Elements/CategoriesElements/CategoryPanel";
 import AboutCompany from "../../components/Elements/AboutCompany/AboutCompany";
@@ -16,10 +17,12 @@ import {
 import { useParams } from "react-router-dom";
 import GoBackButton from "../../components/Elements/GoBackButton/GoBackButton";
 import { v4 as uuidv4 } from "uuid";
+import { useResponsiveNavbar } from "../../hooks/useResponsiveNavbar";
 
 const ProductPage: React.FC = (props) => {
   const allProducts = [...headphonesList, ...earphonesList, ...speakersList];
   const { product } = useParams();
+  const {onDesktop} = useResponsiveNavbar(); 
 
   function selectProduct() {
     return allProducts.find((item) => item.product === product);
@@ -29,7 +32,7 @@ const ProductPage: React.FC = (props) => {
   return (
     <>
       <HeaderSection>
-        <Navbar />
+       {onDesktop ? <Navbar /> : <MobileNavbar />}
       </HeaderSection>
       <MainSection>
         <GoBackButton />

@@ -1,5 +1,6 @@
 import '../../dist-styles/categories.css'
 import Navbar from '../../components/Elements/Navbar/DesktopNavbar';
+import MobileNavbar from '../../components/Elements/Navbar/MobileNavbar';
 import HeaderSection from "../../components/Elements/Header/HeaderSection";
 import CategoryBanner from "../../components/Elements/CategoriesElements/CategoryBanner";
 import MainSection from "../../components/Elements/MainSection/MainSection";
@@ -8,12 +9,15 @@ import CategoryPanel from "../../components/Elements/CategoriesElements/Category
 import AboutCompany from "../../components/Elements/AboutCompany/AboutCompany";
 import Footer from "../../components/Elements/Footer/Footer";
 import { earphonesList } from '../../data/ProductData';
+import { useResponsiveNavbar } from '../../hooks/useResponsiveNavbar';
 
 const EarphonesPage = () => {
+
+  const {onDesktop} = useResponsiveNavbar(); 
   return (
     <>
       <HeaderSection>
-        <Navbar />
+        {onDesktop ? <Navbar /> : <MobileNavbar />}
         <CategoryBanner>EARPHONES</CategoryBanner>
       </HeaderSection>
       <MainSection>

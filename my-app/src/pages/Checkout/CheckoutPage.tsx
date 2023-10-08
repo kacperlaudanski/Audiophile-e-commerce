@@ -7,15 +7,18 @@ import CheckoutCart from "../../components/Checkout/CheckoutCart/CheckoutCart";
 import Footer from "../../components/Elements/Footer/Footer";
 import '../../dist-styles/checkout.css'; 
 import GoBackButton from "../../components/Elements/GoBackButton/GoBackButton";
+import { useResponsiveNavbar } from "../../hooks/useResponsiveNavbar";
+import MobileNavbar from "../../components/Elements/Navbar/MobileNavbar";
 
 const CheckoutPage = () => {
 
+  const {onDesktop} = useResponsiveNavbar(); 
   const [isValidationConfirmed, setValidationConfirm] = useState(false); 
     
     return (
       <>
         <HeaderSection>
-            <Navbar /> 
+          {onDesktop ? <Navbar /> : <MobileNavbar />}
         </HeaderSection>
         <MainSection>
            <GoBackButton />

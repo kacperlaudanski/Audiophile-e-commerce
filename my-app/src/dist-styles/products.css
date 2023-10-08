@@ -42,7 +42,6 @@
 .product-preview-container .product-details h2 {
   font-size: 2rem;
   font-weight: bolder;
-  max-width: 50%;
 }
 .product-preview-container .product-details p {
   color: #666666;
@@ -173,4 +172,25 @@
 }
 .reverse {
   flex-direction: row-reverse;
+}
+@media screen and (max-width: 767px) {
+  .product-preview-container {
+    flex-direction: column;
+    margin: 6em;
+  }
+  .product-preview-container img {
+    width: 100%;
+  }
+  .product-preview-container .product-details {
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    align-items: center;
+  }
+  .product-preview-container .product-details .product-link-btn {
+    width: 50%;
+  }
+  .product-card-container {
+    margin-bottom: 3em;
+  }
 }

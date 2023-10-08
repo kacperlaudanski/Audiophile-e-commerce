@@ -21,7 +21,6 @@
     h2 {
       font-size: 2rem;
       font-weight: bolder;
-      max-width: 50%;
     }
 
     p {
@@ -161,4 +160,29 @@
 
 .reverse {
   flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 767px){
+  .product-preview-container{
+    flex-direction: column;
+    margin:6em;
+
+    img{
+      width:100%; 
+    }
+
+    .product-details{
+      width:100%;
+      height:500px; 
+      text-align: center;
+      align-items: center;
+
+      .product-link-btn{
+        width:50%; 
+      }
+    }
+  }
+  .product-card-container{
+    margin-bottom:3em;
+  }
 }

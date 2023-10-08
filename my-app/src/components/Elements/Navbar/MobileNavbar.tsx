@@ -6,7 +6,6 @@ import CartModal from "../../Cart/CartModal";
 import EmptyCart from "../../Cart/EmptyCart";
 import NavbarCartButton from "./NavbarCartButton";
 import { slide as Menu } from "react-burger-menu";
-//import { styles } from "../../../data/BurgerMenuStyle";
 import '../../../dist-styles/burger-menu.css'; 
 import "../../../dist-styles/navbar.css";
 

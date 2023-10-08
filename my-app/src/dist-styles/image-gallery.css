@@ -50,7 +50,7 @@
   .image-gallery-container {
     height: 920px;
     flex-direction: column;
-    margin: 400px 0 200px;
+    margin-top: 0;
   }
   .image-gallery-container .small-images-container {
     width: 100%;

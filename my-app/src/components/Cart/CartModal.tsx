@@ -38,7 +38,7 @@ const CartModal: React.FC<CartModal> = ({
   }, [cartItems]);
 
   return (
-    <dialog ref={ref} onCancel={closeModal} className="cart-modal-container">
+    <dialog ref={ref} onCancel={closeModal} className="cart-dialog-container">
       <div className="cart-modal-container">
         <div className="cart-top">
           <h3>CART ({cartItemsAmount})</h3>

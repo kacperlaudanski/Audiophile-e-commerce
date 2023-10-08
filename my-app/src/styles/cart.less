@@ -1,13 +1,13 @@
 @import "./variables.less";
 
-.cart-modal-container {
+.cart-dialog-container {
   width: 25%;
   min-height: 200px;
   top: 100px;
   left: 65%;
   border: none;
   box-sizing: border-box;
-  padding: 1em;
+  padding: 2em;
   border-radius: 10px;
   font-family: @font;
 
@@ -142,5 +142,14 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width:767px){
+  .cart-dialog-container{
+    width: 95%; 
+    top:50%; 
+    left:50%; 
+    transform: translate(-50%, -50%);
   }
 }

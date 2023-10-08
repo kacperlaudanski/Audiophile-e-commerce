@@ -4,33 +4,63 @@ import XX59MainImage from '../images/product-xx59-headphones/desktop/image-produ
 import XX59GalleryImage1 from '../images/product-xx59-headphones/desktop/image-gallery-1.jpg'
 import XX59GalleryImage2 from '../images/product-xx59-headphones/desktop/image-gallery-2.jpg'
 import XX59GalleryImage3 from '../images/product-xx59-headphones/desktop/image-gallery-3.jpg'
+ //Mobile 
+ import XX59MainImageMobile from '../images/product-xx59-headphones/mobile/image-product.jpg'
+ import XX59GalleryImage1Mobile from '../images/product-xx59-headphones/mobile/image-gallery-1.jpg'
+ import XX59GalleryImage2Mobile from '../images/product-xx59-headphones/mobile/image-gallery-2.jpg'
+ import XX59GalleryImage3Mobile from '../images/product-xx59-headphones/mobile/image-gallery-3.jpg'
  //XX99MarkI
 import XX99MarkOneMainImage from '../images/product-xx99-mark-one-headphones/desktop/image-product.jpg'
 import XX99MarkOneGalleryImage1 from '../images/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg'
 import XX99MarkOneGalleryImage2 from '../images/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg'
 import XX99MarkOneGalleryImage3 from '../images/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg'
+ //Mobile
+import XX99MarkOneMainImageMobile from '../images/product-xx99-mark-one-headphones/mobile/image-product.jpg'
+import XX99MarkOneGalleryImage1Mobile from '../images/product-xx99-mark-one-headphones/mobile/image-gallery-1.jpg'
+import XX99MarkOneGalleryImage2Mobile from '../images/product-xx99-mark-one-headphones/mobile/image-gallery-2.jpg'
+import XX99MarkOneGalleryImage3Mobile from '../images/product-xx99-mark-one-headphones/mobile/image-gallery-3.jpg'
  //XX99MarkII
 import XX99MarkTwoMainImage from '../images/product-xx99-mark-two-headphones/desktop/image-product.jpg'
 import XX99MarkTwoGalleryImage1 from '../images/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg'
 import XX99MarkTwoGalleryImage2 from '../images/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg'
 import XX99MarkTwoGalleryImage3 from '../images/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg'
+//Mobile
+import XX99MarkTwoMainImageMobile from '../images/product-xx99-mark-two-headphones/mobile/image-product.jpg'
+import XX99MarkTwoGalleryImage1Mobile from '../images/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg'
+import XX99MarkTwoGalleryImage2Mobile from '../images/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg'
+import XX99MarkTwoGalleryImage3Mobile from '../images/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg'
 //Speakres
  //ZX9
 import ZX9MainImage from '../images/product-zx9-speaker/desktop/image-product.jpg'
 import ZX9GalleryImage1 from '../images/product-zx9-speaker/desktop/image-gallery-1.jpg'
 import ZX9GalleryImage2 from '../images/product-zx9-speaker/desktop/image-gallery-2.jpg'
 import ZX9GalleryImage3 from '../images/product-zx9-speaker/desktop/image-gallery-3.jpg'
+//Mobile
+import ZX9MainImageMobile from '../images/product-zx9-speaker/mobile/image-product.jpg'
+import ZX9GalleryImage1Mobile from '../images/product-zx9-speaker/mobile/image-gallery-1.jpg'
+import ZX9GalleryImage2Mobile from '../images/product-zx9-speaker/mobile/image-gallery-2.jpg'
+import ZX9GalleryImage3Mobile from '../images/product-zx9-speaker/mobile/image-gallery-3.jpg'
  //ZX7
 import ZX7MainImage from '../images/product-zx7-speaker/desktop/image-product.jpg'
 import ZX7GalleryImage1 from '../images/product-zx7-speaker/desktop/image-gallery-1.jpg'
 import ZX7GalleryImage2 from '../images/product-zx7-speaker/desktop/image-gallery-2.jpg'
 import ZX7GalleryImage3 from '../images/product-zx7-speaker/desktop/image-gallery-3.jpg'
+//Mobile
+import ZX7MainImageMobile from '../images/product-zx7-speaker/mobile/image-product.jpg'
+import ZX7GalleryImage1Mobile from '../images/product-zx7-speaker/mobile/image-gallery-1.jpg'
+import ZX7GalleryImage2Mobile from '../images/product-zx7-speaker/mobile/image-gallery-2.jpg'
+import ZX7GalleryImage3Mobile from '../images/product-zx7-speaker/mobile/image-gallery-3.jpg'
 //Earphones
  //YX1
 import YX1MainImage from '../images/product-yx1-earphones/desktop/image-product.jpg'
 import YX1GalleryImage1 from '../images/product-yx1-earphones/desktop/image-gallery-1.jpg'
 import YX1GalleryImage2 from '../images/product-yx1-earphones/desktop/image-gallery-2.jpg'
 import YX1GalleryImage3 from '../images/product-yx1-earphones/desktop/image-gallery-3.jpg'
+//Mobile 
+import YX1MainImageMobile from '../images/product-yx1-earphones/mobile/image-product.jpg'
+import YX1GalleryImage1Mobile from '../images/product-yx1-earphones/mobile/image-gallery-1.jpg'
+import YX1GalleryImage2Mobile from '../images/product-yx1-earphones/mobile/image-gallery-2.jpg'
+import YX1GalleryImage3Mobile from '../images/product-yx1-earphones/mobile/image-gallery-3.jpg'
 
 
 export const headphonesList = [
@@ -43,6 +73,10 @@ export const headphonesList = [
     galleryImage1: XX99MarkTwoGalleryImage1, 
     galleryImage2: XX99MarkTwoGalleryImage2, 
     galleryImage3: XX99MarkTwoGalleryImage3, 
+    mainImageMobile: XX99MarkTwoMainImageMobile, 
+    galleryImage1Mobile: XX99MarkTwoGalleryImage1Mobile, 
+    galleryImage2Mobile: XX99MarkTwoGalleryImage2Mobile, 
+    galleryImage3Mobile: XX99MarkTwoGalleryImage3Mobile,
     name: "XX99 MARK II HEADPHONES",
     shortName: "XX99 MARK II",
     cartName: 'XX99 MK II',
@@ -86,6 +120,10 @@ export const headphonesList = [
     galleryImage1: XX99MarkOneGalleryImage1, 
     galleryImage2: XX99MarkOneGalleryImage2, 
     galleryImage3: XX99MarkOneGalleryImage3, 
+    mainImageMobile: XX99MarkOneMainImageMobile,
+    galleryImage1Mobile: XX99MarkOneGalleryImage1Mobile, 
+    galleryImage2Mobile: XX99MarkOneGalleryImage2Mobile, 
+    galleryImage3Mobile: XX99MarkOneGalleryImage3Mobile,
     name: "XX99 MARK I HEADPHONES",
     shortName: "XX99 MARK I",
     cartName: 'XX99 MK I',
@@ -125,6 +163,10 @@ export const headphonesList = [
     galleryImage1: XX59GalleryImage1, 
     galleryImage2: XX59GalleryImage2, 
     galleryImage3: XX59GalleryImage3, 
+    mainImageMobile: XX59MainImageMobile, 
+    galleryImage1Mobile: XX59GalleryImage1Mobile, 
+    galleryImage2Mobile: XX59GalleryImage2Mobile, 
+    galleryImage3Mobile: XX59GalleryImage3Mobile,
     name: "XX59 HEADPHONES",
     shortName: "XX59",
     cartName: 'XX59',
@@ -167,6 +209,10 @@ export const speakersList = [
     galleryImage1: ZX9GalleryImage1, 
     galleryImage2: ZX9GalleryImage2, 
     galleryImage3: ZX9GalleryImage3, 
+    mainImageMobile: ZX9MainImageMobile, 
+    galleryImage1Mobile: ZX9GalleryImage1Mobile, 
+    galleryImage2Mobile: ZX9GalleryImage2Mobile, 
+    galleryImage3Mobile: ZX9GalleryImage3Mobile,
     name: "ZX9 SPEAKER",
     shortName: "ZX9",
     cartName: 'ZX9',
@@ -210,6 +256,10 @@ export const speakersList = [
     galleryImage1: ZX7GalleryImage1, 
     galleryImage2: ZX7GalleryImage2, 
     galleryImage3: ZX7GalleryImage3, 
+    mainImageMobile: ZX7MainImageMobile,
+    galleryImage1Mobile: ZX7GalleryImage1Mobile, 
+    galleryImage2Mobile: ZX7GalleryImage2Mobile, 
+    galleryImage3Mobile: ZX7GalleryImage3Mobile,
     name: "ZX7 SPEAKER",
     shortName: "ZX7",
     cartName: 'ZX7',
@@ -256,6 +306,10 @@ export const earphonesList = [
     galleryImage1: YX1GalleryImage1, 
     galleryImage2: YX1GalleryImage2,
     galleryImage3: YX1GalleryImage3, 
+    mainImageMobile: YX1MainImageMobile,
+    galleryImage1Mobile: YX1GalleryImage1Mobile, 
+    galleryImage2Mobile: YX1GalleryImage2Mobile, 
+    galleryImage3Mobile: YX1GalleryImage3Mobile,
     name: "YX1 WIRELESS EARPHONES",
     shortName: "YX1",
     cartName: 'YX1',

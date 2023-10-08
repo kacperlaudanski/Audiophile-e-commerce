@@ -1,0 +1,58 @@
+@import './variables.less'; 
+.bm-burger-button {
+    position: absolute;
+    width: 24px;
+    height: 20px;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  .bm-burger-bars {
+    background: @white;
+  }
+  
+  .bm-burger-bars-hover {
+    background: @gray;
+  }
+  
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .bm-cross {
+    background: @light-gray;
+  }
+  .bm-menu-wrap {
+    position: fixed;
+    top:0; 
+    left:0; 
+    height: 100%;
+  }
+  .bm-menu {
+    background: @black;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+  }
+  .bm-morph-shape {
+    fill: @dark-gray;
+  }
+  .bm-item-list {
+    color: @white;
+    padding: 0.8em;
+
+    .navbar-mobile-list{
+        list-style: none;
+
+        li{
+            margin-top:1em; 
+        }
+    }
+  }
+  .bm-item {
+    display: inline-block;
+    margin-top: 1em;
+  }
+  .bm-overlay {
+    background: @dark-gray-transparent;
+  }

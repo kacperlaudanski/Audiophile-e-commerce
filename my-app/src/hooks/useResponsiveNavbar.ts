@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export function useResponsiveNavbar() {
-  const [onDesktop, setOnDesktop] = useState<boolean | null>(
+  const [onDesktop, setOnDesktop] = useState<boolean>(
     window.innerWidth > 767
   );
   useEffect(() => {

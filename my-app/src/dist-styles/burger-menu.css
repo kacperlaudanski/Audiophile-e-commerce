@@ -1,0 +1,68 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+.cta-button {
+  height: 45px;
+  font-weight: bolder;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+}
+.bm-burger-button {
+  position: absolute;
+  width: 24px;
+  height: 20px;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.bm-burger-bars {
+  background: #ffffff;
+}
+.bm-burger-bars-hover {
+  background: #666666;
+}
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+.bm-cross {
+  background: #f1f1f1;
+}
+.bm-menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.bm-menu {
+  background: #000000;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+.bm-morph-shape {
+  fill: #191919;
+}
+.bm-item-list {
+  color: #ffffff;
+  padding: 0.8em;
+}
+.bm-item-list .navbar-mobile-list {
+  list-style: none;
+}
+.bm-item-list .navbar-mobile-list li {
+  margin-top: 1em;
+}
+.bm-item {
+  display: inline-block;
+  margin-top: 1em;
+}
+.bm-overlay {
+  background: rgba(25, 25, 25, 0.525);
+}

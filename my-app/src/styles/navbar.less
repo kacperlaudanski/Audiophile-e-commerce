@@ -5,6 +5,7 @@
     height: 90px;
     background-color: @dark-gray; 
     border-bottom: .7px solid @light-gray;
+    position: relative;
 }
 
 .navbar-desktop:extend(.navbar){
@@ -64,6 +65,7 @@
 
     .cart-button-container{
         width:50%; 
+        .flex-setup(center, flex-end, row); 
 
         .cart-button{
             width:30px;

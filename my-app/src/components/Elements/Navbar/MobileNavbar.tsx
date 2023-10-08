@@ -6,7 +6,8 @@ import CartModal from "../../Cart/CartModal";
 import EmptyCart from "../../Cart/EmptyCart";
 import NavbarCartButton from "./NavbarCartButton";
 import { slide as Menu } from "react-burger-menu";
-import { styles } from "../../../data/BurgerMenuStyle";
+//import { styles } from "../../../data/BurgerMenuStyle";
+import '../../../dist-styles/burger-menu.css'; 
 import "../../../dist-styles/navbar.css";
 
 const MobileNavbar = () => {
@@ -16,7 +17,7 @@ const MobileNavbar = () => {
   return (
     <nav className="navbar-mobile">
       <div className="navbar-mobile-logo-list">
-        <Menu styles={styles}>
+        <Menu>
           <CategoriesNavList listClass="navbar-mobile-list" />
         </Menu>
         <NavLink to={"/"} className="navbar-logo">

@@ -12,6 +12,7 @@ interface RelatedProduct {
   mainImage: string;
   shortName: string;
   link: string;
+  mainImageMobile: string;
 }
 
 const RelatedProductsPanel = () => {
@@ -24,28 +25,37 @@ const RelatedProductsPanel = () => {
     const productsWithoutCurrent = allProducts.filter(
       (item) => item.product !== product
     );
-    while (selectedRelatedProducts.length < 3 && productsWithoutCurrent.length > 0){
+    while (
+      selectedRelatedProducts.length < 3 &&
+      productsWithoutCurrent.length > 0
+    ) {
       let randomIndex = Math.floor(
         Math.random() * productsWithoutCurrent.length
       );
-      selectedRelatedProducts.push(productsWithoutCurrent.splice(randomIndex, 1)[0]);
+      selectedRelatedProducts.push(
+        productsWithoutCurrent.splice(randomIndex, 1)[0]
+      );
     }
     return selectedRelatedProducts;
   }
-  
+
   return (
-    <div className="related-panel-container">
-      {randomRelatedProducts()?.map((product) => {
-        return (
-          <RelatedProductItem
-            key={uuidv4()}
-            relatedProductImage={product.mainImage}
-            relatedProductName={product.shortName}
-            relatedProductLink={product.link}
-          />
-        );
-      })}
-    </div>
+    <>
+      <h2>YOU MAY ALSO LIKE</h2>
+      <div className="related-panel-container">
+        {randomRelatedProducts()?.map((product) => {
+          return (
+            <RelatedProductItem
+              key={uuidv4()}
+              relatedProductImage={product.mainImage}
+              relatedProductName={product.shortName}
+              relatedProductLink={product.link}
+              relatedProductImageMobile={product.mainImageMobile}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 };
 

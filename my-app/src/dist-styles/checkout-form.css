@@ -55,6 +55,13 @@
 .checkout-form-container .checkout-form-section input:focus {
   border: 1px solid #d87d4a;
 }
+.checkout-form-container .checkout-form-section .checkout-section-container {
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+}
 .checkout-form-container .checkout-form-section .checkout-input-container {
   width: 90%;
   height: 120px;
@@ -76,32 +83,9 @@
 .checkout-form-container .checkout-form-section .checkout-input-container .checkout-input-info .show-error {
   display: block;
 }
-.checkout-form-container .checkout-form-section .billing-details-container {
-  width: 100%;
-  height: 200px;
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: auto auto;
-}
-.checkout-form-container .checkout-form-section .shipping-info-container {
-  width: 100%;
-  height: 200px;
-  margin-top: 20px;
-  display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: auto auto;
-  grid-template-areas: "address address" "zipCode city" "country";
-}
-.checkout-form-container .checkout-form-section .payment-details-container {
-  width: 100%;
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: auto auto;
-}
 .checkout-form-container .payment-info-container {
   width: 100%;
   height: 100px;
-  margin-top: 2em;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -114,4 +98,32 @@
 .checkout-form-container .payment-info-container p {
   color: rgba(25, 25, 25, 0.525);
   font-size: 0.9rem;
+}
+@media screen and (max-width: 767px) {
+  .checkout-form-container {
+    width: 100%;
+  }
+  .checkout-form-container .checkout-form-section .checkout-section-container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .checkout-form-container .checkout-form-section .shipping-info-container {
+    grid-template-columns: 1fr;
+  }
+  .checkout-form-container .checkout-form-section .checkout-input-container {
+    width: 100%;
+  }
+  .checkout-form-container .payment-info-container {
+    height: auto;
+    margin-top: 1em;
+    justify-content: space-between;
+  }
+  .checkout-form-container .payment-info-container img {
+    width: 40px;
+    height: 40px;
+    margin-right: 1em;
+  }
+  .checkout-form-container .payment-info-container p {
+    font-size: 0.7rem;
+  }
 }

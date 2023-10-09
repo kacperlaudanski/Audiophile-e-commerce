@@ -173,7 +173,7 @@ const CheckoutForm: React.FC<{
       <h1>CHECKOUT</h1>
       <section className="checkout-form-section">
         <h5 className="checkout-form-section-title">BILLING DETAILS</h5>
-        <div className="billing-details-container">
+        <div className="checkout-section-container">
           <CheckoutInput
             className={`checkout-input-container ${
               nameState === false ? `input-error` : ""
@@ -214,7 +214,7 @@ const CheckoutForm: React.FC<{
       </section>
       <section className="checkout-form-section">
         <h5 className="checkout-form-section-title">SHIPPING INFO</h5>
-        <div className="shipping-info-container">
+        <div className="checkout-section-container">
           <CheckoutInput
             className={`checkout-input-container ${
               addressState === false ? `input-error` : ""
@@ -267,7 +267,7 @@ const CheckoutForm: React.FC<{
       </section>
       <section className="checkout-form-section">
         <h5 className="checkout-form-section-title">PAYMENT DETAILS</h5>
-        <div className="payment-details-container">
+        <div className="checkout-section-container">
           <RadioInput
             radioInputId="e-money"
             radioInputLabel="e-Money"

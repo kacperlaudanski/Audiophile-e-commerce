@@ -52,3 +52,8 @@
 .radio-input-container:has(input[type="radio"]:checked) {
   border: 1px solid #d87d4a;
 }
+@media screen and (max-width: 767px) {
+  .radio-input-container {
+    width: 100%;
+  }
+}

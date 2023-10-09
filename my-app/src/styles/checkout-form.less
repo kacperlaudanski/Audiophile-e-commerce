@@ -1,111 +1,125 @@
-@import './variables.less'; 
+@import "./variables.less";
 
 .checkout-form-container {
-    width: 70%;
-    background-color: @white;
-    border-radius: 15px;
-    padding: 3em;
-    border: 2px solid @lighter-gray;
+  width: 70%;
+  background-color: @white;
+  border-radius: 15px;
+  padding: 3em;
+  border: 2px solid @lighter-gray;
 
-    .checkout-form-section {
-      margin-top: 70px;
-      .flex-setup(flex-start, space-around, column);
+  .checkout-form-section {
+    margin-top: 70px;
+    .flex-setup(flex-start, space-around, column);
 
-      .input-error{
-        color:@error;
-        input{
-          border: 2px solid @error; 
-
-          &:focus{
-            border: 2px solid @error; 
-          }
-        }
-      }
-
-      h5 {
-        color: @dark-orange;
-      }
-
-      label {
-        font-size: 0.8rem;
-        font-weight: 800;
-      }
-
+    .input-error {
+      color: @error;
       input {
-        width: 100%;
-        height: 65px;
-        border-radius: 10px;
-        text-indent: 25px;
-        border: 1px solid @lighter-gray;
-        outline: none;
+        border: 2px solid @error;
 
         &:focus {
-          border: 1px solid @dark-orange;
+          border: 2px solid @error;
         }
-      }
-
-      .checkout-input-container {
-        width: 90%;
-        height: 120px;
-        .flex-setup(flex-start, space-around, column);
-
-        .checkout-input-info {
-          width: 100%;
-          .flex-setup(center, space-between, row);
-
-          .input-error-message{
-            display:none;
-          }
-
-          .show-error{
-            display:block; 
-          }
-        }
-      }
-
-      .billing-details-container {
-        width: 100%;
-        height: 200px;
-        margin-top: 20px;
-        display: grid;
-        grid-template-columns: auto auto;
-      }
-
-      .shipping-info-container {
-        width: 100%;
-        height: 200px;
-        margin-top: 20px;
-        display: grid;
-        grid-template-rows: auto auto auto;
-        grid-template-columns: auto auto;
-        grid-template-areas:
-          "address address"
-          "zipCode city"
-          "country";
-      }
-
-      .payment-details-container {
-        width: 100%;
-        margin-top: 20px;
-        display: grid;
-        grid-template-columns: auto auto;
       }
     }
 
-    .payment-info-container {
+    h5 {
+      color: @dark-orange;
+    }
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    input {
       width: 100%;
-      height: 100px;
-      margin-top: 2em;
-      .flex-setup(center, space-around, row);
+      height: 65px;
+      border-radius: 10px;
+      text-indent: 25px;
+      border: 1px solid @lighter-gray;
+      outline: none;
 
-      img {
-        width: 60px;
-        height: 60px;
+      &:focus {
+        border: 1px solid @dark-orange;
       }
+    }
 
-      p {
-        color: @dark-gray-transparent;
-        font-size: 0.9rem;
+    .checkout-section-container{
+      width: 100%;
+      height: 200px;
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+
+    .checkout-input-container {
+      width: 90%;
+      height: 120px;
+      .flex-setup(flex-start, space-around, column);
+
+      .checkout-input-info {
+        width: 100%;
+        .flex-setup(center, space-between, row);
+
+        .input-error-message {
+          display: none;
+        }
+
+        .show-error {
+          display: block;
+        }
       }
     }
   }
+
+  .payment-info-container {
+    width: 100%;
+    height: 100px;
+    .flex-setup(center, space-around, row);
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+
+    p {
+      color: @dark-gray-transparent;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .checkout-form-container {
+    width: 100%;
+    .checkout-form-section {
+      .checkout-section-container {
+        grid-template-columns: 1fr;
+        height:auto; 
+      }
+      .shipping-info-container{
+        grid-template-columns: 1fr;
+      }
+
+      .checkout-input-container{
+        width:100%; 
+      }
+    }
+
+    .payment-info-container{
+      height:auto; 
+      margin-top: 1em;
+      justify-content: space-between;
+
+      img{
+        width:40px; 
+        height:40px; 
+        margin-right:1em;
+      }
+
+      p{
+        font-size: .7rem;
+      }
+    }
+  }
+}

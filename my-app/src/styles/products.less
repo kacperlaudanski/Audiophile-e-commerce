@@ -20,6 +20,7 @@
 
     h2 {
       font-size: 2rem;
+      margin:10px 0;
       font-weight: bolder;
     }
 
@@ -29,6 +30,7 @@
 
     .product-link-btn:extend(.cta-button) {
       width: 30%;
+      margin:1em 0;
       background-color: @dark-orange;
 
       &:hover {
@@ -53,7 +55,7 @@
 
     .product-description {
       width: 50%;
-      height: 400px;
+      height: 500px;
       box-sizing: border-box;
       padding: 1em;
       .flex-setup(flex-start, space-between, column);
@@ -141,7 +143,7 @@
 @media screen and (max-width: 767px){
   .product-preview-container{
     flex-direction: column;
-    margin:6em;
+    margin:1em 0 9em;
 
     img{
       width:100%; 
@@ -149,12 +151,18 @@
 
     .product-details{
       width:100%;
-      height:500px; 
+      height:400px; 
+      padding: 2em;
       text-align: center;
       align-items: center;
 
+      h2{
+        margin:1em 0; 
+      }
+
       .product-link-btn{
         width:50%; 
+        margin-top:1em;
       }
     }
   }

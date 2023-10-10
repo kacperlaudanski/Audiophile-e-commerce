@@ -46,3 +46,9 @@
 .confirmation-modal-container .confirmation-buttons-container .confirmation-modal-button:hover {
   background-color: #fbaf85;
 }
+@media screen and (max-width: 767px) {
+  .confirmation-modal-container {
+    width: 100%;
+    height: 350px;
+  }
+}

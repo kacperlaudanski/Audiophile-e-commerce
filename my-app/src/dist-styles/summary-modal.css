@@ -108,3 +108,22 @@
 .summary-modal-dialog .summary-modal-container .back-to-home-btn:hover {
   background-color: #fbaf85;
 }
+@media screen and (max-width: 767px) {
+  .summary-modal-dialog {
+    width: 90%;
+    padding: 1.5em;
+  }
+  .summary-modal-dialog .summary-modal-container .summary-order-list {
+    flex-direction: column;
+  }
+  .summary-modal-dialog .summary-modal-container .summary-order-list .order-list-left {
+    width: 100%;
+    max-height: 200px;
+    border-radius: 15px 15px 0 0;
+  }
+  .summary-modal-dialog .summary-modal-container .summary-order-list .order-list-right {
+    width: 100%;
+    max-height: 120px;
+    border-radius: 0 0 15px 15px;
+  }
+}

@@ -45,14 +45,15 @@
         }
       }
       .pr-banner-1-description {
-        width: 40%;
-        height: 60%;
+        width: 30%;
+        height: 70%;
         .flex-setup(flex-start, space-around, column);
         position: relative;
         z-index: 2;
 
         h2 {
           font-size: 3rem;
+          margin: 2em 0 0;
           color: @white;
         }
         p {
@@ -60,7 +61,7 @@
         }
 
         .banner1-cta-button:extend(.cta-button) {
-          width: 30%;
+          width: 40%;
           background-color: @black;
           &:hover {
             background-color: rgba(16, 16, 16, 0.632);
@@ -140,17 +141,19 @@
         .flex-setup(center, space-between, column); 
 
         .pr-banner-1-image {
+          width:80%; 
+          height:40%; 
           img {
             width: 70%;
-            height: 70%;
+            height: 80%;
             left: 50%;
             top:20%;
             transform: translate(-50%);
           }
   
           .circle-pattern {
-            width: 290%;
-            height: 210%;
+            width: 270%;
+            height: 230%;
             position: absolute;
             top:-50%;
             z-index: 1;
@@ -158,7 +161,7 @@
       }
       .pr-banner-1-description {
         width: 80%;
-        height: 80%;
+        height: 60%;
         .flex-setup(center, space-around, column);
         text-align: center;
 

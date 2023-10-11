@@ -1,11 +1,11 @@
 import { useEffect, useReducer, useState } from "react";
-import "../../../dist-styles/checkout-form.css";
 import CheckoutInput from "../../Elements/Input/CheckoutInput";
 import RadioInput from "../../Elements/Input/RadioCheckoutInput";
 import { checkValidation, conditions } from "../../../utilities/validation";
 import CashPaymentInfo from "./CashPaymentInfo";
 import { CheckoutReducer, DEFAULT_VALUES_TYPE } from "./checkout-reducer";
 import { Action } from "./checkout-reducer";
+import "../../../dist-styles/checkout-form.css";
 
 const DEFAULT_VALUES: DEFAULT_VALUES_TYPE = {
   name: null,
@@ -20,6 +20,17 @@ const DEFAULT_VALUES: DEFAULT_VALUES_TYPE = {
 };
 
 type FormState = boolean | null;
+
+function handleInputChange(
+  event: React.ChangeEvent<HTMLInputElement>,
+  fieldAction: string,
+  condition: RegExp,
+  setState: React.Dispatch<React.SetStateAction<boolean | null>>,
+  dispatch: (value: Action) => void
+) {
+  checkValidation(event.target.value, condition, setState);
+  dispatch({ type: fieldAction, payload: event.target.value });
+}
 
 const CheckoutForm: React.FC<{
   setValidation: React.Dispatch<React.SetStateAction<boolean>>;
@@ -70,17 +81,6 @@ const CheckoutForm: React.FC<{
     eMoneyNumberState,
     eMoneyPinState,
   ]);
-
-  function handleInputChange(
-    event: React.ChangeEvent<HTMLInputElement>,
-    fieldAction: string,
-    condition: RegExp,
-    setState: React.Dispatch<React.SetStateAction<boolean | null>>,
-    dispatch: (value: Action) => void
-  ) {
-    checkValidation(event.target.value, condition, setState);
-    dispatch({ type: fieldAction, payload: event.target.value });
-  }
 
   function nameHandler(event: React.ChangeEvent<HTMLInputElement>) {
     handleInputChange(event, "NAME", conditions.name, setNameState, dispatch);

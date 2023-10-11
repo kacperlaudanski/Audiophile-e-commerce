@@ -15,6 +15,7 @@ interface CurrentProduct {
 
 interface ProductCardType {
   productImage: string | undefined;
+  productImageMobile: string | undefined;
   productName: string | undefined;
   productDescription: string | undefined;
   productPrice: number | undefined;
@@ -27,9 +28,13 @@ const ProductCard: React.FC<ProductCardType> = (props) => {
   const [currentProduct, setCurrentProduct] = useState<CurrentProduct[]>([]);
   const allProducts = [...headphonesList, ...earphonesList, ...speakersList];
 
+  const { product } = useParams();
   function takeCurrentProduct() {
     setCurrentProduct(allProducts.filter((item) => item.product === product));
   }
+  useEffect(() => {
+    takeCurrentProduct();
+  }, [product]);
 
   const [isModalOpen, setModalState] = useState(false);
 
@@ -38,21 +43,21 @@ const ProductCard: React.FC<ProductCardType> = (props) => {
   }
 
   const { increaseItemAmount } = useShoppingCart();
-  const { product } = useParams();
 
   function addToCart() {
     setModalState(true);
     increaseItemAmount(currentProduct[0].id);
   }
 
-  useEffect(() => {
-    takeCurrentProduct();
-  }, [product]);
-
   return (
     <div className="product-card-container">
       <div className="product-presentation">
-        <img src={props.productImage} alt="product-image"></img>
+        <img
+          src={props.productImage}
+          sizes="(max-width:767px) 654px, 1080px"
+          srcSet={`${props.productImage} 1100w, ${props.productImageMobile}, 700w`}
+          alt="product-image"
+        ></img>
         <div className="product-description">
           <h1>{props.productName}</h1>
           <p>{props.productDescription}</p>

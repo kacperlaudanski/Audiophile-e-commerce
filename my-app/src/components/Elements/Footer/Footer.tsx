@@ -1,9 +1,6 @@
 import "../../../dist-styles/footer.css";
 import CategoriesNavList from "../CategoriesElements/CategoriesNavList";
 import SocialIcon from "./SocialIcon";
-import FacebookIcon from "../../../images/shared/desktop/icon-facebook.svg";
-import InstagramIcon from "../../../images/shared/desktop/icon-instagram.svg";
-import TwitterIcon from "../../../images/shared/desktop/icon-twitter.svg";
 
 const Footer = () => {
   return (

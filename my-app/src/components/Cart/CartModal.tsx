@@ -1,4 +1,4 @@
-import { ReactEventHandler, useEffect, useRef } from "react";
+import { ReactEventHandler, ReactNode, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "../../context/CartContext";
 import "../../dist-styles/cart.css";
@@ -6,7 +6,7 @@ import "../../dist-styles/cart.css";
 interface CartModal {
   openModal: boolean;
   closeModal: ReactEventHandler;
-  children: any;
+  children: ReactNode;
 }
 
 const CartModal: React.FC<CartModal> = ({

@@ -31,7 +31,7 @@ type CartContextProvider = {
   getItemAmount: (id: number) => number;
   decreaseItemAmount: (id: number) => void;
   increaseItemAmount: (id: number) => void;
-  renderCartItems: () => void;
+  renderCartItems: () => ReactNode;
   totalPriceHandler: () => void;
   totalPrice: number;
   removeAllItems: () => void;

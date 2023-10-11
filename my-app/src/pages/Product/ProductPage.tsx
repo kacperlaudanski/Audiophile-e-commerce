@@ -2,7 +2,7 @@ import HeaderSection from "../../components/Elements/Header/HeaderSection";
 import MainSection from "../../components/Elements/MainSection/MainSection";
 import Navbar from "../../components/Elements/Navbar/DesktopNavbar";
 import MobileNavbar from "../../components/Elements/Navbar/MobileNavbar";
-import ProductDetails from "../../components/Products/ProductCard";
+import ProductCard from "../../components/Products/ProductCard";
 import CategoryPanel from "../../components/Elements/CategoriesElements/CategoryPanel";
 import AboutCompany from "../../components/Elements/AboutCompany/AboutCompany";
 import Footer from "../../components/Elements/Footer/Footer";
@@ -36,8 +36,9 @@ const ProductPage: React.FC = (props) => {
       </HeaderSection>
       <MainSection>
         <GoBackButton />
-        <ProductDetails
+        <ProductCard
           productImage={selectedProduct?.mainImage}
+          productImageMobile={selectedProduct?.mainImageMobile}
           productName={selectedProduct?.name}
           productDescription={selectedProduct?.description}
           productPrice={selectedProduct?.price}

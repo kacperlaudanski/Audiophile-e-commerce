@@ -60,8 +60,8 @@
   z-index: 1;
 }
 .home-product-banners .product-banner-1 .pr-banner-1-description {
-  width: 40%;
-  height: 60%;
+  width: 30%;
+  height: 70%;
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
@@ -71,13 +71,14 @@
 }
 .home-product-banners .product-banner-1 .pr-banner-1-description h2 {
   font-size: 3rem;
+  margin: 2em 0 0;
   color: #ffffff;
 }
 .home-product-banners .product-banner-1 .pr-banner-1-description p {
   color: #f1f1f1;
 }
 .home-product-banners .product-banner-1 .pr-banner-1-description .banner1-cta-button {
-  width: 30%;
+  width: 40%;
   background-color: #000000;
 }
 .home-product-banners .product-banner-1 .pr-banner-1-description .banner1-cta-button:hover {
@@ -166,23 +167,27 @@
     justify-content: space-between;
     flex-direction: column;
   }
+  .home-product-banners .product-banner-1 .pr-banner-1-image {
+    width: 80%;
+    height: 40%;
+  }
   .home-product-banners .product-banner-1 .pr-banner-1-image img {
     width: 70%;
-    height: 70%;
+    height: 80%;
     left: 50%;
     top: 20%;
     transform: translate(-50%);
   }
   .home-product-banners .product-banner-1 .pr-banner-1-image .circle-pattern {
-    width: 290%;
-    height: 210%;
+    width: 270%;
+    height: 230%;
     position: absolute;
     top: -50%;
     z-index: 1;
   }
   .home-product-banners .product-banner-1 .pr-banner-1-description {
     width: 80%;
-    height: 80%;
+    height: 60%;
     display: flex;
     align-items: center;
     justify-content: space-around;

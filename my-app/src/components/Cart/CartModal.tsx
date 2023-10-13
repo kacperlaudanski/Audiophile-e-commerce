@@ -45,6 +45,7 @@ const CartModal: React.FC<CartModal> = ({
           <button className="cart-remove-btn" onClick={removeAllItems}>
             Remove all
           </button>
+          <button className="cart-close-btn" onClick={closeModal}></button>
         </div>
         <div className="cart-content-container">{children}</div>
         <div className="cart-bottom">

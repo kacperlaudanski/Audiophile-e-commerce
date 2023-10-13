@@ -58,6 +58,19 @@
 .cart-dialog-container .cart-modal-container .cart-top .cart-remove-btn:hover {
   color: #d87d4a;
 }
+.cart-dialog-container .cart-modal-container .cart-top .cart-close-btn {
+  /* https://www.flaticon.com/free-icons/close - Close icons created by ariefstudio - Flaticon */
+  width: 15px;
+  height: 15px;
+  background: none;
+  border: none;
+  margin-left: 1em;
+  cursor: pointer;
+  background-image: url('../images/cart/close.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .cart-dialog-container .cart-modal-container .cart-content-container {
   display: flex;
   align-items: center;

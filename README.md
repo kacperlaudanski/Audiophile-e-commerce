@@ -9,7 +9,7 @@ In summary, this e-commerce music store not only delivers a visually appealing a
 
 ## Live Preview 
 
-You can visit project website here:
+You can visit project website here: https://audiophile-e-commerce-7197d.web.app/
 
 ## Technologies 
 

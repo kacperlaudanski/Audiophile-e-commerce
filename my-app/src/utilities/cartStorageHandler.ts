@@ -13,6 +13,7 @@ export function getFromStorage(key: string) {
   if (data) {
     return JSON.parse(data);
   }else{
-    return []
+    if(key === 'cartItemsAmount') return 0; 
+    if(key === 'cart') return []; 
   }
 }
